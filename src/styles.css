@@ -110,21 +110,21 @@
 @utility eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.75rem;
+  gap: 0.625rem;
+  font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--teal);
+  &::before {
+    content: "";
+    width: 1.75rem;
+    height: 1px;
+    background: var(--teal);
+    display: inline-block;
+  }
 }
 
-@utility eyebrow::before {
-  content: "";
-  width: 1.5rem;
-  height: 1px;
-  background: var(--teal);
-  display: inline-block;
-}
 
 @keyframes float-up {
   0% { transform: translateY(100vh) scale(0); opacity: 0; }
