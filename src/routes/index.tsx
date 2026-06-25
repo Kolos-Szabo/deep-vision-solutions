@@ -17,9 +17,10 @@ import projPipeline from "@/assets/project-pipeline.jpg";
 import projIndustrial from "@/assets/project-industrial.jpg";
 
 
-const PHONE = "+40 745 123 456";
-const PHONE_HREF = "tel:+40745123456";
-const EMAIL = "contact@lucrarisubacvatice.ro";
+const PHONE = "0040 755 011 497";
+const PHONE_HREF = "tel:0040755011497";
+const EMAIL = "infomylake@gmail.com";
+const WHATSAPP_NUMBER = "40755011497";
 
 export const Route = createFileRoute("/")({
   head: () => ({
