@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState, type FormEvent } from "react";
 import logoWhiteUrl from "@/assets/logo-heidi-white-raw.png";
+import anpcAsset from "@/assets/ANPC.png.asset.json";
 import {
   Search, Droplets, Wrench, Zap, Mountain, Anchor, PackageSearch, Camera, FileText,
   Waves, Landmark, Factory, Phone, Mail, MapPin, ShieldCheck, Clock, Users, Award,
