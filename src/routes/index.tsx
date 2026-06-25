@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState, type FormEvent } from "react";
 import logoWhiteUrl from "@/assets/logo-heidi-white-raw.png";
+import anpcAsset from "@/assets/ANPC.png.asset.json";
 import {
   Search, Droplets, Wrench, Zap, Mountain, Anchor, PackageSearch, Camera, FileText,
   Waves, Landmark, Factory, Phone, Mail, MapPin, ShieldCheck, Clock, Users, Award,
@@ -628,9 +629,26 @@ function Footer() {
         </div>
       </div>
       <div className="border-t border-white/5">
-        <div className="container-x py-6 flex flex-wrap justify-between gap-4 text-xs text-foreground/50">
-          <span>© {new Date().getFullYear()} HEIDI · LucrariSubacvatice.ro · Toate drepturile rezervate.</span>
-          <span>Lucrări subacvatice profesionale · România · since 1993</span>
+        <div className="container-x py-6 flex flex-col items-center gap-4">
+          <a
+            href="https://anpc.ro/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="ANPC - Autoritatea Națională pentru Protecția Consumatorilor"
+          >
+            <img
+              src={anpcAsset.url}
+              alt="ANPC - Autoritatea Națională pentru Protecția Consumatorilor"
+              width={800}
+              height={194}
+              loading="lazy"
+              className="h-14 sm:h-16 w-auto rounded-lg border border-white/10 bg-white"
+            />
+          </a>
+          <div className="w-full flex flex-wrap justify-between gap-4 text-xs text-foreground/50">
+            <span>© {new Date().getFullYear()} HEIDI · LucrariSubacvatice.ro · Toate drepturile rezervate.</span>
+            <span>Lucrări subacvatice profesionale · România · since 1993</span>
+          </div>
         </div>
       </div>
     </footer>
