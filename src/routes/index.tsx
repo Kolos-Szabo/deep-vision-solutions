@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState, type FormEvent } from "react";
+import logoWhiteUrl from "@/assets/logo-heidi-white-raw.png";
 import {
   Search, Droplets, Wrench, Zap, Mountain, Anchor, PackageSearch, Camera, FileText,
   Waves, Landmark, Factory, Phone, Mail, MapPin, ShieldCheck, Clock, Users, Award,
@@ -167,7 +168,7 @@ function Nav() {
     >
       <div className="container-x flex h-20 items-center justify-between gap-4">
         <a href="#top" className="flex items-center gap-2 shrink-0">
-          <img src="/logo-heidi-white.png" alt="HEIDI Lucrări Subacvatice" className="h-9 w-auto" />
+          <img src={logoWhiteUrl} alt="HEIDI Lucrări Subacvatice" className="h-9 w-auto" />
         </a>
         <nav className="hidden lg:flex items-center gap-8">
           {links.map(([l, h]) => (
@@ -600,7 +601,7 @@ function Footer() {
     <footer className="border-t border-white/5 bg-deep">
       <div className="container-x py-16 grid md:grid-cols-[1.4fr_1fr_1fr] gap-10">
         <div>
-          <img src="/logo-heidi-white.png" alt="HEIDI Lucrări Subacvatice" className="h-10 w-auto" />
+          <img src={logoWhiteUrl} alt="HEIDI Lucrări Subacvatice" className="h-10 w-auto" />
           <p className="mt-5 text-sm text-foreground/65 max-w-sm leading-relaxed">
             HEIDI execută lucrări subacvatice industriale în România din 1993:
             inspecții, reparații, sudură, expertize și intervenții pe infrastructură critică.
