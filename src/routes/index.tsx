@@ -672,6 +672,7 @@ function Index() {
         <Contact />
       </main>
       <Footer />
+      <WhatsAppWidget />
     </div>
   );
 }
