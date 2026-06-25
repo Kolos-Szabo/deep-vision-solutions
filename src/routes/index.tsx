@@ -639,6 +639,9 @@ function Footer() {
             <img
               src={anpcAsset.url}
               alt="ANPC - Autoritatea Națională pentru Protecția Consumatorilor"
+              width={800}
+              height={194}
+              loading="lazy"
               className="h-14 sm:h-16 w-auto rounded-lg border border-white/10 bg-white"
             />
           </a>
