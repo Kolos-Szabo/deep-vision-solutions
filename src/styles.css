@@ -141,3 +141,10 @@
 }
 
 @utility animate-fade-up { animation: fade-up 0.8s ease-out both; }
+
+@utility whatsapp-btn {
+  background-color: #25D366;
+  color: #ffffff;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  &:hover { background-color: #1DA851; }
+}
