@@ -14,7 +14,7 @@ import projWelding from "@/assets/project-welding.jpg";
 import projLake from "@/assets/project-lake.jpg";
 import projPipeline from "@/assets/project-pipeline.jpg";
 import projIndustrial from "@/assets/project-industrial.jpg";
-import logoWhite from "@/assets/logo-heidi-white.png.asset.json";
+
 
 const PHONE = "+40 745 123 456";
 const PHONE_HREF = "tel:+40745123456";
@@ -167,7 +167,7 @@ function Nav() {
     >
       <div className="container-x flex h-20 items-center justify-between gap-4">
         <a href="#top" className="flex items-center gap-2 shrink-0">
-          <img src={logoWhite.url} alt="HEIDI Lucrări Subacvatice" className="h-9 w-auto" />
+          <img src="/logo-heidi-white.png" alt="HEIDI Lucrări Subacvatice" className="h-9 w-auto" />
         </a>
         <nav className="hidden lg:flex items-center gap-8">
           {links.map(([l, h]) => (
@@ -600,7 +600,7 @@ function Footer() {
     <footer className="border-t border-white/5 bg-deep">
       <div className="container-x py-16 grid md:grid-cols-[1.4fr_1fr_1fr] gap-10">
         <div>
-          <img src={logoWhite.url} alt="HEIDI Lucrări Subacvatice" className="h-10 w-auto" />
+          <img src="/logo-heidi-white.png" alt="HEIDI Lucrări Subacvatice" className="h-10 w-auto" />
           <p className="mt-5 text-sm text-foreground/65 max-w-sm leading-relaxed">
             HEIDI execută lucrări subacvatice industriale în România din 1993:
             inspecții, reparații, sudură, expertize și intervenții pe infrastructură critică.
