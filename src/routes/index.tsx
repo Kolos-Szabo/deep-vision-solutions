@@ -16,6 +16,9 @@ import projWelding from "@/assets/project-welding.jpg";
 import projLake from "@/assets/project-lake.jpg";
 import projPipeline from "@/assets/project-pipeline.jpg";
 import projIndustrial from "@/assets/project-industrial.jpg";
+import equipmentAsset from "@/assets/echipament-scafandru-profesional-kirby-morgan.webp.asset.json";
+
+
 
 
 const PHONE = "0040 755 011 497";
@@ -346,6 +349,23 @@ function WhyUs() {
             title={<>Expertiză recunoscută în <span className="text-gradient-teal">lucrări subacvatice industriale</span></>}
             intro="Combinăm experiența unei echipe formate din 1993 cu echipamente moderne și proceduri stricte de siguranță. Lucrăm pentru hidrocentrale, companii de apă, primării, constructori și operatori industriali."
           />
+          <figure className="mt-10 group relative overflow-hidden rounded-2xl border border-white/10 bg-surface/60">
+            <img
+              src={equipmentAsset.url}
+              alt="Cască de scafandru profesional Kirby Morgan și ham de scufundare folosite de echipa HEIDI pentru lucrări subacvatice industriale"
+              title="Echipament profesional de scufundare Kirby Morgan — HEIDI"
+              loading="lazy"
+              decoding="async"
+              width={1600}
+              height={900}
+              className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-deep via-deep/30 to-transparent" />
+            <figcaption className="absolute inset-x-0 bottom-0 p-5 text-sm text-foreground/85">
+              <span className="text-teal font-semibold uppercase tracking-widest text-[10px]">Echipament certificat</span>
+              <p className="mt-1 font-medium">Cască Kirby Morgan și ham de scufundare — standardul industriei pentru lucrări subacvatice de profunzime.</p>
+            </figcaption>
+          </figure>
           <a href="#contact" className="mt-10 inline-flex items-center gap-2 rounded-md bg-teal px-6 py-3.5 font-semibold text-primary-foreground transition hover:bg-teal-glow">
             Discutați cu un specialist <ArrowRight className="h-4 w-4" />
           </a>
@@ -365,6 +385,7 @@ function WhyUs() {
     </section>
   );
 }
+
 
 function Projects() {
   return (
