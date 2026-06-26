@@ -16,6 +16,9 @@ import projWelding from "@/assets/project-welding.jpg";
 import projLake from "@/assets/project-lake.jpg";
 import projPipeline from "@/assets/project-pipeline.jpg";
 import projIndustrial from "@/assets/project-industrial.jpg";
+import equipmentAsset from "@/assets/echipament-scafandru-profesional-kirby-morgan.webp.asset.json";
+
+
 
 
 const PHONE = "0040 755 011 497";
