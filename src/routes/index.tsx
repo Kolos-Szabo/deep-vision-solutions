@@ -535,35 +535,104 @@ function SeoSection() {
         <div>
           <span className="eyebrow">Expertiză</span>
           <h2 className="mt-4 font-display text-3xl md:text-4xl font-semibold leading-tight">
-            Lucrări subacvatice<br/>în toată România
+            Firmă de <span className="text-gradient-teal">scafandri profesioniști</span> în România
           </h2>
         </div>
         <div className="space-y-5 text-foreground/75 leading-relaxed">
           <p>
-            <strong className="text-foreground">HEIDI</strong> oferă servicii complete de
-            <em className="text-teal not-italic"> lucrări subacvatice</em> pentru beneficiari industriali și instituționali din toată țara.
-            Echipa de <em className="text-teal not-italic">scafandri industriali</em> efectuează
-            <em className="text-teal not-italic"> inspecții subacvatice</em>,
-            <em className="text-teal not-italic"> reparații subacvatice</em>,
-            <em className="text-teal not-italic"> sudură subacvatică</em> umedă și hiperbarică,
-            <em className="text-teal not-italic"> curățare rezervoare apă</em> potabilă și industrială, precum și
-            <em className="text-teal not-italic"> expertize subacvatice</em> independente.
+            <strong className="text-foreground">HEIDI</strong> este o companie românească specializată în
+            <em className="text-teal not-italic"> lucrări subacvatice industriale</em> și
+            <em className="text-teal not-italic"> scufundări utilitare</em> (commercial diving), cu activitate neîntreruptă din 1993.
+            Executăm <em className="text-teal not-italic">sudură hiperbarică</em>, <em className="text-teal not-italic">sudură subacvatică umedă</em> (wet welding, AWS D3.6M),
+            <em className="text-teal not-italic"> betonări sub apă</em>, <em className="text-teal not-italic">inspecții subacvatice cu ROV</em> și
+            <em className="text-teal not-italic"> expertize tehnice</em> pentru infrastructură hidrotehnică, hidroenergetică și portuară.
           </p>
           <p>
-            Intervenim pe baraje, hidrocentrale, stații de pompare, conducte traversare râu, prize de apă,
-            decantoare, lacuri de acumulare și infrastructură portuară. Pentru fiecare proiect propunem
-            o soluție tehnică personalizată, cu respectarea normativelor în vigoare și a celor mai stricte
-            standarde de siguranță operațională.
+            Acoperim toată gama de scufundări comerciale: <em className="text-teal not-italic">mentenanță baraje și hidrocentrale</em>,
+            <em className="text-teal not-italic"> curățare rezervoare apă potabilă</em> și industrială fără scoaterea din serviciu,
+            <em className="text-teal not-italic"> decolmatare grătare și prize de apă</em>, <em className="text-teal not-italic">pozare cabluri subacvatice</em>,
+            <em className="text-teal not-italic"> etanșări cu baloane pneumatice de obturare</em>, <em className="text-teal not-italic">recuperări și căutări subacvatice</em>
+            cu sonar, precum și intervenții în <em className="text-teal not-italic">medii contaminate</em> cu echipament cu cordon ombilical.
           </p>
           <p>
-            Beneficiarii noștri sunt primării, companii de apă și canalizare, hidrocentrale, constructori
-            de infrastructură, operatori industriali, administrații publice și beneficiari privați.
+            Lucrăm pentru <strong className="text-foreground">ABA (Administrația Bazinală de Apă)</strong>, hidrocentrale, primării,
+            companii de apă-canal, constructori de infrastructură, terminale portuare și operatori industriali.
+            Răspundem la întrebări frecvente precum „cât costă o lucrare subacvatică", „firmă de scafandri lângă mine",
+            „sudură subacvatică preț" sau „inspecție baraj cu ROV" cu evaluare tehnică și deviz în 24 de ore.
           </p>
         </div>
       </div>
     </section>
   );
 }
+
+const faqs = [
+  {
+    q: "Ce înseamnă scufundări utilitare sau comerciale?",
+    a: "Scufundările utilitare (commercial diving) sunt lucrări subacvatice executate de scafandri profesioniști atestați, pentru obiective industriale: inspecții, sudură hiperbarică, betonări, reparații, mentenanță și expertize pe baraje, hidrocentrale, rezervoare, conducte și infrastructură portuară.",
+  },
+  {
+    q: "Până la ce adâncime executați lucrări subacvatice?",
+    a: "Echipele HEIDI sunt dotate pentru intervenții până la 130 m adâncime, cu echipament de scufundare cu cordon ombilical (surface-supplied diving), cască Kirby Morgan și sisteme de comunicații în timp real cu suprafața.",
+  },
+  {
+    q: "Faceți sudură subacvatică certificată?",
+    a: "Da. Executăm sudură umedă (wet welding) și sudură în habitat hiperbaric uscat conform standardului AWS D3.6M, cu scafandri-sudori certificați. Eliberăm documentația WPS/PQR la cerere.",
+  },
+  {
+    q: "Folosiți ROV (robot subacvatic) pentru inspecții?",
+    a: "Da. Folosim ROV-uri cu cameră HD, sonar și manipulator pentru inspecții la adâncimi mari, în spații înguste, medii contaminate sau pentru cartografierea structurilor submerse (pile de pod, conducte, baraje).",
+  },
+  {
+    q: "Cât costă o lucrare subacvatică?",
+    a: "Prețul unei lucrări subacvatice variază în funcție de adâncime, durată, complexitate tehnică, echipament necesar (scafandru, ROV, habitat hiperbaric) și locație. Trimitem ofertă personalizată în maximum 24 de ore.",
+  },
+  {
+    q: "Interveniți în regim de urgență 24/7 în toată România?",
+    a: "Da. Avem echipă de intervenție rapidă mobilizabilă în maximum 24 de ore la nivel național pentru avarii pe baraje, deblocare stavile, etanșare scurgeri din rezervoare și recuperări de urgență.",
+  },
+];
+
+function Faq() {
+  const [open, setOpen] = useState<number | null>(0);
+  return (
+    <section id="faq" className="relative py-28">
+      <div className="container-x grid lg:grid-cols-[1fr_1.4fr] gap-12">
+        <div>
+          <SectionHeader
+            eyebrow="Întrebări frecvente"
+            title={<>Răspunsuri la <span className="text-gradient-teal">căutările frecvente</span></>}
+            intro="Ce întreabă cel mai des beneficiarii noștri despre lucrările subacvatice profesionale, scufundările utilitare și prețurile aferente."
+          />
+        </div>
+        <ul className="space-y-3">
+          {faqs.map((f, i) => {
+            const isOpen = open === i;
+            return (
+              <li key={f.q} className="rounded-xl border border-white/10 bg-surface/60 overflow-hidden">
+                <button
+                  type="button"
+                  onClick={() => setOpen(isOpen ? null : i)}
+                  aria-expanded={isOpen}
+                  className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left hover:bg-surface transition"
+                >
+                  <span className="font-display text-lg font-medium pr-4">{f.q}</span>
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-teal/10 text-teal ring-1 ring-teal/20">
+                    {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
+                  </span>
+                </button>
+                {isOpen && (
+                  <div className="px-6 pb-6 text-foreground/75 leading-relaxed">{f.a}</div>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
 
 function Contact() {
   const [sent, setSent] = useState(false);
