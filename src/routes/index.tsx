@@ -5,7 +5,8 @@ import anpcAsset from "@/assets/ANPC.png.asset.json";
 import {
   Search, Droplets, Wrench, Zap, Mountain, Anchor, PackageSearch, Camera, FileText,
   Waves, Landmark, Factory, Phone, Mail, MapPin, ShieldCheck, Clock, Users, Award,
-  Radio, ArrowRight, Check, ChevronRight,
+  Radio, ArrowRight, Check, ChevronRight, Bot, Cable, Construction, FlaskConical,
+  ShieldAlert, Hammer, Gauge, Plus, Minus,
 } from "lucide-react";
 
 import heroDiver from "@/assets/hero-diver.jpg";
