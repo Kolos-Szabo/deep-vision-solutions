@@ -211,6 +211,7 @@ function Nav() {
     ["De ce HEIDI", "#de-ce-noi"],
     ["Proiecte", "#proiecte"],
     ["Proces", "#proces"],
+    ["Întrebări", "#faq"],
     ["Contact", "#contact"],
   ];
   return (
