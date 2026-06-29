@@ -5,7 +5,8 @@ import anpcAsset from "@/assets/ANPC.png.asset.json";
 import {
   Search, Droplets, Wrench, Zap, Mountain, Anchor, PackageSearch, Camera, FileText,
   Waves, Landmark, Factory, Phone, Mail, MapPin, ShieldCheck, Clock, Users, Award,
-  Radio, ArrowRight, Check, ChevronRight,
+  Radio, ArrowRight, Check, ChevronRight, Bot, Cable, Construction, FlaskConical,
+  ShieldAlert, Hammer, Gauge, Plus, Minus,
 } from "lucide-react";
 
 import heroDiver from "@/assets/hero-diver.jpg";
@@ -29,15 +30,23 @@ const WHATSAPP_NUMBER = "40755011497";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "HEIDI — Lucrări Subacvatice Profesionale în România" },
-      { name: "description", content: "Scafandri industriali HEIDI: inspecții, sudură, reparații, curățare rezervoare, expertize subacvatice. Acoperire națională, peste 30 de ani de experiență." },
-      { name: "keywords", content: "lucrări subacvatice, scafandri industriali, inspecții subacvatice, sudură subacvatică, curățare rezervoare apă, expertize subacvatice, lucrări subacvatice România, baraje, hidrocentrale" },
-      { property: "og:title", content: "HEIDI — Lucrări Subacvatice Profesionale" },
-      { property: "og:description", content: "Inspecții, intervenții și reparații subacvatice pentru baraje, rezervoare, hidrocentrale și infrastructură critică." },
+      { title: "Lucrări Subacvatice Profesionale România · Scafandri Industriali HEIDI" },
+      { name: "description", content: "Scafandri profesioniști pentru lucrări subacvatice industriale în România: inspecții ROV, sudură hiperbarică, betonări sub apă, curățare rezervoare și grătare, mentenanță baraje. Intervenții 24/7, peste 30 ani experiență." },
+      { name: "keywords", content: "lucrări subacvatice, scafandri profesioniști, scafandri industriali, scufundări utilitare, sudură subacvatică, sudură sub apă, sudură hiperbarică, betonări subacvatice, inspecții subacvatice, lucrări cu ROV, robot subacvatic, curățare rezervoare apă, curățare grătare priză apă, mentenanță baraje, reparații baraje subacvatice, pozare conducte subacvatice, etanșare subacvatică, intervenții rapide subacvatice, expertize tehnice subacvatice, scafandri România, firma scafandri, preț lucrări subacvatice, scufundări comerciale" },
+      { name: "author", content: "HEIDI — Lucrări Subacvatice" },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1" },
+      { name: "geo.region", content: "RO" },
+      { name: "geo.placename", content: "România" },
+      { property: "og:title", content: "Lucrări Subacvatice Profesionale · HEIDI Scafandri Industriali" },
+      { property: "og:description", content: "Inspecții ROV, sudură hiperbarică, betonări sub apă, mentenanță baraje și rezervoare. Echipă de scafandri certificați, acoperire națională, intervenții 24/7." },
+      { property: "og:locale", content: "ro_RO" },
       { property: "og:url", content: "/" },
       { property: "og:type", content: "website" },
       { property: "og:image", content: heroDiver },
+      { property: "og:image:alt", content: "Scafandru industrial HEIDI în lucrare subacvatică" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "HEIDI — Lucrări Subacvatice Profesionale România" },
+      { name: "twitter:description", content: "Scafandri profesioniști, sudură hiperbarică, ROV, betonări subacvatice. Intervenții 24/7." },
       { name: "twitter:image", content: heroDiver },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -47,19 +56,50 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ProfessionalService",
+          "@id": "https://lucrarisubacvatice.ro/#org",
           name: "HEIDI — Lucrări Subacvatice",
+          alternateName: "HEIDI Scafandri Industriali",
           url: "https://lucrarisubacvatice.ro",
           telephone: PHONE,
           email: EMAIL,
-          description: "Companie românească specializată în lucrări subacvatice industriale: inspecții, sudură, reparații, expertize.",
+          priceRange: "$$",
+          image: "https://lucrarisubacvatice.ro" + heroDiver,
+          description: "Companie românească de scafandri profesioniști specializată în lucrări subacvatice industriale: inspecții vizuale și instrumentale, sudură hiperbarică, betonări sub apă, mentenanță baraje, curățare rezervoare, lucrări cu ROV și expertize tehnice.",
           areaServed: { "@type": "Country", name: "Romania" },
           foundingDate: "1993",
-          serviceType: [
-            "Inspecții subacvatice", "Sudură subacvatică", "Reparații subacvatice",
-            "Curățare rezervoare apă", "Expertize tehnice subacvatice",
-            "Inspecția barajelor", "Filmări subacvatice",
+          knowsAbout: [
+            "scufundări utilitare", "sudură hiperbarică", "betonări subacvatice",
+            "inspecții subacvatice cu ROV", "mentenanță baraje hidroenergetice",
+            "etanșări subacvatice", "curățare grătare priză apă",
           ],
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: "Servicii subacvatice HEIDI",
+            itemListElement: [
+              "Inspecții subacvatice", "Mentenanță preventivă subacvatică",
+              "Sudură subacvatică umedă și hiperbarică", "Betonări subacvatice",
+              "Reparații și construcții baraje", "Curățare rezervoare apă potabilă",
+              "Curățare grătare și prize de apă", "Lucrări cu ROV (robot subacvatic)",
+              "Pozare cabluri și conducte subacvatice", "Etanșări și obturări subacvatice",
+              "Căutări și recuperări subacvatice", "Filmări și expertize tehnice subacvatice",
+              "Intervenții în medii contaminate", "Prospectări hidrologice și batimetrice",
+            ].map((s) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: s } })),
+          },
           address: { "@type": "PostalAddress", addressCountry: "RO" },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            { "@type": "Question", name: "Ce sunt lucrările subacvatice industriale?", acceptedAnswer: { "@type": "Answer", text: "Lucrările subacvatice industriale (scufundări utilitare/comerciale) cuprind inspecții, sudură hiperbarică, betonări, reparații structurale și mentenanță executate de scafandri profesioniști pe infrastructură critică: baraje, hidrocentrale, rezervoare, conducte, porturi." } },
+            { "@type": "Question", name: "Cât costă o lucrare subacvatică?", acceptedAnswer: { "@type": "Answer", text: "Prețul depinde de adâncime, complexitate, durată, echipamente (scafandru sau ROV) și locație. HEIDI oferă evaluare tehnică și deviz transparent în maximum 24 de ore de la solicitare." } },
+            { "@type": "Question", name: "Lucrați cu ROV (robot subacvatic)?", acceptedAnswer: { "@type": "Answer", text: "Da. Folosim ROV-uri pentru inspecții la adâncimi mari, în medii periculoase sau contaminate, precum și pentru cartografierea structurilor submerse cu sonar și cameră HD." } },
+            { "@type": "Question", name: "Faceți sudură subacvatică certificată?", acceptedAnswer: { "@type": "Answer", text: "Da. Echipa noastră execută sudură umedă (wet welding) și sudură hiperbarică în habitat uscat, conform standardelor AWS D3.6M, cu scafandri-sudori atestați." } },
+            { "@type": "Question", name: "Interveniți în regim de urgență 24/7?", acceptedAnswer: { "@type": "Answer", text: "Da. Mobilizăm echipa de intervenție rapidă în maximum 24 de ore la nivel național pentru etanșări scurgeri, deblocare stavile, recuperări și avarii pe infrastructură hidrotehnică." } },
+          ],
         }),
       },
     ],
@@ -69,18 +109,26 @@ export const Route = createFileRoute("/")({
 
 /* ---------------- Data ---------------- */
 const services = [
-  { icon: Search,        title: "Inspecții subacvatice",        desc: "Inspecții vizuale și instrumentale ale structurilor submerse, cu rapoarte tehnice detaliate și documentație foto-video." },
-  { icon: Droplets,      title: "Curățare rezervoare de apă",    desc: "Curățare și decolmatare rezervoare de apă potabilă și industrială, fără golire, cu echipamente certificate." },
-  { icon: Wrench,        title: "Reparații subacvatice",         desc: "Intervenții de reparații pentru beton, oțel, garnituri și elemente structurale aflate sub apă." },
-  { icon: Zap,           title: "Sudură subacvatică",            desc: "Sudură umedă și hiperbarică executată de scafandri-sudori certificați pentru lucrări de infrastructură." },
-  { icon: Mountain,      title: "Inspecția și întreținerea barajelor", desc: "Investigații complete pe paramente, vane, prize de apă și galerii pentru baraje și hidrocentrale." },
-  { icon: Anchor,        title: "Montaj structuri subacvatice",  desc: "Asamblare, ancorare și poziționare a structurilor și echipamentelor submerse cu precizie milimetrică." },
-  { icon: PackageSearch, title: "Recuperări obiecte și echipamente", desc: "Localizare și recuperare obiecte, utilaje sau echipamente scufundate accidental." },
-  { icon: Camera,        title: "Filmări și fotografii subacvatice", desc: "Documentare 4K și foto profesională pentru rapoarte tehnice, expertize și comunicare." },
-  { icon: FileText,      title: "Expertize tehnice",             desc: "Expertize independente pentru beneficiari, asiguratori și instanțe, semnate de specialiști atestați." },
-  { icon: Waves,         title: "Lucrări în lacuri",             desc: "Intervenții pe lacuri naturale și de acumulare: prize de apă, ancoraje, instalații." },
-  { icon: Landmark,      title: "Lucrări în râuri",              desc: "Operațiuni în condiții de curent: piloți de pod, praguri, conducte traversare râu." },
-  { icon: Factory,       title: "Lucrări în instalații industriale", desc: "Intervenții în bazine tehnologice, decantoare, stații de epurare și circuite de răcire." },
+  { icon: Search,        title: "Inspecții subacvatice", desc: "Inspecții vizuale (CVI) și instrumentale ale structurilor submerse — măsurători de grosime ultrasonice, cartografiere defecte, rapoarte tehnice cu documentație foto-video HD." },
+  { icon: Gauge,         title: "Mentenanță preventivă", desc: "Programe periodice de inspecție și întreținere subacvatică pentru baraje, hidrocentrale și rețele industriale — prelungesc durata de viață și previn avariile." },
+  { icon: Mountain,      title: "Reparații și construcții baraje", desc: "Lucrări complexe pe paramente, batardouri, stavile, vane și galerii de fund la baraje și hidrocentrale, cu retehnologizare echipamente hidromecanice." },
+  { icon: Zap,           title: "Sudură subacvatică (umedă & hiperbarică)", desc: "Sudură wet welding și sudură în habitat hiperbaric uscat conform AWS D3.6M, executată de scafandri-sudori certificați pentru structuri metalice critice." },
+  { icon: Construction,  title: "Betonări subacvatice", desc: "Turnare beton sub apă, cofraje subacvatice, ancoraje și consolidări structurale pe fundații, piloți de pod și praguri hidrotehnice." },
+  { icon: PackageSearch, title: "Căutări și recuperări subacvatice", desc: "Localizare cu sonar și recuperare de obiecte, utilaje, vehicule sau echipamente scufundate accidental în lacuri, râuri sau bazine industriale." },
+  { icon: Wrench,        title: "Curățare grătare și prize de apă", desc: "Decolmatare grătare, sorburi și prize de apă la stații de pompare și hidrocentrale, cu îndepărtarea aluviunilor și a corpurilor străine." },
+  { icon: Droplets,      title: "Mentenanță rezervoare de apă", desc: "Curățare și decolmatare rezervoare de apă potabilă și industrială fără scoaterea din serviciu, conform normelor sanitare în vigoare." },
+  { icon: Bot,           title: "Lucrări cu ROV (robot subacvatic)", desc: "Inspecții ROV la adâncimi mari, în spații înguste sau medii periculoase — sonar multibeam, cameră HD, manipulator pentru sarcini ușoare." },
+  { icon: Cable,         title: "Pozare cabluri și conducte subacvatice", desc: "Amplasare, traversare și protejare a cablurilor, conductelor și canalelor în ape staționare și curgătoare, inclusiv cuplări și flanșări sub apă." },
+  { icon: ShieldAlert,   title: "Intervenții în medii contaminate", desc: "Scufundări în medii poluate sau cu risc respirator, cu echipament cu cordon ombilical, recirculare și protocoale strict de decontaminare." },
+  { icon: Hammer,        title: "Etanșări și obturări subacvatice", desc: "Obturare conducte cu baloane pneumatice, dopuri metalice și etanșări de scurgeri în rezervoare — opriri rapide pentru intervenții uscate." },
+  { icon: Wrench,        title: "Reparații subacvatice generale", desc: "Intervenții pe beton, oțel, garnituri și elemente structurale aflate sub apă — refacere ghidaje, batardouri și echipamente hidromecanice." },
+  { icon: Anchor,        title: "Montaj structuri subacvatice", desc: "Asamblare, ancorare și poziționare a structurilor submerse — ancoraje, geamanduri, pontoane, prize de apă, cu toleranțe milimetrice." },
+  { icon: FlaskConical,  title: "Prospectări hidrologice & batimetrice", desc: "Investigații hidrologice, hidrogeologice și geodezice, măsurători batimetrice și analiză calitativă a apei pentru proiecte de infrastructură." },
+  { icon: Camera,        title: "Filmări și fotografii subacvatice", desc: "Documentare 4K și fotografie profesională pentru rapoarte tehnice, expertize judiciare și comunicare corporate." },
+  { icon: FileText,      title: "Expertize tehnice subacvatice", desc: "Expertize independente pentru beneficiari, asiguratori și instanțe, întocmite de specialiști atestați MTCT/ISPCSAR." },
+  { icon: Waves,         title: "Lucrări în lacuri de acumulare", desc: "Intervenții pe lacuri naturale și de acumulare: prize de apă, ancoraje, instalații hidrotehnice — inclusiv la altitudini alpine." },
+  { icon: Landmark,      title: "Lucrări în râuri și curent rapid", desc: "Operațiuni în condiții de curent: piloți de pod, praguri, conducte de traversare râu, înlăturare obstacole pentru navigație." },
+  { icon: Factory,       title: "Lucrări în instalații industriale", desc: "Intervenții în bazine tehnologice, decantoare, stații de epurare, circuite de răcire și terminale portuare de cereale." },
 ];
 
 const trustItems = [
@@ -163,6 +211,7 @@ function Nav() {
     ["De ce HEIDI", "#de-ce-noi"],
     ["Proiecte", "#proiecte"],
     ["Proces", "#proces"],
+    ["Întrebări", "#faq"],
     ["Contact", "#contact"],
   ];
   return (
@@ -487,35 +536,104 @@ function SeoSection() {
         <div>
           <span className="eyebrow">Expertiză</span>
           <h2 className="mt-4 font-display text-3xl md:text-4xl font-semibold leading-tight">
-            Lucrări subacvatice<br/>în toată România
+            Firmă de <span className="text-gradient-teal">scafandri profesioniști</span> în România
           </h2>
         </div>
         <div className="space-y-5 text-foreground/75 leading-relaxed">
           <p>
-            <strong className="text-foreground">HEIDI</strong> oferă servicii complete de
-            <em className="text-teal not-italic"> lucrări subacvatice</em> pentru beneficiari industriali și instituționali din toată țara.
-            Echipa de <em className="text-teal not-italic">scafandri industriali</em> efectuează
-            <em className="text-teal not-italic"> inspecții subacvatice</em>,
-            <em className="text-teal not-italic"> reparații subacvatice</em>,
-            <em className="text-teal not-italic"> sudură subacvatică</em> umedă și hiperbarică,
-            <em className="text-teal not-italic"> curățare rezervoare apă</em> potabilă și industrială, precum și
-            <em className="text-teal not-italic"> expertize subacvatice</em> independente.
+            <strong className="text-foreground">HEIDI</strong> este o companie românească specializată în
+            <em className="text-teal not-italic"> lucrări subacvatice industriale</em> și
+            <em className="text-teal not-italic"> scufundări utilitare</em> (commercial diving), cu activitate neîntreruptă din 1993.
+            Executăm <em className="text-teal not-italic">sudură hiperbarică</em>, <em className="text-teal not-italic">sudură subacvatică umedă</em> (wet welding, AWS D3.6M),
+            <em className="text-teal not-italic"> betonări sub apă</em>, <em className="text-teal not-italic">inspecții subacvatice cu ROV</em> și
+            <em className="text-teal not-italic"> expertize tehnice</em> pentru infrastructură hidrotehnică, hidroenergetică și portuară.
           </p>
           <p>
-            Intervenim pe baraje, hidrocentrale, stații de pompare, conducte traversare râu, prize de apă,
-            decantoare, lacuri de acumulare și infrastructură portuară. Pentru fiecare proiect propunem
-            o soluție tehnică personalizată, cu respectarea normativelor în vigoare și a celor mai stricte
-            standarde de siguranță operațională.
+            Acoperim toată gama de scufundări comerciale: <em className="text-teal not-italic">mentenanță baraje și hidrocentrale</em>,
+            <em className="text-teal not-italic"> curățare rezervoare apă potabilă</em> și industrială fără scoaterea din serviciu,
+            <em className="text-teal not-italic"> decolmatare grătare și prize de apă</em>, <em className="text-teal not-italic">pozare cabluri subacvatice</em>,
+            <em className="text-teal not-italic"> etanșări cu baloane pneumatice de obturare</em>, <em className="text-teal not-italic">recuperări și căutări subacvatice</em>
+            cu sonar, precum și intervenții în <em className="text-teal not-italic">medii contaminate</em> cu echipament cu cordon ombilical.
           </p>
           <p>
-            Beneficiarii noștri sunt primării, companii de apă și canalizare, hidrocentrale, constructori
-            de infrastructură, operatori industriali, administrații publice și beneficiari privați.
+            Lucrăm pentru <strong className="text-foreground">ABA (Administrația Bazinală de Apă)</strong>, hidrocentrale, primării,
+            companii de apă-canal, constructori de infrastructură, terminale portuare și operatori industriali.
+            Răspundem la întrebări frecvente precum „cât costă o lucrare subacvatică", „firmă de scafandri lângă mine",
+            „sudură subacvatică preț" sau „inspecție baraj cu ROV" cu evaluare tehnică și deviz în 24 de ore.
           </p>
         </div>
       </div>
     </section>
   );
 }
+
+const faqs = [
+  {
+    q: "Ce înseamnă scufundări utilitare sau comerciale?",
+    a: "Scufundările utilitare (commercial diving) sunt lucrări subacvatice executate de scafandri profesioniști atestați, pentru obiective industriale: inspecții, sudură hiperbarică, betonări, reparații, mentenanță și expertize pe baraje, hidrocentrale, rezervoare, conducte și infrastructură portuară.",
+  },
+  {
+    q: "Până la ce adâncime executați lucrări subacvatice?",
+    a: "Echipele HEIDI sunt dotate pentru intervenții până la 130 m adâncime, cu echipament de scufundare cu cordon ombilical (surface-supplied diving), cască Kirby Morgan și sisteme de comunicații în timp real cu suprafața.",
+  },
+  {
+    q: "Faceți sudură subacvatică certificată?",
+    a: "Da. Executăm sudură umedă (wet welding) și sudură în habitat hiperbaric uscat conform standardului AWS D3.6M, cu scafandri-sudori certificați. Eliberăm documentația WPS/PQR la cerere.",
+  },
+  {
+    q: "Folosiți ROV (robot subacvatic) pentru inspecții?",
+    a: "Da. Folosim ROV-uri cu cameră HD, sonar și manipulator pentru inspecții la adâncimi mari, în spații înguste, medii contaminate sau pentru cartografierea structurilor submerse (pile de pod, conducte, baraje).",
+  },
+  {
+    q: "Cât costă o lucrare subacvatică?",
+    a: "Prețul unei lucrări subacvatice variază în funcție de adâncime, durată, complexitate tehnică, echipament necesar (scafandru, ROV, habitat hiperbaric) și locație. Trimitem ofertă personalizată în maximum 24 de ore.",
+  },
+  {
+    q: "Interveniți în regim de urgență 24/7 în toată România?",
+    a: "Da. Avem echipă de intervenție rapidă mobilizabilă în maximum 24 de ore la nivel național pentru avarii pe baraje, deblocare stavile, etanșare scurgeri din rezervoare și recuperări de urgență.",
+  },
+];
+
+function Faq() {
+  const [open, setOpen] = useState<number | null>(0);
+  return (
+    <section id="faq" className="relative py-28">
+      <div className="container-x grid lg:grid-cols-[1fr_1.4fr] gap-12">
+        <div>
+          <SectionHeader
+            eyebrow="Întrebări frecvente"
+            title={<>Răspunsuri la <span className="text-gradient-teal">căutările frecvente</span></>}
+            intro="Ce întreabă cel mai des beneficiarii noștri despre lucrările subacvatice profesionale, scufundările utilitare și prețurile aferente."
+          />
+        </div>
+        <ul className="space-y-3">
+          {faqs.map((f, i) => {
+            const isOpen = open === i;
+            return (
+              <li key={f.q} className="rounded-xl border border-white/10 bg-surface/60 overflow-hidden">
+                <button
+                  type="button"
+                  onClick={() => setOpen(isOpen ? null : i)}
+                  aria-expanded={isOpen}
+                  className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left hover:bg-surface transition"
+                >
+                  <span className="font-display text-lg font-medium pr-4">{f.q}</span>
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-teal/10 text-teal ring-1 ring-teal/20">
+                    {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
+                  </span>
+                </button>
+                {isOpen && (
+                  <div className="px-6 pb-6 text-foreground/75 leading-relaxed">{f.a}</div>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
 
 function Contact() {
   const [sent, setSent] = useState(false);
@@ -708,6 +826,7 @@ function Index() {
         <Process />
         <Testimonials />
         <SeoSection />
+        <Faq />
         <Contact />
       </main>
       <Footer />
