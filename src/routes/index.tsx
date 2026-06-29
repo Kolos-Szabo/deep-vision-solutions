@@ -826,6 +826,7 @@ function Index() {
         <Process />
         <Testimonials />
         <SeoSection />
+        <Faq />
         <Contact />
       </main>
       <Footer />
