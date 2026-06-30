@@ -266,6 +266,10 @@ function Nav() {
                 {l}
               </a>
             ))}
+            <Link to="/blog" onClick={() => setOpen(false)}
+                  className="py-3 text-foreground/90 hover:text-teal border-b border-white/5">
+              Blog
+            </Link>
             <a href={PHONE_HREF} className="mt-3 inline-flex items-center gap-2 text-teal">
               <Phone className="h-4 w-4" /> {PHONE}
             </a>
