@@ -762,6 +762,7 @@ function Footer() {
             <li><a href="#de-ce-noi" className="hover:text-teal text-foreground/80">De ce HEIDI</a></li>
             <li><a href="#proiecte" className="hover:text-teal text-foreground/80">Proiecte</a></li>
             <li><a href="#proces" className="hover:text-teal text-foreground/80">Proces</a></li>
+            <li><Link to="/blog" className="hover:text-teal text-foreground/80">Blog</Link></li>
             <li><a href="#contact" className="hover:text-teal text-foreground/80">Contact</a></li>
           </ul>
         </div>
