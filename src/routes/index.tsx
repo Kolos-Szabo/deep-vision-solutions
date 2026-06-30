@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState, type FormEvent } from "react";
 import logoWhiteUrl from "@/assets/logo-heidi-white-raw.png";
 import anpcAsset from "@/assets/ANPC.png.asset.json";
@@ -230,6 +230,9 @@ function Nav() {
               {l}
             </a>
           ))}
+          <Link to="/blog" className="text-sm text-foreground/80 hover:text-teal transition-colors">
+            Blog
+          </Link>
         </nav>
         <div className="flex items-center gap-3">
           <a href={PHONE_HREF} className="hidden md:inline-flex items-center gap-2 text-sm text-foreground/90 hover:text-teal">
@@ -263,6 +266,10 @@ function Nav() {
                 {l}
               </a>
             ))}
+            <Link to="/blog" onClick={() => setOpen(false)}
+                  className="py-3 text-foreground/90 hover:text-teal border-b border-white/5">
+              Blog
+            </Link>
             <a href={PHONE_HREF} className="mt-3 inline-flex items-center gap-2 text-teal">
               <Phone className="h-4 w-4" /> {PHONE}
             </a>
@@ -755,6 +762,7 @@ function Footer() {
             <li><a href="#de-ce-noi" className="hover:text-teal text-foreground/80">De ce HEIDI</a></li>
             <li><a href="#proiecte" className="hover:text-teal text-foreground/80">Proiecte</a></li>
             <li><a href="#proces" className="hover:text-teal text-foreground/80">Proces</a></li>
+            <li><Link to="/blog" className="hover:text-teal text-foreground/80">Blog</Link></li>
             <li><a href="#contact" className="hover:text-teal text-foreground/80">Contact</a></li>
           </ul>
         </div>
