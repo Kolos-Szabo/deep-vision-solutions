@@ -230,6 +230,9 @@ function Nav() {
               {l}
             </a>
           ))}
+          <Link to="/servicii" className="text-sm text-foreground/80 hover:text-teal transition-colors">
+            Toate serviciile
+          </Link>
           <Link to="/blog" className="text-sm text-foreground/80 hover:text-teal transition-colors">
             Blog
           </Link>
@@ -266,6 +269,10 @@ function Nav() {
                 {l}
               </a>
             ))}
+            <Link to="/servicii" onClick={() => setOpen(false)}
+                  className="py-3 text-foreground/90 hover:text-teal border-b border-white/5">
+              Toate serviciile
+            </Link>
             <Link to="/blog" onClick={() => setOpen(false)}
                   className="py-3 text-foreground/90 hover:text-teal border-b border-white/5">
               Blog
@@ -385,6 +392,12 @@ function Services() {
               </div>
             </article>
           ))}
+        </div>
+        <div className="mt-12 flex justify-center">
+          <Link to="/servicii"
+                className="inline-flex items-center gap-2 rounded-md border border-teal/40 bg-teal/10 px-6 py-3 text-sm font-semibold text-teal hover:bg-teal hover:text-primary-foreground transition">
+            Vezi toate serviciile detaliate <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>
@@ -759,6 +772,7 @@ function Footer() {
           <div className="text-xs uppercase tracking-widest text-foreground/50">Navigare</div>
           <ul className="mt-5 space-y-3 text-sm">
             <li><a href="#servicii" className="hover:text-teal text-foreground/80">Servicii</a></li>
+            <li><Link to="/servicii" className="hover:text-teal text-foreground/80">Toate serviciile</Link></li>
             <li><a href="#de-ce-noi" className="hover:text-teal text-foreground/80">De ce HEIDI</a></li>
             <li><a href="#proiecte" className="hover:text-teal text-foreground/80">Proiecte</a></li>
             <li><a href="#proces" className="hover:text-teal text-foreground/80">Proces</a></li>
