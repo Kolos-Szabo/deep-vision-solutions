@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowRight, ChevronRight, Phone, Mail, Check } from "lucide-react";
-import { SERVICES, getService } from "@/lib/services";
+import { SERVICES, getService, type ServicePage } from "@/lib/services";
 import logoWhiteUrl from "@/assets/logo-heidi-white-raw.png";
 
 const PHONE = "0040 755 011 497";
@@ -97,8 +97,8 @@ export const Route = createFileRoute("/servicii/$slug")({
 });
 
 function ServicePageView() {
-  const { service: s } = Route.useLoaderData();
-  const related = s.related.map(getService).filter(Boolean).slice(0, 3);
+  const { service: s } = Route.useLoaderData() as { service: ServicePage };
+  const related = s.related.map(getService).filter(Boolean).slice(0, 3) as ServicePage[];
 
   return (
     <div className="min-h-screen bg-background text-foreground">

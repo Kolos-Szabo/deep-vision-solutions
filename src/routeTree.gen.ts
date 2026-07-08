@@ -11,7 +11,9 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServiciiIndexRouteImport } from './routes/servicii.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as ServiciiSlugRouteImport } from './routes/servicii.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -24,9 +26,19 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServiciiIndexRoute = ServiciiIndexRouteImport.update({
+  id: '/servicii/',
+  path: '/servicii/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
   id: '/blog/',
   path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiciiSlugRoute = ServiciiSlugRouteImport.update({
+  id: '/servicii/$slug',
+  path: '/servicii/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
@@ -39,34 +51,61 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/servicii/$slug': typeof ServiciiSlugRoute
   '/blog/': typeof BlogIndexRoute
+  '/servicii/': typeof ServiciiIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/servicii/$slug': typeof ServiciiSlugRoute
   '/blog': typeof BlogIndexRoute
+  '/servicii': typeof ServiciiIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/servicii/$slug': typeof ServiciiSlugRoute
   '/blog/': typeof BlogIndexRoute
+  '/servicii/': typeof ServiciiIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/sitemap.xml' | '/blog/$slug' | '/blog/'
+  fullPaths:
+    | '/'
+    | '/sitemap.xml'
+    | '/blog/$slug'
+    | '/servicii/$slug'
+    | '/blog/'
+    | '/servicii/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/sitemap.xml' | '/blog/$slug' | '/blog'
-  id: '__root__' | '/' | '/sitemap.xml' | '/blog/$slug' | '/blog/'
+  to:
+    | '/'
+    | '/sitemap.xml'
+    | '/blog/$slug'
+    | '/servicii/$slug'
+    | '/blog'
+    | '/servicii'
+  id:
+    | '__root__'
+    | '/'
+    | '/sitemap.xml'
+    | '/blog/$slug'
+    | '/servicii/$slug'
+    | '/blog/'
+    | '/servicii/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   BlogSlugRoute: typeof BlogSlugRoute
+  ServiciiSlugRoute: typeof ServiciiSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
+  ServiciiIndexRoute: typeof ServiciiIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -85,11 +124,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/servicii/': {
+      id: '/servicii/'
+      path: '/servicii'
+      fullPath: '/servicii/'
+      preLoaderRoute: typeof ServiciiIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/': {
       id: '/blog/'
       path: '/blog'
       fullPath: '/blog/'
       preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/servicii/$slug': {
+      id: '/servicii/$slug'
+      path: '/servicii/$slug'
+      fullPath: '/servicii/$slug'
+      preLoaderRoute: typeof ServiciiSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/$slug': {
@@ -106,18 +159,10 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   BlogSlugRoute: BlogSlugRoute,
+  ServiciiSlugRoute: ServiciiSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
+  ServiciiIndexRoute: ServiciiIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
