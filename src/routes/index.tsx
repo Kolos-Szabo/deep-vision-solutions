@@ -11,12 +11,12 @@ import {
 
 import heroDiver from "@/assets/hero-diver.jpg";
 import textureWater from "@/assets/texture-water.jpg";
-import projDam from "@/assets/project-dam.jpg";
-import projReservoir from "@/assets/project-reservoir.jpg";
-import projWelding from "@/assets/project-welding.jpg";
-import projLake from "@/assets/project-lake.jpg";
-import projPipeline from "@/assets/project-pipeline.jpg";
-import projIndustrial from "@/assets/project-industrial.jpg";
+import projDam from "@/assets/interventie-hidrotehnica-baraj-batardou.webp.asset.json";
+import projReservoir from "@/assets/scafandru-comercial-inspectie-rezervoar-apa.webp.asset.json";
+import projWelding from "@/assets/sudura-subacvatica-structura-metalica-scafandru.webp.asset.json";
+import projLake from "@/assets/lucrari-subacvatice-lac-acumulare-scafandru.webp.asset.json";
+import projPipeline from "@/assets/inspectie-conducta-subacvatica-traversare-rau.webp.asset.json";
+import projIndustrial from "@/assets/interventie-statie-de-pompare-subacvatica.webp.asset.json";
 import equipmentAsset from "@/assets/echipament-scafandru-profesional-kirby-morgan.webp.asset.json";
 
 
@@ -150,12 +150,12 @@ const stats = [
 ];
 
 const projects = [
-  { img: projDam,        cat: "Baraje",          title: "Inspecție parament baraj hidroenergetic", obj: "Evaluarea stării betonului și a rosturilor pe 40 m adâncime.", res: "Raport complet cu hartă defecte și plan de mentenanță." },
-  { img: projReservoir,  cat: "Rezervoare",      title: "Curățare rezervor apă potabilă",          obj: "Decolmatare fără scoaterea din serviciu a rezervorului.", res: "Reducerea cu 95% a sedimentelor, conformitate sanitară." },
-  { img: projWelding,    cat: "Infrastructură",  title: "Sudură subacvatică structură metalică",    obj: "Repararea unei structuri portuare degradate.", res: "Sudură umedă certificată, reintrare imediată în funcțiune." },
-  { img: projLake,       cat: "Lacuri",          title: "Lucrări pe lac de acumulare",              obj: "Inspecție prize de apă și ancoraje pe lac alpin.", res: "Documentație video completă și recomandări tehnice." },
-  { img: projPipeline,   cat: "Râuri",           title: "Inspecție conductă traversare râu",        obj: "Verificare integritate conductă industrială sub râu.", res: "Identificare 2 puncte critice și plan de reparație." },
-  { img: projIndustrial, cat: "Industrial",      title: "Intervenție stație de pompare",            obj: "Recuperare echipament și verificare grătare.", res: "Repunere în funcțiune în mai puțin de 24 h." },
+  { img: projDam.url, w: 1600, h: 1200, alt: "Batardou metalic ridicat cu macaraua la un baraj din România, în cadrul unei lucrări subacvatice hidrotehnice executate de scafandri comerciali.", caption: "Montaj batardou și inspecție parament la baraj hidroenergetic", cat: "Baraje", title: "Inspecție parament baraj hidroenergetic", obj: "Evaluarea stării betonului și a rosturilor pe 40 m adâncime.", res: "Raport complet cu hartă defecte și plan de mentenanță." },
+  { img: projReservoir.url, w: 1600, h: 1200, alt: "Scafandru profesionist cu cască Kirby Morgan și furtun ombilical, în timpul unei inspecții subacvatice într-un bazin de apă industrial.", caption: "Decolmatare și inspecție rezervor de apă, fără scoatere din serviciu", cat: "Rezervoare", title: "Curățare rezervor apă potabilă", obj: "Decolmatare fără scoaterea din serviciu a rezervorului.", res: "Reducerea cu 95% a sedimentelor, conformitate sanitară." },
+  { img: projWelding.url, w: 1600, h: 1200, alt: "Scafandru comercial coborând pe scară către o structură metalică submersată, pregătit pentru lucrări de sudură subacvatică.", caption: "Sudură subacvatică umedă pe structură metalică portuară", cat: "Infrastructură", title: "Sudură subacvatică structură metalică", obj: "Repararea unei structuri portuare degradate.", res: "Sudură umedă certificată, reintrare imediată în funcțiune." },
+  { img: projLake.url, w: 1600, h: 1067, alt: "Scafandru echipat cu cască galbenă ieșind din apă pe malul unui lac de acumulare, cu furtunul ombilical desfășurat pe mal.", caption: "Inspecție prize de apă și ancoraje pe lac de acumulare", cat: "Lacuri", title: "Lucrări pe lac de acumulare", obj: "Inspecție prize de apă și ancoraje pe lac alpin.", res: "Documentație video completă și recomandări tehnice." },
+  { img: projPipeline.url, w: 1600, h: 1200, alt: "Scafandru pătrunzând printr-o fereastră tăiată într-o conductă industrială, pentru inspecția interioară a traversării de râu.", caption: "Inspecție interioară conductă la traversare de râu", cat: "Râuri", title: "Inspecție conductă traversare râu", obj: "Verificare integritate conductă industrială sub râu.", res: "Identificare 2 puncte critice și plan de reparație." },
+  { img: projIndustrial.url, w: 1600, h: 1200, alt: "Echipament metalic ridicat cu macaraua din apă la o stație de pompare, sub supravegherea echipei de scafandri de pe ponton.", caption: "Recuperare echipament și verificare grătare la stație de pompare", cat: "Industrial", title: "Intervenție stație de pompare", obj: "Recuperare echipament și verificare grătare.", res: "Repunere în funcțiune în mai puțin de 24 h." },
 ];
 
 const steps = [
@@ -475,8 +475,11 @@ function Projects() {
               }`}
             >
               <div className={`relative overflow-hidden ${i === 0 ? "aspect-[16/11] lg:aspect-[4/5]" : "aspect-[4/3]"}`}>
-                <img src={p.img} alt={p.title} loading="lazy" width={1280} height={896}
-                     className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+                <img src={p.img} alt={p.alt} title={p.caption}
+                     loading={i === 0 ? "eager" : "lazy"} decoding="async"
+                     fetchPriority={i === 0 ? "high" : "auto"}
+                     width={p.w} height={p.h} sizes={i === 0 ? "(max-width: 1024px) 100vw, 66vw" : "(max-width: 768px) 100vw, 33vw"}
+                     className="h-full w-full object-cover object-center transition duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-deep via-deep/40 to-transparent" />
                 <span className="absolute top-4 left-4 inline-flex items-center rounded-full bg-deep/80 backdrop-blur px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-teal ring-1 ring-teal/30">
                   {p.cat}
