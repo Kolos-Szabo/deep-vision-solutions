@@ -1,9 +1,15 @@
-import projDam from "@/assets/project-dam.jpg";
-import projReservoir from "@/assets/project-reservoir.jpg";
-import projWelding from "@/assets/project-welding.jpg";
-import projLake from "@/assets/project-lake.jpg";
-import projPipeline from "@/assets/project-pipeline.jpg";
-import projIndustrial from "@/assets/project-industrial.jpg";
+import projDamAsset from "@/assets/interventie-hidrotehnica-baraj-batardou.webp.asset.json";
+const projDam = projDamAsset.url;
+import projReservoirAsset from "@/assets/scafandru-comercial-inspectie-rezervoar-apa.webp.asset.json";
+const projReservoir = projReservoirAsset.url;
+import projWeldingAsset from "@/assets/sudura-subacvatica-structura-metalica-scafandru.webp.asset.json";
+const projWelding = projWeldingAsset.url;
+import projLakeAsset from "@/assets/lucrari-subacvatice-lac-acumulare-scafandru.webp.asset.json";
+const projLake = projLakeAsset.url;
+import projPipelineAsset from "@/assets/inspectie-conducta-subacvatica-traversare-rau.webp.asset.json";
+const projPipeline = projPipelineAsset.url;
+import projIndustrialAsset from "@/assets/interventie-statie-de-pompare-subacvatica.webp.asset.json";
+const projIndustrial = projIndustrialAsset.url;
 
 export type ServicePage = {
   slug: string;
