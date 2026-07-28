@@ -7,6 +7,7 @@ import {
   Waves, Landmark, Factory, Phone, Mail, MapPin, ShieldCheck, Clock, Users, Award,
   Radio, ArrowRight, Check, ChevronRight, Bot, Cable, Construction, FlaskConical,
   ShieldAlert, Hammer, Gauge, Plus, Minus,
+  type LucideIcon,
 } from "lucide-react";
 
 import heroDiver from "@/assets/hero-diver.jpg";
@@ -108,24 +109,24 @@ export const Route = createFileRoute("/")({
 });
 
 /* ---------------- Data ---------------- */
-const services = [
-  { icon: Search,        title: "Inspecții subacvatice", desc: "Inspecții vizuale (CVI) și instrumentale ale structurilor submerse — măsurători de grosime ultrasonice, cartografiere defecte, rapoarte tehnice cu documentație foto-video HD." },
-  { icon: Gauge,         title: "Mentenanță preventivă", desc: "Programe periodice de inspecție și întreținere subacvatică pentru baraje, hidrocentrale și rețele industriale — prelungesc durata de viață și previn avariile." },
-  { icon: Mountain,      title: "Reparații și construcții baraje", desc: "Lucrări complexe pe paramente, batardouri, stavile, vane și galerii de fund la baraje și hidrocentrale, cu retehnologizare echipamente hidromecanice." },
-  { icon: Zap,           title: "Sudură subacvatică (umedă & hiperbarică)", desc: "Sudură wet welding și sudură în habitat hiperbaric uscat conform AWS D3.6M, executată de scafandri-sudori certificați pentru structuri metalice critice." },
-  { icon: Construction,  title: "Betonări subacvatice", desc: "Turnare beton sub apă, cofraje subacvatice, ancoraje și consolidări structurale pe fundații, piloți de pod și praguri hidrotehnice." },
-  { icon: PackageSearch, title: "Căutări și recuperări subacvatice", desc: "Localizare cu sonar și recuperare de obiecte, utilaje, vehicule sau echipamente scufundate accidental în lacuri, râuri sau bazine industriale." },
-  { icon: Wrench,        title: "Curățare grătare și prize de apă", desc: "Decolmatare grătare, sorburi și prize de apă la stații de pompare și hidrocentrale, cu îndepărtarea aluviunilor și a corpurilor străine." },
-  { icon: Droplets,      title: "Mentenanță rezervoare de apă", desc: "Curățare și decolmatare rezervoare de apă potabilă și industrială fără scoaterea din serviciu, conform normelor sanitare în vigoare." },
-  { icon: Bot,           title: "Lucrări cu ROV (robot subacvatic)", desc: "Inspecții ROV la adâncimi mari, în spații înguste sau medii periculoase — sonar multibeam, cameră HD, manipulator pentru sarcini ușoare." },
+const services: { icon: LucideIcon; title: string; slug?: string; desc: string }[] = [
+  { icon: Search,        title: "Inspecții subacvatice", slug: "inspectii-subacvatice", desc: "Inspecții vizuale (CVI) și instrumentale ale structurilor submerse — măsurători de grosime ultrasonice, cartografiere defecte, rapoarte tehnice cu documentație foto-video HD." },
+  { icon: Gauge,         title: "Mentenanță preventivă", slug: "mentenanta-preventiva-subacvatica", desc: "Programe periodice de inspecție și întreținere subacvatică pentru baraje, hidrocentrale și rețele industriale — prelungesc durata de viață și previn avariile." },
+  { icon: Mountain,      title: "Reparații și construcții baraje", slug: "reparatii-si-constructii-baraje", desc: "Lucrări complexe pe paramente, batardouri, stavile, vane și galerii de fund la baraje și hidrocentrale, cu retehnologizare echipamente hidromecanice." },
+  { icon: Zap,           title: "Sudură subacvatică (umedă & hiperbarică)", slug: "sudura-subacvatica", desc: "Sudură wet welding și sudură în habitat hiperbaric uscat conform AWS D3.6M, executată de scafandri-sudori certificați pentru structuri metalice critice." },
+  { icon: Construction,  title: "Betonări subacvatice", slug: "betonari-subacvatice", desc: "Turnare beton sub apă, cofraje subacvatice, ancoraje și consolidări structurale pe fundații, piloți de pod și praguri hidrotehnice." },
+  { icon: PackageSearch, title: "Căutări și recuperări subacvatice", slug: "cautari-si-recuperari-subacvatice", desc: "Localizare cu sonar și recuperare de obiecte, utilaje, vehicule sau echipamente scufundate accidental în lacuri, râuri sau bazine industriale." },
+  { icon: Wrench,        title: "Curățare grătare și prize de apă", slug: "curatare-gratare-priza-apa", desc: "Decolmatare grătare, sorburi și prize de apă la stații de pompare și hidrocentrale, cu îndepărtarea aluviunilor și a corpurilor străine." },
+  { icon: Droplets,      title: "Mentenanță rezervoare de apă", slug: "mentenanta-rezervoare-apa", desc: "Curățare și decolmatare rezervoare de apă potabilă și industrială fără scoaterea din serviciu, conform normelor sanitare în vigoare." },
+  { icon: Bot,           title: "Lucrări cu ROV (robot subacvatic)", slug: "lucrari-cu-rov", desc: "Inspecții ROV la adâncimi mari, în spații înguste sau medii periculoase — sonar multibeam, cameră HD, manipulator pentru sarcini ușoare." },
   { icon: Cable,         title: "Pozare cabluri și conducte subacvatice", desc: "Amplasare, traversare și protejare a cablurilor, conductelor și canalelor în ape staționare și curgătoare, inclusiv cuplări și flanșări sub apă." },
-  { icon: ShieldAlert,   title: "Intervenții în medii contaminate", desc: "Scufundări în medii poluate sau cu risc respirator, cu echipament cu cordon ombilical, recirculare și protocoale strict de decontaminare." },
+  { icon: ShieldAlert,   title: "Intervenții în medii contaminate", slug: "interventii-medii-contaminate", desc: "Scufundări în medii poluate sau cu risc respirator, cu echipament cu cordon ombilical, recirculare și protocoale strict de decontaminare." },
   { icon: Hammer,        title: "Etanșări și obturări subacvatice", desc: "Obturare conducte cu baloane pneumatice, dopuri metalice și etanșări de scurgeri în rezervoare — opriri rapide pentru intervenții uscate." },
   { icon: Wrench,        title: "Reparații subacvatice generale", desc: "Intervenții pe beton, oțel, garnituri și elemente structurale aflate sub apă — refacere ghidaje, batardouri și echipamente hidromecanice." },
   { icon: Anchor,        title: "Montaj structuri subacvatice", desc: "Asamblare, ancorare și poziționare a structurilor submerse — ancoraje, geamanduri, pontoane, prize de apă, cu toleranțe milimetrice." },
   { icon: FlaskConical,  title: "Prospectări hidrologice & batimetrice", desc: "Investigații hidrologice, hidrogeologice și geodezice, măsurători batimetrice și analiză calitativă a apei pentru proiecte de infrastructură." },
   { icon: Camera,        title: "Filmări și fotografii subacvatice", desc: "Documentare 4K și fotografie profesională pentru rapoarte tehnice, expertize judiciare și comunicare corporate." },
-  { icon: FileText,      title: "Expertize tehnice subacvatice", desc: "Expertize independente pentru beneficiari, asiguratori și instanțe, întocmite de specialiști atestați MTCT/ISPCSAR." },
+  { icon: FileText,      title: "Expertize tehnice subacvatice", slug: "expertize-tehnice-subacvatice", desc: "Expertize independente pentru beneficiari, asiguratori și instanțe, întocmite de specialiști atestați MTCT/ISPCSAR." },
   { icon: Waves,         title: "Lucrări în lacuri de acumulare", desc: "Intervenții pe lacuri naturale și de acumulare: prize de apă, ancoraje, instalații hidrotehnice — inclusiv la altitudini alpine." },
   { icon: Landmark,      title: "Lucrări în râuri și curent rapid", desc: "Operațiuni în condiții de curent: piloți de pod, praguri, conducte de traversare râu, înlăturare obstacole pentru navigație." },
   { icon: Factory,       title: "Lucrări în instalații industriale", desc: "Intervenții în bazine tehnologice, decantoare, stații de epurare, circuite de răcire și terminale portuare de cereale." },
@@ -379,19 +380,30 @@ function Services() {
           intro="Acoperim întregul lanț tehnic: de la inspecție și diagnoză până la intervenții complexe de sudură, reparații și expertize, pentru beneficiari publici și privați."
         />
         <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 rounded-2xl overflow-hidden border border-white/5">
-          {services.map(({ icon: Icon, title, desc }) => (
-            <article key={title}
-              className="group relative bg-deep p-8 transition-colors hover:bg-surface">
-              <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-teal/10 text-teal ring-1 ring-teal/20 transition group-hover:bg-teal group-hover:text-primary-foreground">
-                <Icon className="h-5 w-5" strokeWidth={1.75} />
-              </div>
-              <h3 className="mt-6 font-display text-xl font-semibold">{title}</h3>
-              <p className="mt-3 text-sm text-foreground/65 leading-relaxed">{desc}</p>
-              <div className="mt-5 inline-flex items-center gap-1 text-xs uppercase tracking-widest text-teal opacity-0 group-hover:opacity-100 transition">
-                Detalii <ChevronRight className="h-3.5 w-3.5" />
-              </div>
-            </article>
-          ))}
+          {services.map(({ icon: Icon, title, desc, slug }) => {
+            const body = (
+              <>
+                <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-teal/10 text-teal ring-1 ring-teal/20 transition group-hover:bg-teal group-hover:text-primary-foreground">
+                  <Icon className="h-5 w-5" strokeWidth={1.75} />
+                </div>
+                <h3 className="mt-6 font-display text-xl font-semibold">{title}</h3>
+                <p className="mt-3 text-sm text-foreground/65 leading-relaxed">{desc}</p>
+                <span className="mt-5 inline-flex items-center gap-1 text-xs uppercase tracking-widest text-teal opacity-100 md:opacity-0 md:group-hover:opacity-100 transition">
+                  Detalii <ChevronRight className="h-3.5 w-3.5" />
+                </span>
+              </>
+            );
+            const cls = "group relative block bg-deep p-8 transition-colors hover:bg-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal/60";
+            return slug ? (
+              <Link key={title} to="/servicii/$slug" params={{ slug }} aria-label={`Detalii ${title}`} className={cls}>
+                {body}
+              </Link>
+            ) : (
+              <Link key={title} to="/servicii" aria-label={`Detalii ${title}`} className={cls}>
+                {body}
+              </Link>
+            );
+          })}
         </div>
         <div className="mt-12 flex justify-center">
           <Link to="/servicii"
