@@ -475,8 +475,11 @@ function Projects() {
               }`}
             >
               <div className={`relative overflow-hidden ${i === 0 ? "aspect-[16/11] lg:aspect-[4/5]" : "aspect-[4/3]"}`}>
-                <img src={p.img} alt={p.title} loading="lazy" width={1280} height={896}
-                     className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+                <img src={p.img} alt={p.alt} title={p.caption}
+                     loading={i === 0 ? "eager" : "lazy"} decoding="async"
+                     fetchPriority={i === 0 ? "high" : "auto"}
+                     width={p.w} height={p.h} sizes={i === 0 ? "(max-width: 1024px) 100vw, 66vw" : "(max-width: 768px) 100vw, 33vw"}
+                     className="h-full w-full object-cover object-center transition duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-deep via-deep/40 to-transparent" />
                 <span className="absolute top-4 left-4 inline-flex items-center rounded-full bg-deep/80 backdrop-blur px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-teal ring-1 ring-teal/30">
                   {p.cat}
