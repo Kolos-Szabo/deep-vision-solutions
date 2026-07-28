@@ -11,12 +11,12 @@ import {
 
 import heroDiver from "@/assets/hero-diver.jpg";
 import textureWater from "@/assets/texture-water.jpg";
-import projDam from "@/assets/project-dam.jpg";
-import projReservoir from "@/assets/project-reservoir.jpg";
-import projWelding from "@/assets/project-welding.jpg";
-import projLake from "@/assets/project-lake.jpg";
-import projPipeline from "@/assets/project-pipeline.jpg";
-import projIndustrial from "@/assets/project-industrial.jpg";
+import projDam from "@/assets/interventie-hidrotehnica-baraj-batardou.webp.asset.json";
+import projReservoir from "@/assets/scafandru-comercial-inspectie-rezervoar-apa.webp.asset.json";
+import projWelding from "@/assets/sudura-subacvatica-structura-metalica-scafandru.webp.asset.json";
+import projLake from "@/assets/lucrari-subacvatice-lac-acumulare-scafandru.webp.asset.json";
+import projPipeline from "@/assets/inspectie-conducta-subacvatica-traversare-rau.webp.asset.json";
+import projIndustrial from "@/assets/interventie-statie-de-pompare-subacvatica.webp.asset.json";
 import equipmentAsset from "@/assets/echipament-scafandru-profesional-kirby-morgan.webp.asset.json";
 
 
