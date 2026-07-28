@@ -7,6 +7,7 @@ import {
   Waves, Landmark, Factory, Phone, Mail, MapPin, ShieldCheck, Clock, Users, Award,
   Radio, ArrowRight, Check, ChevronRight, Bot, Cable, Construction, FlaskConical,
   ShieldAlert, Hammer, Gauge, Plus, Minus,
+  type LucideIcon,
 } from "lucide-react";
 
 import heroDiver from "@/assets/hero-diver.jpg";
@@ -108,7 +109,7 @@ export const Route = createFileRoute("/")({
 });
 
 /* ---------------- Data ---------------- */
-const services = [
+const services: { icon: LucideIcon; title: string; slug?: string; desc: string }[] = [
   { icon: Search,        title: "Inspecții subacvatice", slug: "inspectii-subacvatice", desc: "Inspecții vizuale (CVI) și instrumentale ale structurilor submerse — măsurători de grosime ultrasonice, cartografiere defecte, rapoarte tehnice cu documentație foto-video HD." },
   { icon: Gauge,         title: "Mentenanță preventivă", slug: "mentenanta-preventiva-subacvatica", desc: "Programe periodice de inspecție și întreținere subacvatică pentru baraje, hidrocentrale și rețele industriale — prelungesc durata de viață și previn avariile." },
   { icon: Mountain,      title: "Reparații și construcții baraje", slug: "reparatii-si-constructii-baraje", desc: "Lucrări complexe pe paramente, batardouri, stavile, vane și galerii de fund la baraje și hidrocentrale, cu retehnologizare echipamente hidromecanice." },
@@ -379,19 +380,30 @@ function Services() {
           intro="Acoperim întregul lanț tehnic: de la inspecție și diagnoză până la intervenții complexe de sudură, reparații și expertize, pentru beneficiari publici și privați."
         />
         <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 rounded-2xl overflow-hidden border border-white/5">
-          {services.map(({ icon: Icon, title, desc }) => (
-            <article key={title}
-              className="group relative bg-deep p-8 transition-colors hover:bg-surface">
-              <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-teal/10 text-teal ring-1 ring-teal/20 transition group-hover:bg-teal group-hover:text-primary-foreground">
-                <Icon className="h-5 w-5" strokeWidth={1.75} />
-              </div>
-              <h3 className="mt-6 font-display text-xl font-semibold">{title}</h3>
-              <p className="mt-3 text-sm text-foreground/65 leading-relaxed">{desc}</p>
-              <div className="mt-5 inline-flex items-center gap-1 text-xs uppercase tracking-widest text-teal opacity-0 group-hover:opacity-100 transition">
-                Detalii <ChevronRight className="h-3.5 w-3.5" />
-              </div>
-            </article>
-          ))}
+          {services.map(({ icon: Icon, title, desc, slug }) => {
+            const body = (
+              <>
+                <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-teal/10 text-teal ring-1 ring-teal/20 transition group-hover:bg-teal group-hover:text-primary-foreground">
+                  <Icon className="h-5 w-5" strokeWidth={1.75} />
+                </div>
+                <h3 className="mt-6 font-display text-xl font-semibold">{title}</h3>
+                <p className="mt-3 text-sm text-foreground/65 leading-relaxed">{desc}</p>
+                <span className="mt-5 inline-flex items-center gap-1 text-xs uppercase tracking-widest text-teal opacity-100 md:opacity-0 md:group-hover:opacity-100 transition">
+                  Detalii <ChevronRight className="h-3.5 w-3.5" />
+                </span>
+              </>
+            );
+            const cls = "group relative block bg-deep p-8 transition-colors hover:bg-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal/60";
+            return slug ? (
+              <Link key={title} to="/servicii/$slug" params={{ slug }} aria-label={`Detalii ${title}`} className={cls}>
+                {body}
+              </Link>
+            ) : (
+              <Link key={title} to="/servicii" aria-label={`Detalii ${title}`} className={cls}>
+                {body}
+              </Link>
+            );
+          })}
         </div>
         <div className="mt-12 flex justify-center">
           <Link to="/servicii"
