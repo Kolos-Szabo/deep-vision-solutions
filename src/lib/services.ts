@@ -11,6 +11,15 @@ const projPipeline = projPipelineAsset.url;
 import projIndustrialAsset from "@/assets/interventie-statie-de-pompare-subacvatica.webp.asset.json";
 const projIndustrial = projIndustrialAsset.url;
 
+import projCraneAsset from "@/assets/montaj-structura-metalica-subacvatica-macara.webp.asset.json";
+const projCrane = projCraneAsset.url;
+import projEntryAsset from "@/assets/scafandru-intrare-in-apa-scufundari-utilitare.webp.asset.json";
+const projEntry = projEntryAsset.url;
+import projWinterAsset from "@/assets/scufundari-in-conditii-de-iarna-gheata-scafandru.webp.asset.json";
+const projWinter = projWinterAsset.url;
+import projGearAsset from "@/assets/echipament-scafandru-profesional-kirby-morgan.webp.asset.json";
+const projGear = projGearAsset.url;
+
 export type ServicePage = {
   slug: string;
   h1: string;
@@ -144,8 +153,8 @@ export const SERVICES: ServicePage[] = [
     eyebrow: "Baraje & hidrocentrale",
     intro:
       "Coordonăm lucrări multi-disciplinare pe baraje și hidrocentrale — de la lansarea batardoului și punerea la uscat a galeriei până la refacerea ghidajelor, retehnologizarea vanelor și repararea echipamentelor hidromecanice.",
-    cover: projDam,
-    coverAlt: "Intervenție subacvatică HEIDI pe batardou și ghidaje la un baraj hidroenergetic",
+    cover: projCrane,
+    coverAlt: "Montaj de structură metalică subacvatică cu macara în cadrul lucrărilor de reabilitare a unui baraj",
     sections: [
       {
         heading: "Categorii de lucrări pe care le acoperim",
@@ -192,8 +201,8 @@ export const SERVICES: ServicePage[] = [
     eyebrow: "Beton armat sub apă",
     intro:
       "Turnăm beton sub apă cu metoda tremie și pungi de beton special, executăm cofraje subacvatice etanșe și consolidăm fundații existente prin ancorare cu răsucire sau bulon chimic subacvatic.",
-    cover: projPipeline,
-    coverAlt: "Turnare beton subacvatic cu tremie pe un prag hidrotehnic",
+    cover: projIndustrial,
+    coverAlt: "Cofraj și cameră hidrotehnică pregătite pentru betonare subacvatică",
     sections: [
       {
         heading: "Metode și rețete",
@@ -227,8 +236,8 @@ export const SERVICES: ServicePage[] = [
     eyebrow: "ROV & tehnologie",
     intro:
       "Folosim ROV-uri (Remotely Operated Vehicles) pentru inspecții rapide la adâncimi mari, în medii contaminate sau în spații confinate — completate, când este cazul, cu intervenție tactilă a scafandrului.",
-    cover: projReservoir,
-    coverAlt: "ROV HEIDI în inspecția unui rezervor de apă potabilă",
+    cover: projPipeline,
+    coverAlt: "Inspecție cu ROV a unei conducte subacvatice la traversare de râu",
     sections: [
       {
         heading: "Când alegem ROV în locul scafandrului",
@@ -300,8 +309,8 @@ export const SERVICES: ServicePage[] = [
     eyebrow: "Prize de apă & sorburi",
     intro:
       "Recuperăm debitul de proiect al prizelor colmatate și eliminăm riscul de aspirație pe grătare prin lucrări rapide de decolmatare, cu scafandri, airlift și, unde este nevoie, ROV.",
-    cover: projIndustrial,
-    coverAlt: "Curățare subacvatică a unui grătar de priză de apă industrială",
+    cover: projEntry,
+    coverAlt: "Scafandru HEIDI intrând în apă pentru curățarea unui grătar de priză de apă",
     sections: [
       {
         heading: "De ce contează decolmatarea la timp",
@@ -369,8 +378,8 @@ export const SERVICES: ServicePage[] = [
     eyebrow: "Medii speciale",
     intro:
       "Intervenim în medii ostile — ape uzate, lagune de decantare, bazine cu hidrocarburi, medii cu risc biologic sau chimic — cu echipament de scufundare cu cordon ombilical (surface-supplied), cască etanșă și protocoale HazMat.",
-    cover: projIndustrial,
-    coverAlt: "Scafandru HEIDI cu cască etanșă și cordon ombilical în intervenție în mediu contaminat",
+    cover: projGear,
+    coverAlt: "Cască Kirby Morgan și echipament etanș pentru intervenții subacvatice în medii contaminate",
     sections: [
       {
         heading: "Echipare și proceduri",
@@ -404,8 +413,8 @@ export const SERVICES: ServicePage[] = [
     eyebrow: "Contracte de mentenanță",
     intro:
       "Structurăm programe multianuale de mentenanță preventivă pentru operatori de infrastructură — cu inspecții periodice, intervale planificate de curățare și rapoarte comparate an de an, care documentează evoluția stării obiectivului.",
-    cover: projDam,
-    coverAlt: "Echipa HEIDI la o inspecție de mentenanță preventivă pe un baraj",
+    cover: projWinter,
+    coverAlt: "Echipa HEIDI în intervenție subacvatică pe timp de iarnă, pe gheață",
     sections: [
       {
         heading: "Avantaje pentru beneficiar",
@@ -440,7 +449,7 @@ export const SERVICES: ServicePage[] = [
     intro:
       "Întocmim expertize tehnice independente pentru beneficiari, companii de asigurări, constructori și instanțe — pe baza inspecției directe, a măsurătorilor și a documentației foto-video subacvatice.",
     cover: projPipeline,
-    coverAlt: "Documentare foto-video pentru expertiză tehnică subacvatică",
+    coverAlt: "Documentare foto-video subacvatică pe conductă pentru expertiză tehnică",
     sections: [
       {
         heading: "Ce include o expertiză",
