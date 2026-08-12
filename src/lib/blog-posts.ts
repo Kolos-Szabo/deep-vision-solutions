@@ -79,7 +79,6 @@ export const BLOG_POSTS: BlogPost[] = [
           "Accesul la mal: drum de acces, spațiu pentru echipamente, sursă de energie.",
           "Planuri, schițe, fotografii sau rapoarte anterioare, dacă există.",
         ],
-        paragraphs2: undefined as never,
       },
       {
         heading: "3. Recunoașterea în teren și evaluarea riscurilor",
