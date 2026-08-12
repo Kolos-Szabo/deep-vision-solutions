@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useState } from "react";
 import logoWhiteUrl from "@/assets/logo-heidi-white-raw.png";
 import anpcAsset from "@/assets/ANPC.png.asset.json";
 import {
@@ -27,6 +27,7 @@ const PHONE = "0040 755 011 497";
 const PHONE_HREF = "tel:0040755011497";
 const EMAIL = "infomylake@gmail.com";
 const WHATSAPP_NUMBER = "40755011497";
+const OFFER_MAILTO = `mailto:${EMAIL}?subject=${encodeURIComponent("Solicitare ofertă")}`;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -243,7 +244,7 @@ function Nav() {
             <Phone className="h-4 w-4" /> {PHONE}
           </a>
           <a
-            href="#contact"
+            href={OFFER_MAILTO}
             className="hidden sm:inline-flex items-center gap-2 rounded-md bg-teal px-4 py-2 text-sm font-semibold text-primary-foreground transition hover:bg-teal-glow"
           >
             Solicitați ofertă <ArrowRight className="h-4 w-4" />
@@ -311,9 +312,9 @@ function Hero() {
             infrastructură critică din toată România.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
-            <a href="#contact"
+            <a href={OFFER_MAILTO}
                className="inline-flex items-center gap-2 rounded-md bg-teal px-6 py-3.5 font-semibold text-primary-foreground transition hover:bg-teal-glow hover:shadow-[0_0_40px_-5px_var(--teal-glow)]">
-              Solicitați ofertă <ArrowRight className="h-4 w-4" />
+               Solicitați ofertă <ArrowRight className="h-4 w-4" />
             </a>
             <a href={PHONE_HREF}
                className="inline-flex items-center gap-2 rounded-md border border-white/15 bg-white/5 px-6 py-3.5 font-semibold text-foreground transition hover:bg-white/10">
@@ -671,11 +672,6 @@ function Faq() {
 
 
 function Contact() {
-  const [sent, setSent] = useState(false);
-  function submit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setSent(true);
-  }
   return (
     <section id="contact" className="relative py-28 overflow-hidden">
       <div className="absolute inset-0 -z-10 opacity-40">
@@ -721,54 +717,22 @@ function Contact() {
             </div>
           </div>
         </div>
-        <form onSubmit={submit}
-              className="rounded-2xl border border-white/10 bg-surface/80 backdrop-blur p-8 md:p-10 shadow-elegant">
-          {sent ? (
-            <div className="py-16 text-center">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-teal/15 text-teal ring-1 ring-teal/30">
-                <Check className="h-6 w-6" />
-              </div>
-              <h3 className="mt-6 font-display text-2xl font-semibold">Mulțumim pentru solicitare</h3>
-              <p className="mt-3 text-foreground/70">Echipa HEIDI vă va contacta în cel mai scurt timp.</p>
-            </div>
-          ) : (
-            <div className="space-y-5">
-              <h3 className="font-display text-2xl font-semibold">Formular ofertă</h3>
-              <div className="grid sm:grid-cols-2 gap-4">
-                <Field label="Nume" name="name" required />
-                <Field label="Companie" name="company" />
-                <Field label="Telefon" name="phone" type="tel" required />
-                <Field label="E-mail" name="email" type="email" required />
-              </div>
-              <Field label="Locație lucrare" name="location" />
-              <div>
-                <label className="text-xs uppercase tracking-widest text-foreground/60">Descrierea lucrării</label>
-                <textarea name="message" required rows={4}
-                  className="mt-2 w-full rounded-md border border-white/10 bg-deep/60 px-4 py-3 text-foreground placeholder:text-foreground/40 outline-none focus:border-teal focus:ring-2 focus:ring-teal/30 transition"
-                  placeholder="Tip lucrare, adâncime, termen estimat..." />
-              </div>
-              <button type="submit"
-                className="w-full inline-flex items-center justify-center gap-2 rounded-md bg-teal px-6 py-4 font-semibold text-primary-foreground transition hover:bg-teal-glow hover:shadow-[0_0_40px_-5px_var(--teal-glow)]">
-                Trimite solicitarea <ArrowRight className="h-4 w-4" />
-              </button>
-              <p className="text-xs text-foreground/50">
-                Prin trimiterea formularului sunteți de acord cu prelucrarea datelor în scopul ofertării.
-              </p>
-            </div>
-          )}
-        </form>
+        <div className="rounded-2xl border border-white/10 bg-surface/80 backdrop-blur p-8 md:p-10 shadow-elegant flex flex-col justify-center">
+          <h3 className="font-display text-2xl font-semibold">Solicitați ofertă</h3>
+          <p className="mt-3 text-foreground/70 leading-relaxed">
+            Trimiteți-ne un e-mail cu detaliile lucrării — tip, locație, adâncime estimată și termen —
+            și primiți o propunere tehnică transparentă în maximum 24 de ore.
+          </p>
+          <a href={OFFER_MAILTO}
+             className="mt-8 w-full inline-flex items-center justify-center gap-2 rounded-md bg-teal px-6 py-4 font-semibold text-primary-foreground transition hover:bg-teal-glow hover:shadow-[0_0_40px_-5px_var(--teal-glow)]">
+            Solicitați ofertă <ArrowRight className="h-4 w-4" />
+          </a>
+          <p className="mt-4 text-xs text-foreground/50">
+            Clickul deschide clientul de e-mail cu subiectul precompletat „Solicitare ofertă".
+          </p>
+        </div>
       </div>
     </section>
-  );
-}
-
-function Field({ label, name, type = "text", required }: { label: string; name: string; type?: string; required?: boolean }) {
-  return (
-    <div>
-      <label htmlFor={name} className="text-xs uppercase tracking-widest text-foreground/60">{label}{required && " *"}</label>
-      <input id={name} name={name} type={type} required={required}
-        className="mt-2 w-full rounded-md border border-white/10 bg-deep/60 px-4 py-3 text-foreground placeholder:text-foreground/40 outline-none focus:border-teal focus:ring-2 focus:ring-teal/30 transition" />
-    </div>
   );
 }
 
