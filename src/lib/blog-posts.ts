@@ -2,6 +2,8 @@ import projWeldingAsset from "@/assets/sudura-subacvatica-structura-metalica-sca
 const projWelding = projWeldingAsset;
 import projDamAsset from "@/assets/interventie-hidrotehnica-baraj-batardou.webp";
 const projDam = projDamAsset;
+import projEntryAsset from "@/assets/scafandru-intrare-in-apa-scufundari-utilitare.webp";
+const projEntry = projEntryAsset;
 
 export type BlogPost = {
   slug: string;
@@ -16,10 +18,158 @@ export type BlogPost = {
   dateISO: string;
   readingMinutes: number;
   category: string;
-  body: { heading?: string; paragraphs: string[] }[];
+  body: {
+    heading?: string;
+    paragraphs: string[];
+    bullets?: string[];
+    serviceLinks?: { slug: string; label: string }[];
+  }[];
 };
 
 export const BLOG_POSTS: BlogPost[] = [
+  {
+    slug: "planificarea-unei-lucrari-subacvatice-etape-documentatie-siguranta",
+    title:
+      "Cum se planifică o lucrare subacvatică: etape, documentație și măsuri de siguranță",
+    metaTitle:
+      "Planificarea unei lucrări subacvatice — etape, documentație, siguranță | HEIDI",
+    metaDescription:
+      "Ghid practic pentru beneficiari: cum se pregătește o lucrare subacvatică, ce informații sunt necesare la cererea de ofertă, cum se evaluează riscurile și ce conține un plan de scufundare.",
+    keywords:
+      "planificare lucrari subacvatice, plan de scufundare, siguranta scufundari industriale, cerere oferta lucrari subacvatice, scafandri profesionisti, interventii subacvatice, organizare santier subacvatic, evaluare riscuri scufundari",
+    excerpt:
+      "Ce trebuie pregătit înainte de intrarea scafandrilor în apă: informațiile necesare pentru o ofertă corectă, evaluarea riscurilor, planul de scufundare, coordonarea cu exploatarea și recepția lucrării.",
+    cover: projEntry,
+    coverAlt:
+      "Scafandru profesionist pregătit pentru intrarea în apă la începutul unei lucrări subacvatice",
+    date: "12 august 2026",
+    dateISO: "2026-08-12",
+    readingMinutes: 8,
+    category: "Planificare & siguranță",
+    body: [
+      {
+        paragraphs: [
+          "Majoritatea întârzierilor și a costurilor suplimentare dintr-o lucrare subacvatică nu apar sub apă, ci înainte de intrarea scafandrilor în apă. Un obiectiv incomplet descris, o oprire de exploatare neplanificată sau lipsa unui acces sigur pot transforma o intervenție de câteva ore într-o mobilizare repetată.",
+          "Articolul de față este scris pentru beneficiari — primării, operatori de apă și canalizare, hidrocentrale, porturi, constructori și companii industriale — și explică pas cu pas cum se pregătește corect o lucrare subacvatică, ce informații sunt necesare pentru o ofertă realistă și cum se gestionează siguranța pe durata intervenției.",
+        ],
+      },
+      {
+        heading: "1. Definirea obiectivului: ce problemă rezolvăm, de fapt",
+        paragraphs: [
+          "Primul pas nu este alegerea metodei de lucru, ci formularea clară a rezultatului urmărit. „Avem o pierdere de apă la bazin” și „vrem să verificăm starea peretelui bazinului” conduc la lucrări diferite, cu echipe și durate diferite.",
+          "În practică, obiectivele se împart în trei mari categorii: diagnostic (nu știm ce avem), intervenție (știm ce avem și vrem reparat) și verificare periodică (vrem să prevenim).",
+        ],
+        bullets: [
+          "Diagnostic — inspecție vizuală, măsurători, documentare foto-video, raport tehnic.",
+          "Intervenție — reparație, etanșare, montaj, demontare, recuperare, curățare.",
+          "Prevenție — verificări planificate, la intervale stabilite, pe aceleași repere.",
+        ],
+      },
+      {
+        heading: "2. Informațiile care fac diferența într-o cerere de ofertă",
+        paragraphs: [
+          "O ofertă precisă depinde de datele primite. Cu cât informația inițială este mai bună, cu atât devizul este mai apropiat de realitate și cu atât scad șansele unor costuri neprevăzute pe teren.",
+        ],
+        bullets: [
+          "Tipul obiectivului: baraj, rezervor, priză de apă, conductă, cheu, pilă de pod, bazin industrial.",
+          "Adâncimea estimată de lucru și nivelul apei la data intervenției.",
+          "Vizibilitatea și tipul apei (limpede, tulbure, ape uzate, mediu industrial).",
+          "Existența curenților, a sorburilor sau a instalațiilor active în zonă.",
+          "Posibilitatea opririi sau golirii instalației și fereastra de timp disponibilă.",
+          "Accesul la mal: drum de acces, spațiu pentru echipamente, sursă de energie.",
+          "Planuri, schițe, fotografii sau rapoarte anterioare, dacă există.",
+        ],
+      },
+      {
+        heading: "3. Recunoașterea în teren și evaluarea riscurilor",
+        paragraphs: [
+          "Înainte de execuție se face o recunoaștere a amplasamentului. Se verifică accesul, se identifică sursele de pericol și se stabilește dacă lucrarea se poate executa cu scafandri, cu ROV sau printr-o combinație a celor două.",
+          "Riscurile tipice ale unui șantier subacvatic sunt bine cunoscute și trebuie tratate individual, nu generic: aspirația în sorburi și prize de apă, instalațiile aflate sub tensiune sau sub presiune, vizibilitatea zero, spațiile confinate, obstacolele și fiarele din apă, mediile contaminate, temperatura scăzută.",
+          "Regula de bază este izolarea energiilor: orice pompă, stavilă, turbină sau vană care poate genera curent de aspirație trebuie oprită, blocată și semnalizată pe durata scufundării, cu confirmare din partea personalului de exploatare al beneficiarului.",
+        ],
+        serviceLinks: [
+          { slug: "interventii-medii-contaminate", label: "intervenții în medii contaminate" },
+          { slug: "lucrari-cu-rov", label: "inspecții și lucrări cu ROV" },
+        ],
+      },
+      {
+        heading: "4. Planul de scufundare și organizarea echipei",
+        paragraphs: [
+          "Planul de scufundare este documentul care transformă intenția în procedură. El descrie succesiunea operațiunilor, adâncimile și timpii de lucru, echipamentul folosit, componența echipei, mijloacele de comunicare și scenariile de urgență.",
+        ],
+        bullets: [
+          "Rolurile în echipă: scafandrul care lucrează, scafandrul de rezervă, supervizorul de la suprafață și personalul de asistență.",
+          "Comunicarea permanentă scafandru–suprafață și semnalizarea zonei de lucru.",
+          "Verificarea echipamentului înainte de fiecare imersiune, cu bifare pe listă.",
+          "Procedura de urgență: cine intervine, pe ce traseu, cu ce mijloace, pe cine anunță.",
+          "Jurnalul de scufundare: ore, adâncimi, operațiuni executate, observații.",
+        ],
+      },
+      {
+        heading: "5. Coordonarea cu exploatarea beneficiarului",
+        paragraphs: [
+          "Cele mai multe lucrări se execută pe instalații aflate în funcțiune sau oprite temporar. De aceea, coordonarea cu echipa tehnică a beneficiarului este parte din lucrare, nu o formalitate.",
+          "Se stabilesc din timp: persoana de contact pe amplasament, fereastra de oprire, procedura de repunere în funcțiune, regulile interne de acces și echipamentul de protecție cerut la sol.",
+          "Acolo unde oprirea este costisitoare sau imposibilă — de exemplu la o priză de apă în funcțiune sau la un rezervor de apă potabilă aflat în serviciu — se analizează varianta lucrului cu ROV sau a intervenției etapizate, pentru a reduce timpul de indisponibilitate.",
+        ],
+        serviceLinks: [
+          { slug: "mentenanta-rezervoare-apa", label: "mentenanța rezervoarelor de apă" },
+          { slug: "curatare-gratare-priza-apa", label: "curățarea grătarelor și a prizelor de apă" },
+        ],
+      },
+      {
+        heading: "6. Execuția: documentare continuă, nu doar la final",
+        paragraphs: [
+          "O lucrare subacvatică bine condusă produce dovezi pe tot parcursul ei. Documentarea foto-video pe zone, marcarea reperelor și notarea anomaliilor în timp real permit beneficiarului să înțeleagă ce s-a găsit și ce s-a executat, chiar dacă nu a văzut niciodată zona respectivă.",
+          "Este util ca reperele de măsurare să fie stabilite de la început și păstrate identic la verificările următoare. Astfel, două inspecții succesive devin comparabile, iar evoluția unei fisuri, a unei afuieri sau a unui strat de depuneri poate fi urmărită în timp.",
+        ],
+        serviceLinks: [
+          { slug: "inspectii-subacvatice", label: "inspecții subacvatice" },
+          { slug: "expertize-tehnice-subacvatice", label: "expertize tehnice subacvatice" },
+        ],
+      },
+      {
+        heading: "7. Recepția lucrării și ce ar trebui să conțină raportul",
+        paragraphs: [
+          "La finalul intervenției, beneficiarul ar trebui să rămână cu un document utilizabil în mentenanță, nu doar cu o factură. Un raport corect este citibil și de personalul tehnic, și de decidentul care aprobă bugetul.",
+        ],
+        bullets: [
+          "Descrierea obiectivului, a condițiilor de lucru și a perioadei de execuție.",
+          "Constatările pe zone, cu fotografii și capturi video relevante.",
+          "Lucrările efectiv executate și materialele folosite.",
+          "Anomaliile rămase nerezolvate și nivelul lor de urgență.",
+          "Recomandări pentru intervenții viitoare și interval de reverificare.",
+        ],
+      },
+      {
+        heading: "Greșeli frecvente care scumpesc o lucrare subacvatică",
+        paragraphs: [
+          "Din experiența lucrărilor pe infrastructură hidrotehnică, industrială și portuară, cele mai costisitoare greșeli sunt de organizare, nu de execuție.",
+        ],
+        bullets: [
+          "Amânarea inspecției până când defectul devine avarie și impune intervenție de urgență.",
+          "Descrierea vagă a obiectivului, care duce la o a doua mobilizare a echipei.",
+          "Nestabilirea clară a opririi instalației, cu timp de așteptare pe amplasament.",
+          "Lipsa planurilor sau a rapoartelor anterioare, deși acestea există în arhivă.",
+          "Contractarea doar pe criteriul prețului, fără a compara ce documentație se livrează la final.",
+        ],
+      },
+      {
+        heading: "Când este momentul să solicitați o evaluare",
+        paragraphs: [
+          "Semnalele care justifică o verificare subacvatică sunt, de regulă, vizibile de la suprafață: pierderi de apă inexplicabile, scăderea debitului la o priză, tasări sau deplasări în zona malului, zgomote și vibrații anormale la instalațiile de pompare, precum și obiective la care nu s-a mai făcut nicio verificare de câțiva ani.",
+          "În aceste situații, o inspecție planificată costă semnificativ mai puțin decât o intervenție de avarie și oferă timpul necesar pentru bugetarea corectă a reparației.",
+        ],
+      },
+      {
+        heading: "Concluzie",
+        paragraphs: [
+          "O lucrare subacvatică reușită se decide la birou: obiectiv clar, informații complete, riscuri evaluate, plan de scufundare asumat și coordonare reală cu exploatarea. Restul este execuție disciplinată și documentare corectă.",
+          "Echipa lucrarisubacvatice.ro pregătește fiecare intervenție pornind de la datele obiectivului dumneavoastră și livrează, la final, documentația necesară pentru deciziile de mentenanță. Descrieți-ne pe scurt situația din teren și primiți o evaluare tehnică și o ofertă adaptată lucrării.",
+        ],
+      },
+    ],
+  },
   {
     slug: "sudura-subacvatica-hiperbarica-ghid-complet",
     title: "Sudură subacvatică hiperbarică: ghid complet pentru lucrări industriale sub apă",

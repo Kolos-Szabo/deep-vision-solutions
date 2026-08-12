@@ -129,6 +129,33 @@ function BlogPost() {
                 {block.paragraphs.map((p, j) => (
                   <p key={j}>{p}</p>
                 ))}
+                {block.bullets && (
+                  <ul className="space-y-2.5 pl-1">
+                    {block.bullets.map((b, j) => (
+                      <li key={j} className="flex gap-3">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal" />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {block.serviceLinks && (
+                  <p className="text-sm text-foreground/65">
+                    Detalii tehnice:{" "}
+                    {block.serviceLinks.map((l, j) => (
+                      <span key={l.slug}>
+                        {j > 0 && " · "}
+                        <Link
+                          to="/servicii/$slug"
+                          params={{ slug: l.slug }}
+                          className="text-teal hover:text-teal-glow underline underline-offset-4"
+                        >
+                          {l.label}
+                        </Link>
+                      </span>
+                    ))}
+                  </p>
+                )}
               </div>
             </section>
           ))}
