@@ -244,7 +244,7 @@ function Nav() {
             <Phone className="h-4 w-4" /> {PHONE}
           </a>
           <a
-            href="#contact"
+            href={OFFER_MAILTO}
             className="hidden sm:inline-flex items-center gap-2 rounded-md bg-teal px-4 py-2 text-sm font-semibold text-primary-foreground transition hover:bg-teal-glow"
           >
             Solicitați ofertă <ArrowRight className="h-4 w-4" />
