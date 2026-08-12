@@ -2,6 +2,8 @@ import projWeldingAsset from "@/assets/sudura-subacvatica-structura-metalica-sca
 const projWelding = projWeldingAsset;
 import projDamAsset from "@/assets/interventie-hidrotehnica-baraj-batardou.webp";
 const projDam = projDamAsset;
+import projEntryAsset from "@/assets/scafandru-intrare-in-apa-scufundari-utilitare.webp";
+const projEntry = projEntryAsset;
 
 export type BlogPost = {
   slug: string;
