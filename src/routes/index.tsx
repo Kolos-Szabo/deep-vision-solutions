@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import logoWhiteUrl from "@/assets/logo-heidi-white-raw.png";
-import anpcAsset from "@/assets/ANPC.png.asset.json";
+import anpcAsset from "@/assets/ANPC.png";
 import {
   Search, Droplets, Wrench, Zap, Mountain, Anchor, PackageSearch, Camera, FileText,
   Waves, Landmark, Factory, Phone, Mail, MapPin, ShieldCheck, Clock, Users, Award,
@@ -12,13 +12,13 @@ import {
 
 import heroDiver from "@/assets/hero-diver.jpg";
 import textureWater from "@/assets/texture-water.jpg";
-import projDam from "@/assets/interventie-hidrotehnica-baraj-batardou.webp.asset.json";
-import projReservoir from "@/assets/scafandru-comercial-inspectie-rezervoar-apa.webp.asset.json";
-import projWelding from "@/assets/sudura-subacvatica-structura-metalica-scafandru.webp.asset.json";
-import projLake from "@/assets/lucrari-subacvatice-lac-acumulare-scafandru.webp.asset.json";
-import projPipeline from "@/assets/inspectie-conducta-subacvatica-traversare-rau.webp.asset.json";
-import projIndustrial from "@/assets/interventie-statie-de-pompare-subacvatica.webp.asset.json";
-import equipmentAsset from "@/assets/echipament-scafandru-profesional-kirby-morgan.webp.asset.json";
+import projDam from "@/assets/interventie-hidrotehnica-baraj-batardou.webp";
+import projReservoir from "@/assets/scafandru-comercial-inspectie-rezervoar-apa.webp";
+import projWelding from "@/assets/sudura-subacvatica-structura-metalica-scafandru.webp";
+import projLake from "@/assets/lucrari-subacvatice-lac-acumulare-scafandru.webp";
+import projPipeline from "@/assets/inspectie-conducta-subacvatica-traversare-rau.webp";
+import projIndustrial from "@/assets/interventie-statie-de-pompare-subacvatica.webp";
+import equipmentAsset from "@/assets/echipament-scafandru-profesional-kirby-morgan.webp";
 
 
 
@@ -152,12 +152,12 @@ const stats = [
 ];
 
 const projects = [
-  { img: projDam.url, w: 1600, h: 1200, alt: "Batardou metalic ridicat cu macaraua la un baraj din România, în cadrul unei lucrări subacvatice hidrotehnice executate de scafandri comerciali.", caption: "Montaj batardou și inspecție parament la baraj hidroenergetic", cat: "Baraje", title: "Inspecție parament baraj hidroenergetic", obj: "Evaluarea stării betonului și a rosturilor pe 40 m adâncime.", res: "Raport complet cu hartă defecte și plan de mentenanță." },
-  { img: projReservoir.url, w: 1600, h: 1200, alt: "Scafandru profesionist cu cască Kirby Morgan și furtun ombilical, în timpul unei inspecții subacvatice într-un bazin de apă industrial.", caption: "Decolmatare și inspecție rezervor de apă, fără scoatere din serviciu", cat: "Rezervoare", title: "Curățare rezervor apă potabilă", obj: "Decolmatare fără scoaterea din serviciu a rezervorului.", res: "Reducerea cu 95% a sedimentelor, conformitate sanitară." },
-  { img: projWelding.url, w: 1600, h: 1200, alt: "Scafandru comercial coborând pe scară către o structură metalică submersată, pregătit pentru lucrări de sudură subacvatică.", caption: "Sudură subacvatică umedă pe structură metalică portuară", cat: "Infrastructură", title: "Sudură subacvatică structură metalică", obj: "Repararea unei structuri portuare degradate.", res: "Sudură umedă certificată, reintrare imediată în funcțiune." },
-  { img: projLake.url, w: 1600, h: 1067, alt: "Scafandru echipat cu cască galbenă ieșind din apă pe malul unui lac de acumulare, cu furtunul ombilical desfășurat pe mal.", caption: "Inspecție prize de apă și ancoraje pe lac de acumulare", cat: "Lacuri", title: "Lucrări pe lac de acumulare", obj: "Inspecție prize de apă și ancoraje pe lac alpin.", res: "Documentație video completă și recomandări tehnice." },
-  { img: projPipeline.url, w: 1600, h: 1200, alt: "Scafandru pătrunzând printr-o fereastră tăiată într-o conductă industrială, pentru inspecția interioară a traversării de râu.", caption: "Inspecție interioară conductă la traversare de râu", cat: "Râuri", title: "Inspecție conductă traversare râu", obj: "Verificare integritate conductă industrială sub râu.", res: "Identificare 2 puncte critice și plan de reparație." },
-  { img: projIndustrial.url, w: 1600, h: 1200, alt: "Echipament metalic ridicat cu macaraua din apă la o stație de pompare, sub supravegherea echipei de scafandri de pe ponton.", caption: "Recuperare echipament și verificare grătare la stație de pompare", cat: "Industrial", title: "Intervenție stație de pompare", obj: "Recuperare echipament și verificare grătare.", res: "Repunere în funcțiune în mai puțin de 24 h." },
+  { img: projDam, w: 1600, h: 1200, alt: "Batardou metalic ridicat cu macaraua la un baraj din România, în cadrul unei lucrări subacvatice hidrotehnice executate de scafandri comerciali.", caption: "Montaj batardou și inspecție parament la baraj hidroenergetic", cat: "Baraje", title: "Inspecție parament baraj hidroenergetic", obj: "Evaluarea stării betonului și a rosturilor pe 40 m adâncime.", res: "Raport complet cu hartă defecte și plan de mentenanță." },
+  { img: projReservoir, w: 1600, h: 1200, alt: "Scafandru profesionist cu cască Kirby Morgan și furtun ombilical, în timpul unei inspecții subacvatice într-un bazin de apă industrial.", caption: "Decolmatare și inspecție rezervor de apă, fără scoatere din serviciu", cat: "Rezervoare", title: "Curățare rezervor apă potabilă", obj: "Decolmatare fără scoaterea din serviciu a rezervorului.", res: "Reducerea cu 95% a sedimentelor, conformitate sanitară." },
+  { img: projWelding, w: 1600, h: 1200, alt: "Scafandru comercial coborând pe scară către o structură metalică submersată, pregătit pentru lucrări de sudură subacvatică.", caption: "Sudură subacvatică umedă pe structură metalică portuară", cat: "Infrastructură", title: "Sudură subacvatică structură metalică", obj: "Repararea unei structuri portuare degradate.", res: "Sudură umedă certificată, reintrare imediată în funcțiune." },
+  { img: projLake, w: 1600, h: 1067, alt: "Scafandru echipat cu cască galbenă ieșind din apă pe malul unui lac de acumulare, cu furtunul ombilical desfășurat pe mal.", caption: "Inspecție prize de apă și ancoraje pe lac de acumulare", cat: "Lacuri", title: "Lucrări pe lac de acumulare", obj: "Inspecție prize de apă și ancoraje pe lac alpin.", res: "Documentație video completă și recomandări tehnice." },
+  { img: projPipeline, w: 1600, h: 1200, alt: "Scafandru pătrunzând printr-o fereastră tăiată într-o conductă industrială, pentru inspecția interioară a traversării de râu.", caption: "Inspecție interioară conductă la traversare de râu", cat: "Râuri", title: "Inspecție conductă traversare râu", obj: "Verificare integritate conductă industrială sub râu.", res: "Identificare 2 puncte critice și plan de reparație." },
+  { img: projIndustrial, w: 1600, h: 1200, alt: "Echipament metalic ridicat cu macaraua din apă la o stație de pompare, sub supravegherea echipei de scafandri de pe ponton.", caption: "Recuperare echipament și verificare grătare la stație de pompare", cat: "Industrial", title: "Intervenție stație de pompare", obj: "Recuperare echipament și verificare grătare.", res: "Repunere în funcțiune în mai puțin de 24 h." },
 ];
 
 const steps = [
@@ -433,7 +433,7 @@ function WhyUs() {
           />
           <figure className="mt-10 group relative overflow-hidden rounded-2xl border border-white/10 bg-surface/60">
             <img
-              src={equipmentAsset.url}
+              src={equipmentAsset}
               alt="Cască de scafandru profesional Kirby Morgan și ham de scufundare folosite de echipa HEIDI pentru lucrări subacvatice industriale"
               title="Echipament profesional de scufundare Kirby Morgan — HEIDI"
               loading="lazy"
@@ -777,7 +777,7 @@ function Footer() {
             aria-label="ANPC - Autoritatea Națională pentru Protecția Consumatorilor"
           >
             <img
-              src={anpcAsset.url}
+              src={anpcAsset}
               alt="ANPC - Autoritatea Națională pentru Protecția Consumatorilor"
               width={800}
               height={194}

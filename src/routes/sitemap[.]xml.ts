@@ -3,7 +3,7 @@ import type {} from "@tanstack/react-start";
 import { BLOG_POSTS } from "@/lib/blog-posts";
 import { SERVICES } from "@/lib/services";
 
-const BASE_URL = "";
+const BASE_URL = "https://lucrarisubacvatice.ro";
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
