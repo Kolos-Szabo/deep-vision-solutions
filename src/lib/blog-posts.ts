@@ -1,7 +1,7 @@
-import projWeldingAsset from "@/assets/sudura-subacvatica-structura-metalica-scafandru.webp.asset.json";
-const projWelding = projWeldingAsset.url;
-import projDamAsset from "@/assets/interventie-hidrotehnica-baraj-batardou.webp.asset.json";
-const projDam = projDamAsset.url;
+import projWeldingAsset from "@/assets/sudura-subacvatica-structura-metalica-scafandru.webp";
+const projWelding = projWeldingAsset;
+import projDamAsset from "@/assets/interventie-hidrotehnica-baraj-batardou.webp";
+const projDam = projDamAsset;
 
 export type BlogPost = {
   slug: string;

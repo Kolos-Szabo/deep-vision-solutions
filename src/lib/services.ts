@@ -1,24 +1,24 @@
-import projDamAsset from "@/assets/interventie-hidrotehnica-baraj-batardou.webp.asset.json";
-const projDam = projDamAsset.url;
-import projReservoirAsset from "@/assets/scafandru-comercial-inspectie-rezervoar-apa.webp.asset.json";
-const projReservoir = projReservoirAsset.url;
-import projWeldingAsset from "@/assets/sudura-subacvatica-structura-metalica-scafandru.webp.asset.json";
-const projWelding = projWeldingAsset.url;
-import projLakeAsset from "@/assets/lucrari-subacvatice-lac-acumulare-scafandru.webp.asset.json";
-const projLake = projLakeAsset.url;
-import projPipelineAsset from "@/assets/inspectie-conducta-subacvatica-traversare-rau.webp.asset.json";
-const projPipeline = projPipelineAsset.url;
-import projIndustrialAsset from "@/assets/interventie-statie-de-pompare-subacvatica.webp.asset.json";
-const projIndustrial = projIndustrialAsset.url;
+import projDamAsset from "@/assets/interventie-hidrotehnica-baraj-batardou.webp";
+const projDam = projDamAsset;
+import projReservoirAsset from "@/assets/scafandru-comercial-inspectie-rezervoar-apa.webp";
+const projReservoir = projReservoirAsset;
+import projWeldingAsset from "@/assets/sudura-subacvatica-structura-metalica-scafandru.webp";
+const projWelding = projWeldingAsset;
+import projLakeAsset from "@/assets/lucrari-subacvatice-lac-acumulare-scafandru.webp";
+const projLake = projLakeAsset;
+import projPipelineAsset from "@/assets/inspectie-conducta-subacvatica-traversare-rau.webp";
+const projPipeline = projPipelineAsset;
+import projIndustrialAsset from "@/assets/interventie-statie-de-pompare-subacvatica.webp";
+const projIndustrial = projIndustrialAsset;
 
-import projCraneAsset from "@/assets/montaj-structura-metalica-subacvatica-macara.webp.asset.json";
-const projCrane = projCraneAsset.url;
-import projEntryAsset from "@/assets/scafandru-intrare-in-apa-scufundari-utilitare.webp.asset.json";
-const projEntry = projEntryAsset.url;
-import projWinterAsset from "@/assets/scufundari-in-conditii-de-iarna-gheata-scafandru.webp.asset.json";
-const projWinter = projWinterAsset.url;
-import projGearAsset from "@/assets/echipament-scafandru-profesional-kirby-morgan.webp.asset.json";
-const projGear = projGearAsset.url;
+import projCraneAsset from "@/assets/montaj-structura-metalica-subacvatica-macara.webp";
+const projCrane = projCraneAsset;
+import projEntryAsset from "@/assets/scafandru-intrare-in-apa-scufundari-utilitare.webp";
+const projEntry = projEntryAsset;
+import projWinterAsset from "@/assets/scufundari-in-conditii-de-iarna-gheata-scafandru.webp";
+const projWinter = projWinterAsset;
+import projGearAsset from "@/assets/echipament-scafandru-profesional-kirby-morgan.webp";
+const projGear = projGearAsset;
 
 export type ServicePage = {
   slug: string;
