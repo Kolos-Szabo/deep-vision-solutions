@@ -736,16 +736,6 @@ function Contact() {
   );
 }
 
-function Field({ label, name, type = "text", required }: { label: string; name: string; type?: string; required?: boolean }) {
-  return (
-    <div>
-      <label htmlFor={name} className="text-xs uppercase tracking-widest text-foreground/60">{label}{required && " *"}</label>
-      <input id={name} name={name} type={type} required={required}
-        className="mt-2 w-full rounded-md border border-white/10 bg-deep/60 px-4 py-3 text-foreground placeholder:text-foreground/40 outline-none focus:border-teal focus:ring-2 focus:ring-teal/30 transition" />
-    </div>
-  );
-}
-
 function Footer() {
   return (
     <footer className="border-t border-white/5 bg-deep">
