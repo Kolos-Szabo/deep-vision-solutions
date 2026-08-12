@@ -12,12 +12,8 @@ export default defineConfig({
   vite: {
     base: "/",
   },
-  nitro: {
-    preset: "static",
-    output: {
-      dir: "dist",
-    },
-  },
+  // No server runtime is deployed: the site is a fully prerendered static bundle.
+  nitro: false,
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
