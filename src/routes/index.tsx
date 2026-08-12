@@ -312,9 +312,9 @@ function Hero() {
             infrastructură critică din toată România.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
-            <a href="#contact"
+            <a href={OFFER_MAILTO}
                className="inline-flex items-center gap-2 rounded-md bg-teal px-6 py-3.5 font-semibold text-primary-foreground transition hover:bg-teal-glow hover:shadow-[0_0_40px_-5px_var(--teal-glow)]">
-              Solicitați ofertă <ArrowRight className="h-4 w-4" />
+               Solicitați ofertă <ArrowRight className="h-4 w-4" />
             </a>
             <a href={PHONE_HREF}
                className="inline-flex items-center gap-2 rounded-md border border-white/15 bg-white/5 px-6 py-3.5 font-semibold text-foreground transition hover:bg-white/10">
