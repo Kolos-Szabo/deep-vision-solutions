@@ -6,10 +6,27 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
+// Static export target (GitHub Pages): every route is prerendered to HTML and the
+// whole site is served from the domain root, so `base` stays "/".
 export default defineConfig({
+  vite: {
+    base: "/",
+  },
+  nitro: {
+    preset: "static",
+    output: {
+      dir: "dist",
+    },
+  },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
+    prerender: {
+      enabled: true,
+      crawlLinks: true,
+      failOnError: false,
+    },
+    spa: { enabled: false },
   },
 });
