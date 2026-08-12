@@ -27,6 +27,7 @@ const PHONE = "0040 755 011 497";
 const PHONE_HREF = "tel:0040755011497";
 const EMAIL = "infomylake@gmail.com";
 const WHATSAPP_NUMBER = "40755011497";
+const OFFER_MAILTO = `mailto:${EMAIL}?subject=${encodeURIComponent("Solicitare ofertă")}`;
 
 export const Route = createFileRoute("/")({
   head: () => ({
