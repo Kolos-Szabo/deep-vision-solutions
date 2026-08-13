@@ -122,15 +122,15 @@ function ServicePageView() {
               <p className="mt-6 text-lg text-foreground/75 leading-relaxed">{s.intro}</p>
 
               <div className="mt-8 flex flex-wrap gap-3">
-                <a href="/#contact"
+                <a href={OFFER_MAILTO}
                    className="inline-flex items-center gap-2 rounded-md bg-teal px-5 py-3 font-semibold text-primary-foreground hover:bg-teal-glow">
-                  Solicit deviz <ArrowRight className="h-4 w-4" />
+                  Solicitați ofertă <ArrowRight className="h-4 w-4" />
                 </a>
                 <a href={PHONE_HREF}
                    className="inline-flex items-center gap-2 rounded-md border border-white/15 bg-white/5 px-5 py-3 font-semibold hover:bg-white/10">
-                  <Phone className="h-4 w-4" /> Suna acum
+                  <Phone className="h-4 w-4" /> Sunați acum
                 </a>
-                <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer"
+                <a href={WHATSAPP_HREF} target="_blank" rel="noopener noreferrer"
                    className="inline-flex items-center gap-2 rounded-md whatsapp-btn px-5 py-3 font-semibold">
                   WhatsApp
                 </a>
