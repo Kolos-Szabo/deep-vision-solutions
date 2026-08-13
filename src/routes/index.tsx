@@ -281,8 +281,15 @@ function Nav() {
                   className="py-3 text-foreground/90 hover:text-teal border-b border-white/5">
               Blog
             </Link>
-            <a href={PHONE_HREF} className="mt-3 inline-flex items-center gap-2 text-teal">
+            <a href={PHONE_HREF} className="mt-4 inline-flex items-center gap-2 text-teal font-semibold">
               <Phone className="h-4 w-4" /> {PHONE}
+            </a>
+            <a
+              href={OFFER_MAILTO}
+              onClick={() => setOpen(false)}
+              className="mt-4 inline-flex items-center justify-center gap-2 rounded-md bg-teal px-4 py-3 text-sm font-semibold text-primary-foreground hover:bg-teal-glow"
+            >
+              Solicitați ofertă <ArrowRight className="h-4 w-4" />
             </a>
           </div>
         </div>
@@ -296,7 +303,9 @@ function Hero() {
     <section id="top" className="relative isolate min-h-[100svh] overflow-hidden pt-28 pb-20">
       <div className="absolute inset-0 -z-10">
         <img src={heroDiver} alt="Scafandru industrial HEIDI în intervenție subacvatică"
+             fetchPriority="high" decoding="async"
              className="h-full w-full object-cover" width={1920} height={1280} />
+
         <div className="absolute inset-0 bg-gradient-to-r from-deep via-deep/85 to-deep/20" />
         <div className="absolute inset-0 bg-gradient-to-t from-deep via-transparent to-deep/40" />
       </div>
