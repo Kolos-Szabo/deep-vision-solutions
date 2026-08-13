@@ -248,11 +248,14 @@ function Nav() {
             Solicitați ofertă <ArrowRight className="h-4 w-4" />
           </a>
           <button
+            type="button"
             className="lg:hidden p-2 text-foreground"
             onClick={() => setOpen((v) => !v)}
-            aria-label="Meniu"
+            aria-label={open ? "Închideți meniul" : "Deschideți meniul"}
+            aria-expanded={open}
+            aria-controls="meniu-mobil"
           >
-            <div className="flex flex-col gap-1.5">
+            <div className="flex flex-col gap-1.5" aria-hidden>
               <span className="h-0.5 w-5 bg-current" />
               <span className="h-0.5 w-5 bg-current" />
               <span className="h-0.5 w-5 bg-current" />
@@ -261,7 +264,8 @@ function Nav() {
         </div>
       </div>
       {open && (
-        <div className="lg:hidden border-t border-white/5 bg-deep/95 backdrop-blur-xl">
+        <div id="meniu-mobil" className="lg:hidden border-t border-white/5 bg-deep/95 backdrop-blur-xl">
+
           <div className="container-x flex flex-col py-4">
             {links.map(([l, h]) => (
               <a key={h} href={h} onClick={() => setOpen(false)}
