@@ -188,17 +188,16 @@ function BlogPost() {
               Solicitați o evaluare tehnică gratuită
             </h3>
             <p className="mt-3 text-foreground/70">
-              Echipa HEIDI oferă deviz transparent pentru lucrări subacvatice în maximum 24–48 de ore.
-              Acoperire națională, intervenții 24/7.
+              Echipa HEIDI vă transmite o evaluare tehnică și un deviz transparent în maximum 24 de ore.
+              Lucrăm în toată România, inclusiv pentru intervenții urgente.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Link
-                to="/"
-                hash="contact"
+              <a
+                href={OFFER_MAILTO}
                 className="inline-flex items-center gap-2 rounded-md bg-teal px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-teal-glow"
               >
                 Solicitați ofertă <ArrowRight className="h-4 w-4" />
-              </Link>
+              </a>
               <a
                 href={PHONE_HREF}
                 className="inline-flex items-center gap-2 rounded-md border border-white/15 px-5 py-2.5 text-sm font-semibold text-foreground hover:border-teal hover:text-teal"
