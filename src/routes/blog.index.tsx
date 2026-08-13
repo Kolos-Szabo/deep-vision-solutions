@@ -131,6 +131,9 @@ function BlogIndex() {
           </Link>
         </div>
       </section>
-    </main>
+      </main>
+      <SiteFooter />
+      <WhatsAppWidget />
+    </div>
   );
 }
