@@ -78,9 +78,9 @@ function ServicesHub() {
             Servicii subacvatice <span className="text-gradient-teal">industriale</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-foreground/75 leading-relaxed">
-            Ecosistem complet de scufundări utilitare — de la inspecții și expertize până la sudură hiperbarică,
-            betonări subacvatice, mentenanță baraje și lucrări cu ROV. Fiecare serviciu are pagina lui dedicată,
-            cu detalii tehnice, aplicații și întrebări frecvente.
+            Gamă completă de scufundări utilitare — de la inspecții și expertize tehnice până la sudură
+            subacvatică, betonări sub apă, mentenanța barajelor și lucrări cu ROV. Fiecare serviciu are
+            o pagină dedicată, cu detalii tehnice, aplicații și întrebări frecvente.
           </p>
 
           <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -115,13 +115,15 @@ function ServicesHub() {
             <p className="mt-4 max-w-2xl mx-auto text-foreground/75">
               Fiecare proiect subacvatic este unic. Descrieți-ne obiectivul și primiți o evaluare tehnică cu deviz în 24 de ore.
             </p>
-            <a href="/#contact"
+            <a href={OFFER_MAILTO}
                className="mt-8 inline-flex items-center gap-2 rounded-md bg-teal px-6 py-3.5 font-semibold text-primary-foreground hover:bg-teal-glow">
               Solicitați ofertă <ArrowRight className="h-4 w-4" />
             </a>
           </div>
         </div>
       </main>
+      <SiteFooter />
+      <WhatsAppWidget />
     </div>
   );
 }
