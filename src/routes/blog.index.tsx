@@ -59,8 +59,15 @@ export const Route = createFileRoute("/blog/")({
 
 function BlogIndex() {
   return (
-    <main className="bg-deep min-h-screen">
+    <div className="min-h-screen bg-deep text-foreground">
+      <SiteHeader active="blog" />
+      <main>
       <section className="relative pt-32 pb-16 border-b border-white/5">
+        <nav aria-label="Breadcrumb" className="container-x text-xs uppercase tracking-widest text-foreground/50">
+          <Link to="/" className="hover:text-teal">Acasă</Link>
+          <span className="mx-2">/</span>
+          <span className="text-foreground/80">Blog</span>
+        </nav>
         <div className="absolute inset-0 -z-10 opacity-30 bg-[radial-gradient(circle_at_30%_20%,rgba(20,184,166,0.18),transparent_60%)]" />
         <div className="container-x">
           <div className="text-xs uppercase tracking-[0.3em] text-teal/80">Blog tehnic</div>
