@@ -4,7 +4,7 @@ import { getService, type ServicePage } from "@/lib/services";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { WhatsAppWidget } from "@/components/whatsapp-widget";
-import { EMAIL, OFFER_MAILTO, PHONE, PHONE_HREF, WHATSAPP_URL, abs } from "@/lib/site";
+import { EMAIL, OFFER_MAILTO, PHONE, PHONE_HREF, WHATSAPP_HREF, abs } from "@/lib/site";
 
 export const Route = createFileRoute("/servicii/$slug")({
   loader: ({ params }) => {
