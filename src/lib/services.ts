@@ -159,7 +159,7 @@ export const SERVICES: ServicePage[] = [
       {
         heading: "Categorii de lucrări pe care le acoperim",
         paragraphs: [
-          "Lucrările la baraje și noduri hidrotehnice combină de regulă mai multe meserii subacvatice. Programăm etapele astfel încât beneficiarul să opereze cu întreruperi minime și cu documentație care satisface cerințele ISCH, ANAR și ale beneficiarilor privați.",
+          "Lucrările la baraje și noduri hidrotehnice combină de regulă mai multe meserii subacvatice. Programăm etapele astfel încât beneficiarul să opereze cu întreruperi minime și cu documentație care satisface cerințele Inspectoratului de Stat în Construcții (ISC), ale ANAR și ale beneficiarilor privați.",
         ],
         bullets: [
           "Lansare, ghidare și recuperare batardouri",
@@ -200,7 +200,7 @@ export const SERVICES: ServicePage[] = [
       "betonari subacvatice, turnare beton sub apa, cofraje subacvatice, consolidare pilon pod, ancoraje sub apa, praguri hidrotehnice, apararea malurilor",
     eyebrow: "Beton armat sub apă",
     intro:
-      "Turnăm beton sub apă cu metoda tremie și pungi de beton special, executăm cofraje subacvatice etanșe și consolidăm fundații existente prin ancorare cu răsucire sau bulon chimic subacvatic.",
+      "Turnăm beton sub apă cu metoda tremie și pungi de beton special, executăm cofraje subacvatice etanșe și consolidăm fundații existente prin ancore mecanice cu expansiune sau ancore chimice montate sub apă.",
     cover: projIndustrial,
     coverAlt: "Cofraj și cameră hidrotehnică pregătite pentru betonare subacvatică",
     sections: [
@@ -419,7 +419,7 @@ export const SERVICES: ServicePage[] = [
       {
         heading: "Avantaje pentru beneficiar",
         paragraphs: [
-          "Un contract multianual reduce costul mediu al inspecțiilor, elimină urgențele costisitoare și oferă bază documentară pentru auditul ISCH sau intern. Beneficiarul primește un plan anual clar, cu date fixe și estimare de buget.",
+          "Un contract multianual reduce costul mediu al inspecțiilor, elimină urgențele costisitoare și oferă bază documentară pentru auditul ISC sau pentru auditul intern. Beneficiarul primește un plan anual clar, cu date fixe și estimare de buget.",
         ],
       },
     ],
@@ -432,7 +432,7 @@ export const SERVICES: ServicePage[] = [
     faqs: [
       {
         q: "Care este durata standard a unui contract?",
-        a: "Recomandăm contracte pe 3 ani cu revizuire anuală. Pentru obiective critice (baraje mari, rezervoare mari) construim planuri pe 5 ani, aliniate cu ciclurile ISCH.",
+        a: "Recomandăm contracte pe 3 ani cu revizuire anuală. Pentru obiective critice (baraje mari, rezervoare mari) construim planuri pe 5 ani, aliniate cu ciclurile de verificare impuse de ISC.",
       },
     ],
     related: ["inspectii-subacvatice", "reparatii-si-constructii-baraje", "curatare-gratare-priza-apa"],

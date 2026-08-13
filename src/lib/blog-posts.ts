@@ -217,7 +217,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "Cât costă sudura subacvatică?",
         paragraphs: [
-          "Prețul unei lucrări de sudură sub apă depinde de adâncime, accesibilitate, lungimea cordonului, clasa de calitate cerută și de timpul de imobilizare a instalației beneficiare. Pentru o estimare corectă, HEIDI execută o inspecție preliminară (vizuală sau cu ROV), urmată de deviz tehnic transparent, livrat în 24–48 de ore. Solicitați o evaluare gratuită pentru lucrarea dumneavoastră.",
+          "Prețul unei lucrări de sudură sub apă depinde de adâncime, accesibilitate, lungimea cordonului, clasa de calitate cerută și de timpul de imobilizare a instalației beneficiare. Pentru o estimare corectă, HEIDI execută o inspecție preliminară (vizuală sau cu ROV), urmată de deviz tehnic transparent, livrat în 24 de ore. Solicitați o evaluare gratuită pentru lucrarea dumneavoastră.",
         ],
       },
     ],
@@ -256,7 +256,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "Inspecții de baraje și hidrocentrale",
         paragraphs: [
-          "Pe baraje hidroenergetice executăm inspecții vizuale (CVI), măsurători de grosime, verificări ale rosturilor și etanșărilor, ale grătarelor de priză, ale stavilelor și ale galeriilor de aducțiune. Raportăm conform cerințelor ISCH și ale ANAR, cu localizare GPS, marcaje pe planșe și recomandări de mentenanță preventivă.",
+          "Pe baraje hidroenergetice executăm inspecții vizuale (CVI), măsurători de grosime, verificări ale rosturilor și etanșărilor, ale grătarelor de priză, ale stavilelor și ale galeriilor de aducțiune. Raportăm conform cerințelor Inspectoratului de Stat în Construcții (ISC) și ale ANAR, cu localizare GPS, marcaje pe planșe și recomandări de mentenanță preventivă.",
         ],
       },
       {
