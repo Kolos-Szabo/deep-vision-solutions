@@ -29,9 +29,11 @@ export const Route = createFileRoute("/blog/")({
           "Ghiduri și studii de caz despre sudură subacvatică, inspecții cu ROV și mentenanța infrastructurii hidrotehnice.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/blog" },
+      { property: "og:locale", content: "ro_RO" },
+      { property: "og:url", content: abs("/blog") },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/blog" }],
+    links: [{ rel: "canonical", href: abs("/blog") }],
     scripts: [
       {
         type: "application/ld+json",
