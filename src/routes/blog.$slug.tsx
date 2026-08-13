@@ -80,8 +80,8 @@ export const Route = createFileRoute("/blog/$slug")({
   notFoundComponent: () => (
     <main className="bg-deep min-h-screen flex items-center justify-center">
       <div className="text-center container-x py-32">
-        <h1 className="text-3xl font-display font-semibold text-foreground">Articol negăsit</h1>
-        <p className="mt-4 text-foreground/65">Articolul pe care îl cauți nu mai există sau a fost mutat.</p>
+        <h1 className="text-3xl font-display font-semibold text-foreground">Articol indisponibil</h1>
+        <p className="mt-4 text-foreground/65">Articolul pe care îl căutați nu mai există sau a fost mutat.</p>
         <Link to="/blog" className="mt-6 inline-flex items-center gap-2 text-teal hover:text-teal-glow">
           ← Înapoi la blog
         </Link>
@@ -93,7 +93,7 @@ export const Route = createFileRoute("/blog/$slug")({
       <div className="text-center container-x py-32">
         <h1 className="text-2xl font-display font-semibold text-foreground">A apărut o eroare</h1>
         <button onClick={reset} className="mt-6 inline-flex items-center gap-2 rounded-md bg-teal px-4 py-2 text-sm font-semibold text-primary-foreground">
-          Reîncearcă
+          Reîncercați
         </button>
       </div>
     </main>
@@ -105,12 +105,20 @@ function BlogPost() {
   const other = BLOG_POSTS.find((p) => p.slug !== post.slug);
 
   return (
-    <main className="bg-deep min-h-screen">
+    <div className="min-h-screen bg-deep text-foreground">
+      <SiteHeader active="blog" />
+      <main>
       <article className="pt-28 pb-20">
         <div className="container-x max-w-3xl">
+          <nav aria-label="Breadcrumb" className="text-xs uppercase tracking-widest text-foreground/50 mb-6">
+            <Link to="/" className="hover:text-teal">Acasă</Link>
+            <span className="mx-2">/</span>
+            <Link to="/blog" className="hover:text-teal">Blog</Link>
+          </nav>
           <Link to="/blog" className="inline-flex items-center gap-2 text-sm text-foreground/60 hover:text-teal">
             <ArrowLeft className="h-4 w-4" /> Înapoi la blog
           </Link>
+
 
           <div className="mt-8 flex flex-wrap items-center gap-4 text-xs text-foreground/55">
             <span className="inline-flex items-center gap-1.5 text-teal"><Tag className="h-3.5 w-3.5" />{post.category}</span>
