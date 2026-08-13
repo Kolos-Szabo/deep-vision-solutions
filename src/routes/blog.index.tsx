@@ -1,6 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Calendar, Clock, Tag } from "lucide-react";
 import { BLOG_POSTS } from "@/lib/blog-posts";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
+import { WhatsAppWidget } from "@/components/whatsapp-widget";
+import { abs } from "@/lib/site";
+
 
 export const Route = createFileRoute("/blog/")({
   head: () => ({
