@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import logoWhiteUrl from "@/assets/logo-heidi-white-raw.png";
-import anpcAsset from "@/assets/ANPC.png";
+
 import {
   Search, Droplets, Wrench, Zap, Mountain, Anchor, PackageSearch, Camera, FileText,
   Waves, Landmark, Factory, Phone, Mail, MapPin, ShieldCheck, Clock, Users, Award,
@@ -23,11 +23,9 @@ import equipmentAsset from "@/assets/echipament-scafandru-profesional-kirby-morg
 
 
 
-const PHONE = "0040 755 011 497";
-const PHONE_HREF = "tel:0040755011497";
-const EMAIL = "infomylake@gmail.com";
-const WHATSAPP_NUMBER = "40755011497";
-const OFFER_MAILTO = `mailto:${EMAIL}?subject=${encodeURIComponent("Solicitare ofertă")}`;
+import { SiteFooter } from "@/components/site-footer";
+import { WhatsAppWidget } from "@/components/whatsapp-widget";
+import { EMAIL, OFFER_MAILTO, PHONE, PHONE_HREF, SITE_URL, abs } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -42,30 +40,30 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Lucrări Subacvatice Profesionale · HEIDI Scafandri Industriali" },
       { property: "og:description", content: "Inspecții ROV, sudură hiperbarică, betonări sub apă, mentenanță baraje și rezervoare. Echipă de scafandri certificați, acoperire națională, intervenții 24/7." },
       { property: "og:locale", content: "ro_RO" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: abs("/") },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: heroDiver },
-      { property: "og:image:alt", content: "Scafandru industrial HEIDI în lucrare subacvatică" },
+      { property: "og:image", content: abs(heroDiver) },
+      { property: "og:image:alt", content: "Scafandru industrial HEIDI în intervenție subacvatică" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "HEIDI — Lucrări Subacvatice Profesionale România" },
-      { name: "twitter:description", content: "Scafandri profesioniști, sudură hiperbarică, ROV, betonări subacvatice. Intervenții 24/7." },
-      { name: "twitter:image", content: heroDiver },
+      { name: "twitter:description", content: "Scafandri profesioniști, sudură subacvatică, inspecții cu ROV, betonări sub apă. Intervenții în toată România." },
+      { name: "twitter:image", content: abs(heroDiver) },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: abs("/") }],
     scripts: [
       {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ProfessionalService",
-          "@id": "https://lucrarisubacvatice.ro/#org",
+          "@id": `${SITE_URL}/#org`,
           name: "HEIDI — Lucrări Subacvatice",
           alternateName: "HEIDI Scafandri Industriali",
-          url: "https://lucrarisubacvatice.ro",
+          url: SITE_URL,
           telephone: PHONE,
           email: EMAIL,
           priceRange: "$$",
-          image: "https://lucrarisubacvatice.ro" + heroDiver,
+          image: abs(heroDiver),
           description: "Companie românească de scafandri profesioniști specializată în lucrări subacvatice industriale: inspecții vizuale și instrumentale, sudură hiperbarică, betonări sub apă, mentenanță baraje, curățare rezervoare, lucrări cu ROV și expertize tehnice.",
           areaServed: { "@type": "Country", name: "Romania" },
           foundingDate: "1993",
@@ -121,13 +119,13 @@ const services: { icon: LucideIcon; title: string; slug?: string; desc: string }
   { icon: Droplets,      title: "Mentenanță rezervoare de apă", slug: "mentenanta-rezervoare-apa", desc: "Curățare și decolmatare rezervoare de apă potabilă și industrială fără scoaterea din serviciu, conform normelor sanitare în vigoare." },
   { icon: Bot,           title: "Lucrări cu ROV (robot subacvatic)", slug: "lucrari-cu-rov", desc: "Inspecții ROV la adâncimi mari, în spații înguste sau medii periculoase — sonar multibeam, cameră HD, manipulator pentru sarcini ușoare." },
   { icon: Cable,         title: "Pozare cabluri și conducte subacvatice", desc: "Amplasare, traversare și protejare a cablurilor, conductelor și canalelor în ape staționare și curgătoare, inclusiv cuplări și flanșări sub apă." },
-  { icon: ShieldAlert,   title: "Intervenții în medii contaminate", slug: "interventii-medii-contaminate", desc: "Scufundări în medii poluate sau cu risc respirator, cu echipament cu cordon ombilical, recirculare și protocoale strict de decontaminare." },
+  { icon: ShieldAlert,   title: "Intervenții în medii contaminate", slug: "interventii-medii-contaminate", desc: "Scufundări în ape poluate sau cu risc respirator, cu echipament alimentat de la suprafață (cordon ombilical) și protocoale stricte de decontaminare." },
   { icon: Hammer,        title: "Etanșări și obturări subacvatice", desc: "Obturare conducte cu baloane pneumatice, dopuri metalice și etanșări de scurgeri în rezervoare — opriri rapide pentru intervenții uscate." },
   { icon: Wrench,        title: "Reparații subacvatice generale", desc: "Intervenții pe beton, oțel, garnituri și elemente structurale aflate sub apă — refacere ghidaje, batardouri și echipamente hidromecanice." },
   { icon: Anchor,        title: "Montaj structuri subacvatice", desc: "Asamblare, ancorare și poziționare a structurilor submerse — ancoraje, geamanduri, pontoane, prize de apă, cu toleranțe milimetrice." },
   { icon: FlaskConical,  title: "Prospectări hidrologice & batimetrice", desc: "Investigații hidrologice, hidrogeologice și geodezice, măsurători batimetrice și analiză calitativă a apei pentru proiecte de infrastructură." },
   { icon: Camera,        title: "Filmări și fotografii subacvatice", desc: "Documentare 4K și fotografie profesională pentru rapoarte tehnice, expertize judiciare și comunicare corporate." },
-  { icon: FileText,      title: "Expertize tehnice subacvatice", slug: "expertize-tehnice-subacvatice", desc: "Expertize independente pentru beneficiari, asiguratori și instanțe, întocmite de specialiști atestați MTCT/ISPCSAR." },
+  { icon: FileText,      title: "Expertize tehnice subacvatice", slug: "expertize-tehnice-subacvatice", desc: "Expertize independente pentru beneficiari, companii de asigurări și instanțe, întocmite de specialiști atestați, pe baza inspecției directe și a documentației foto-video." },
   { icon: Waves,         title: "Lucrări în lacuri de acumulare", desc: "Intervenții pe lacuri naturale și de acumulare: prize de apă, ancoraje, instalații hidrotehnice — inclusiv la altitudini alpine." },
   { icon: Landmark,      title: "Lucrări în râuri și curent rapid", desc: "Operațiuni în condiții de curent: piloți de pod, praguri, conducte de traversare râu, înlăturare obstacole pentru navigație." },
   { icon: Factory,       title: "Lucrări în instalații industriale", desc: "Intervenții în bazine tehnologice, decantoare, stații de epurare, circuite de răcire și terminale portuare de cereale." },
@@ -250,11 +248,14 @@ function Nav() {
             Solicitați ofertă <ArrowRight className="h-4 w-4" />
           </a>
           <button
+            type="button"
             className="lg:hidden p-2 text-foreground"
             onClick={() => setOpen((v) => !v)}
-            aria-label="Meniu"
+            aria-label={open ? "Închideți meniul" : "Deschideți meniul"}
+            aria-expanded={open}
+            aria-controls="meniu-mobil"
           >
-            <div className="flex flex-col gap-1.5">
+            <div className="flex flex-col gap-1.5" aria-hidden>
               <span className="h-0.5 w-5 bg-current" />
               <span className="h-0.5 w-5 bg-current" />
               <span className="h-0.5 w-5 bg-current" />
@@ -263,7 +264,8 @@ function Nav() {
         </div>
       </div>
       {open && (
-        <div className="lg:hidden border-t border-white/5 bg-deep/95 backdrop-blur-xl">
+        <div id="meniu-mobil" className="lg:hidden border-t border-white/5 bg-deep/95 backdrop-blur-xl">
+
           <div className="container-x flex flex-col py-4">
             {links.map(([l, h]) => (
               <a key={h} href={h} onClick={() => setOpen(false)}
@@ -279,8 +281,15 @@ function Nav() {
                   className="py-3 text-foreground/90 hover:text-teal border-b border-white/5">
               Blog
             </Link>
-            <a href={PHONE_HREF} className="mt-3 inline-flex items-center gap-2 text-teal">
+            <a href={PHONE_HREF} className="mt-4 inline-flex items-center gap-2 text-teal font-semibold">
               <Phone className="h-4 w-4" /> {PHONE}
+            </a>
+            <a
+              href={OFFER_MAILTO}
+              onClick={() => setOpen(false)}
+              className="mt-4 inline-flex items-center justify-center gap-2 rounded-md bg-teal px-4 py-3 text-sm font-semibold text-primary-foreground hover:bg-teal-glow"
+            >
+              Solicitați ofertă <ArrowRight className="h-4 w-4" />
             </a>
           </div>
         </div>
@@ -294,14 +303,16 @@ function Hero() {
     <section id="top" className="relative isolate min-h-[100svh] overflow-hidden pt-28 pb-20">
       <div className="absolute inset-0 -z-10">
         <img src={heroDiver} alt="Scafandru industrial HEIDI în intervenție subacvatică"
+             fetchPriority="high" decoding="async"
              className="h-full w-full object-cover" width={1920} height={1280} />
+
         <div className="absolute inset-0 bg-gradient-to-r from-deep via-deep/85 to-deep/20" />
         <div className="absolute inset-0 bg-gradient-to-t from-deep via-transparent to-deep/40" />
       </div>
       <Bubbles />
       <div className="container-x relative grid lg:grid-cols-[1.2fr_1fr] gap-12 items-center">
         <div className="animate-fade-up">
-          <span className="eyebrow">HEIDI · since 1993</span>
+          <span className="eyebrow">HEIDI · din 1993</span>
           <h1 className="mt-6 font-display text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.02] tracking-tight">
             Lucrări <span className="text-gradient-teal">Subacvatice</span>
             <br/>Profesionale
@@ -344,7 +355,7 @@ function Hero() {
                 <div className="mt-1 text-foreground/60 text-sm">la nivel național</div>
               </div>
               <div className="grid grid-cols-2 gap-3 text-xs">
-                {["EN ISO 9001", "OHSAS 18001", "Scafandri atestați", "Echipamente certificate"].map((t) => (
+                {["Scafandri atestați", "Echipamente verificate periodic", "Scafandru de rezervă la fiecare imersiune", "Documentație foto-video la final"].map((t) => (
                   <div key={t} className="flex items-center gap-2 text-foreground/70">
                     <Check className="h-3.5 w-3.5 text-teal" /> {t}
                   </div>
@@ -400,7 +411,7 @@ function Services() {
                 {body}
               </Link>
             ) : (
-              <Link key={title} to="/servicii" aria-label={`Detalii ${title}`} className={cls}>
+              <Link key={title} to="/servicii" aria-label={`${title} — vezi toate serviciile subacvatice`} className={cls}>
                 {body}
               </Link>
             );
@@ -594,8 +605,9 @@ function SeoSection() {
           <p>
             Lucrăm pentru <strong className="text-foreground">ABA (Administrația Bazinală de Apă)</strong>, hidrocentrale, primării,
             companii de apă-canal, constructori de infrastructură, terminale portuare și operatori industriali.
-            Răspundem la întrebări frecvente precum „cât costă o lucrare subacvatică", „firmă de scafandri lângă mine",
-            „sudură subacvatică preț" sau „inspecție baraj cu ROV" cu evaluare tehnică și deviz în 24 de ore.
+            Răspundem punctual la întrebările cele mai frecvente — „cât costă o lucrare subacvatică”,
+            „ce firmă de scafandri lucrează în zona mea”, „cât costă sudura subacvatică” sau
+            „cum se face inspecția unui baraj cu ROV” — cu evaluare tehnică și deviz în 24 de ore.
           </p>
         </div>
       </div>
@@ -610,7 +622,7 @@ const faqs = [
   },
   {
     q: "Până la ce adâncime executați lucrări subacvatice?",
-    a: "Echipele HEIDI sunt dotate pentru intervenții până la 130 m adâncime, cu echipament de scufundare cu cordon ombilical (surface-supplied diving), cască Kirby Morgan și sisteme de comunicații în timp real cu suprafața.",
+    a: "Lucrările curente se execută cu echipament de scufundare alimentat de la suprafață (surface-supplied), cască Kirby Morgan și comunicație permanentă cu suprafața, în domeniul uzual al scufundărilor industriale cu aer, până la aproximativ 50 m. Pentru adâncimi mai mari sau pentru zone cu risc ridicat folosim ROV sau planificăm lucrarea cu procedură dedicată, stabilită împreună cu beneficiarul.",
   },
   {
     q: "Faceți sudură subacvatică certificată?",
@@ -728,89 +740,11 @@ function Contact() {
             Solicitați ofertă <ArrowRight className="h-4 w-4" />
           </a>
           <p className="mt-4 text-xs text-foreground/50">
-            Clickul deschide clientul de e-mail cu subiectul precompletat „Solicitare ofertă".
+            Butonul deschide aplicația dumneavoastră de e-mail, cu subiectul completat automat: „Solicitare ofertă”.
           </p>
         </div>
       </div>
     </section>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="border-t border-white/5 bg-deep">
-      <div className="container-x py-16 grid md:grid-cols-[1.4fr_1fr_1fr] gap-10">
-        <div>
-          <img src={logoWhiteUrl} alt="HEIDI Lucrări Subacvatice" className="h-10 w-auto" />
-          <p className="mt-5 text-sm text-foreground/65 max-w-sm leading-relaxed">
-            HEIDI execută lucrări subacvatice industriale în România din 1993:
-            inspecții, reparații, sudură, expertize și intervenții pe infrastructură critică.
-          </p>
-        </div>
-        <div>
-          <div className="text-xs uppercase tracking-widest text-foreground/50">Navigare</div>
-          <ul className="mt-5 space-y-3 text-sm">
-            <li><a href="#servicii" className="hover:text-teal text-foreground/80">Servicii</a></li>
-            <li><Link to="/servicii" className="hover:text-teal text-foreground/80">Toate serviciile</Link></li>
-            <li><a href="#de-ce-noi" className="hover:text-teal text-foreground/80">De ce HEIDI</a></li>
-            <li><a href="#proiecte" className="hover:text-teal text-foreground/80">Proiecte</a></li>
-            <li><a href="#proces" className="hover:text-teal text-foreground/80">Proces</a></li>
-            <li><Link to="/blog" className="hover:text-teal text-foreground/80">Blog</Link></li>
-            <li><a href="#contact" className="hover:text-teal text-foreground/80">Contact</a></li>
-          </ul>
-        </div>
-        <div>
-          <div className="text-xs uppercase tracking-widest text-foreground/50">Contact</div>
-          <ul className="mt-5 space-y-3 text-sm">
-            <li><a href={PHONE_HREF} className="hover:text-teal text-foreground/80 inline-flex items-center gap-2"><Phone className="h-4 w-4" />{PHONE}</a></li>
-            <li><a href={`mailto:${EMAIL}`} className="hover:text-teal text-foreground/80 inline-flex items-center gap-2"><Mail className="h-4 w-4" />{EMAIL}</a></li>
-            <li className="text-foreground/70 inline-flex items-center gap-2"><MapPin className="h-4 w-4" />Acoperire națională</li>
-          </ul>
-        </div>
-      </div>
-      <div className="border-t border-white/5">
-        <div className="container-x py-6 flex flex-col items-center gap-4">
-          <a
-            href="https://anpc.ro/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="ANPC - Autoritatea Națională pentru Protecția Consumatorilor"
-          >
-            <img
-              src={anpcAsset}
-              alt="ANPC - Autoritatea Națională pentru Protecția Consumatorilor"
-              width={800}
-              height={194}
-              loading="lazy"
-              className="h-14 sm:h-16 w-auto rounded-lg border border-white/10 bg-white"
-            />
-          </a>
-          <div className="w-full flex flex-wrap justify-between gap-4 text-xs text-foreground/50">
-            <span>© {new Date().getFullYear()} HEIDI · LucrariSubacvatice.ro · Toate drepturile rezervate.</span>
-            <span>Lucrări subacvatice profesionale · România · since 1993</span>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
-}
-
-function WhatsAppWidget() {
-  return (
-    <a
-      href={`https://wa.me/${WHATSAPP_NUMBER}?text=Bun%C4%83%2C%20doresc%20informa%C8%9Bii%20despre%20lucr%C4%83rile%20subacvatice%20HEIDI.`}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Scrie-ne pe WhatsApp"
-      className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full whatsapp-btn shadow-lg transition-transform hover:scale-105 hover:-translate-y-1"
-    >
-      <span className="flex h-14 w-14 items-center justify-center">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-7 w-7">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-9.847A9.928 9.928 0 0 0 12.002 2C6.486 2 2 6.486 2 12.002c0 1.76.456 3.484 1.321 5.012L2 22l5.124-1.342A9.936 9.936 0 0 0 12 22c5.515 0 10-4.486 10-10.002 0-2.67-1.04-5.18-2.928-7.07A9.952 9.952 0 0 0 12.051 4.535Z"/>
-        </svg>
-      </span>
-      <span className="hidden sm:inline pr-5 font-semibold text-sm">WhatsApp</span>
-    </a>
   );
 }
 
@@ -830,7 +764,7 @@ function Index() {
         <Faq />
         <Contact />
       </main>
-      <Footer />
+      <SiteFooter home />
       <WhatsAppWidget />
     </div>
   );

@@ -1,9 +1,10 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, Calendar, Clock, Phone, Tag } from "lucide-react";
 import { BLOG_POSTS, getPost } from "@/lib/blog-posts";
-
-const PHONE = "0040 755 011 497";
-const PHONE_HREF = "tel:0040755011497";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
+import { WhatsAppWidget } from "@/components/whatsapp-widget";
+import { OFFER_MAILTO, PHONE, PHONE_HREF, abs } from "@/lib/site";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
@@ -13,8 +14,8 @@ export const Route = createFileRoute("/blog/$slug")({
   },
   head: ({ loaderData }) => {
     const post = loaderData?.post;
-    if (!post) return { meta: [{ title: "Articol negăsit | HEIDI" }] };
-    const url = `/blog/${post.slug}`;
+    if (!post) return { meta: [{ title: "Articol indisponibil | HEIDI" }, { name: "robots", content: "noindex" }] };
+    const url = abs(`/blog/${post.slug}`);
     return {
       meta: [
         { title: post.metaTitle },
@@ -28,12 +29,13 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:title", content: post.metaTitle },
         { property: "og:description", content: post.metaDescription },
         { property: "og:url", content: url },
-        { property: "og:image", content: post.cover },
+        { property: "og:locale", content: "ro_RO" },
+        { property: "og:image", content: abs(post.cover) },
         { property: "og:image:alt", content: post.coverAlt },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: post.metaTitle },
         { name: "twitter:description", content: post.metaDescription },
-        { name: "twitter:image", content: post.cover },
+        { name: "twitter:image", content: abs(post.cover) },
       ],
       links: [{ rel: "canonical", href: url }],
       scripts: [
@@ -48,15 +50,27 @@ export const Route = createFileRoute("/blog/$slug")({
             dateModified: post.dateISO,
             inLanguage: "ro-RO",
             keywords: post.keywords,
-            image: post.cover,
+            image: abs(post.cover),
             articleSection: post.category,
-            mainEntityOfPage: `https://lucrarisubacvatice.ro${url}`,
+            mainEntityOfPage: url,
             author: { "@type": "Organization", name: "HEIDI — Lucrări Subacvatice" },
             publisher: {
               "@type": "Organization",
               name: "HEIDI — Lucrări Subacvatice",
-              url: "https://lucrarisubacvatice.ro",
+              url: abs("/"),
             },
+          }),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Acasă", item: abs("/") },
+              { "@type": "ListItem", position: 2, name: "Blog", item: abs("/blog") },
+              { "@type": "ListItem", position: 3, name: post.title, item: url },
+            ],
           }),
         },
       ],
@@ -66,8 +80,8 @@ export const Route = createFileRoute("/blog/$slug")({
   notFoundComponent: () => (
     <main className="bg-deep min-h-screen flex items-center justify-center">
       <div className="text-center container-x py-32">
-        <h1 className="text-3xl font-display font-semibold text-foreground">Articol negăsit</h1>
-        <p className="mt-4 text-foreground/65">Articolul pe care îl cauți nu mai există sau a fost mutat.</p>
+        <h1 className="text-3xl font-display font-semibold text-foreground">Articol indisponibil</h1>
+        <p className="mt-4 text-foreground/65">Articolul pe care îl căutați nu mai există sau a fost mutat.</p>
         <Link to="/blog" className="mt-6 inline-flex items-center gap-2 text-teal hover:text-teal-glow">
           ← Înapoi la blog
         </Link>
@@ -79,7 +93,7 @@ export const Route = createFileRoute("/blog/$slug")({
       <div className="text-center container-x py-32">
         <h1 className="text-2xl font-display font-semibold text-foreground">A apărut o eroare</h1>
         <button onClick={reset} className="mt-6 inline-flex items-center gap-2 rounded-md bg-teal px-4 py-2 text-sm font-semibold text-primary-foreground">
-          Reîncearcă
+          Reîncercați
         </button>
       </div>
     </main>
@@ -91,12 +105,20 @@ function BlogPost() {
   const other = BLOG_POSTS.find((p) => p.slug !== post.slug);
 
   return (
-    <main className="bg-deep min-h-screen">
+    <div className="min-h-screen bg-deep text-foreground">
+      <SiteHeader active="blog" />
+      <main>
       <article className="pt-28 pb-20">
         <div className="container-x max-w-3xl">
+          <nav aria-label="Breadcrumb" className="text-xs uppercase tracking-widest text-foreground/50 mb-6">
+            <Link to="/" className="hover:text-teal">Acasă</Link>
+            <span className="mx-2">/</span>
+            <Link to="/blog" className="hover:text-teal">Blog</Link>
+          </nav>
           <Link to="/blog" className="inline-flex items-center gap-2 text-sm text-foreground/60 hover:text-teal">
             <ArrowLeft className="h-4 w-4" /> Înapoi la blog
           </Link>
+
 
           <div className="mt-8 flex flex-wrap items-center gap-4 text-xs text-foreground/55">
             <span className="inline-flex items-center gap-1.5 text-teal"><Tag className="h-3.5 w-3.5" />{post.category}</span>
@@ -166,17 +188,16 @@ function BlogPost() {
               Solicitați o evaluare tehnică gratuită
             </h3>
             <p className="mt-3 text-foreground/70">
-              Echipa HEIDI oferă deviz transparent pentru lucrări subacvatice în maximum 24–48 de ore.
-              Acoperire națională, intervenții 24/7.
+              Echipa HEIDI vă transmite o evaluare tehnică și un deviz transparent în maximum 24 de ore.
+              Lucrăm în toată România, inclusiv pentru intervenții urgente.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Link
-                to="/"
-                hash="contact"
+              <a
+                href={OFFER_MAILTO}
                 className="inline-flex items-center gap-2 rounded-md bg-teal px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-teal-glow"
               >
                 Solicitați ofertă <ArrowRight className="h-4 w-4" />
-              </Link>
+              </a>
               <a
                 href={PHONE_HREF}
                 className="inline-flex items-center gap-2 rounded-md border border-white/15 px-5 py-2.5 text-sm font-semibold text-foreground hover:border-teal hover:text-teal"
@@ -192,7 +213,7 @@ function BlogPost() {
         <section className="border-t border-white/5 py-16">
           <div className="container-x max-w-5xl">
             <div className="text-xs uppercase tracking-[0.3em] text-foreground/50 mb-6">
-              Continuă să citești
+              Continuați lectura
             </div>
             <Link
               to="/blog/$slug"
@@ -200,7 +221,7 @@ function BlogPost() {
               className="group block rounded-2xl overflow-hidden border border-white/5 hover:border-teal/40 transition-colors md:grid md:grid-cols-[1fr_1.2fr]"
             >
               <div className="aspect-[16/10] md:aspect-auto overflow-hidden">
-                <img src={other.cover} alt={other.coverAlt} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <img src={other.cover} alt={other.coverAlt} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
               <div className="p-7">
                 <div className="text-xs text-teal uppercase tracking-widest">{other.category}</div>
@@ -209,13 +230,16 @@ function BlogPost() {
                 </h3>
                 <p className="mt-3 text-sm text-foreground/65">{other.excerpt}</p>
                 <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-teal">
-                  Citește articolul <ArrowRight className="h-4 w-4" />
+                  Citiți articolul <ArrowRight className="h-4 w-4" />
                 </span>
               </div>
             </Link>
           </div>
         </section>
       )}
-    </main>
+      </main>
+      <SiteFooter />
+      <WhatsAppWidget />
+    </div>
   );
 }

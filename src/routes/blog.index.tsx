@@ -1,6 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Calendar, Clock, Tag } from "lucide-react";
 import { BLOG_POSTS } from "@/lib/blog-posts";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
+import { WhatsAppWidget } from "@/components/whatsapp-widget";
+import { abs } from "@/lib/site";
+
 
 export const Route = createFileRoute("/blog/")({
   head: () => ({
@@ -24,9 +29,11 @@ export const Route = createFileRoute("/blog/")({
           "Ghiduri și studii de caz despre sudură subacvatică, inspecții cu ROV și mentenanța infrastructurii hidrotehnice.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/blog" },
+      { property: "og:locale", content: "ro_RO" },
+      { property: "og:url", content: abs("/blog") },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/blog" }],
+    links: [{ rel: "canonical", href: abs("/blog") }],
     scripts: [
       {
         type: "application/ld+json",
@@ -34,13 +41,13 @@ export const Route = createFileRoute("/blog/")({
           "@context": "https://schema.org",
           "@type": "Blog",
           name: "Blog HEIDI — Lucrări Subacvatice",
-          url: "https://lucrarisubacvatice.ro/blog",
+          url: abs("/blog"),
           blogPost: BLOG_POSTS.map((p) => ({
             "@type": "BlogPosting",
             headline: p.title,
             description: p.metaDescription,
             datePublished: p.dateISO,
-            url: `https://lucrarisubacvatice.ro/blog/${p.slug}`,
+            url: abs(`/blog/${p.slug}`),
             keywords: p.keywords,
           })),
         }),
@@ -52,8 +59,15 @@ export const Route = createFileRoute("/blog/")({
 
 function BlogIndex() {
   return (
-    <main className="bg-deep min-h-screen">
+    <div className="min-h-screen bg-deep text-foreground">
+      <SiteHeader active="blog" />
+      <main>
       <section className="relative pt-32 pb-16 border-b border-white/5">
+        <nav aria-label="Breadcrumb" className="container-x text-xs uppercase tracking-widest text-foreground/50">
+          <Link to="/" className="hover:text-teal">Acasă</Link>
+          <span className="mx-2">/</span>
+          <span className="text-foreground/80">Blog</span>
+        </nav>
         <div className="absolute inset-0 -z-10 opacity-30 bg-[radial-gradient(circle_at_30%_20%,rgba(20,184,166,0.18),transparent_60%)]" />
         <div className="container-x">
           <div className="text-xs uppercase tracking-[0.3em] text-teal/80">Blog tehnic</div>
@@ -117,6 +131,9 @@ function BlogIndex() {
           </Link>
         </div>
       </section>
-    </main>
+      </main>
+      <SiteFooter />
+      <WhatsAppWidget />
+    </div>
   );
 }

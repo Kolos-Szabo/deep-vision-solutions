@@ -1,10 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ChevronRight, Phone } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
 import { SERVICES } from "@/lib/services";
-import logoWhiteUrl from "@/assets/logo-heidi-white-raw.png";
-
-const PHONE = "0040 755 011 497";
-const PHONE_HREF = "tel:0040755011497";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
+import { WhatsAppWidget } from "@/components/whatsapp-widget";
+import { OFFER_MAILTO, abs } from "@/lib/site";
 
 export const Route = createFileRoute("/servicii/")({
   head: () => ({
@@ -13,7 +13,7 @@ export const Route = createFileRoute("/servicii/")({
       {
         name: "description",
         content:
-          "Toate serviciile subacvatice HEIDI: inspecții, sudură hiperbarică, betonări, reparații baraje, curățare rezervoare și grătare, ROV, căutări și recuperări, expertize tehnice.",
+          "Toate serviciile subacvatice HEIDI: inspecții, sudură subacvatică, betonări sub apă, reparații la baraje, curățare rezervoare și grătare, lucrări cu ROV, căutări și recuperări, expertize tehnice.",
       },
       {
         name: "keywords",
@@ -22,11 +22,17 @@ export const Route = createFileRoute("/servicii/")({
       },
       { name: "robots", content: "index, follow, max-image-preview:large" },
       { property: "og:title", content: "Servicii subacvatice industriale · HEIDI" },
-      { property: "og:description", content: "Ecosistem complet de servicii subacvatice pentru operatori de infrastructură critică." },
+      {
+        property: "og:description",
+        content:
+          "Gamă completă de scufundări utilitare: inspecții, sudură subacvatică, betonări, mentenanța barajelor și lucrări cu ROV, pentru operatori de infrastructură din România.",
+      },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/servicii" },
+      { property: "og:locale", content: "ro_RO" },
+      { property: "og:url", content: abs("/servicii") },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/servicii" }],
+    links: [{ rel: "canonical", href: abs("/servicii") }],
     scripts: [
       {
         type: "application/ld+json",
@@ -34,8 +40,8 @@ export const Route = createFileRoute("/servicii/")({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Acasă", item: "/" },
-            { "@type": "ListItem", position: 2, name: "Servicii", item: "/servicii" },
+            { "@type": "ListItem", position: 1, name: "Acasă", item: abs("/") },
+            { "@type": "ListItem", position: 2, name: "Servicii", item: abs("/servicii") },
           ],
         }),
       },
@@ -47,7 +53,7 @@ export const Route = createFileRoute("/servicii/")({
           itemListElement: SERVICES.map((s, i) => ({
             "@type": "ListItem",
             position: i + 1,
-            url: `/servicii/${s.slug}`,
+            url: abs(`/servicii/${s.slug}`),
             name: s.h1,
           })),
         }),
@@ -60,22 +66,8 @@ export const Route = createFileRoute("/servicii/")({
 function ServicesHub() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="fixed inset-x-0 top-0 z-50 bg-deep/80 backdrop-blur-xl border-b border-white/5">
-        <div className="container-x flex h-20 items-center justify-between gap-4">
-          <Link to="/" className="flex items-center gap-2 shrink-0">
-            <img src={logoWhiteUrl} alt="HEIDI Lucrări Subacvatice" className="h-9 w-auto" />
-          </Link>
-          <nav className="hidden md:flex items-center gap-8 text-sm">
-            <Link to="/" className="text-foreground/80 hover:text-teal">Acasă</Link>
-            <Link to="/servicii" className="text-teal">Servicii</Link>
-            <Link to="/blog" className="text-foreground/80 hover:text-teal">Blog</Link>
-            <a href="/#contact" className="text-foreground/80 hover:text-teal">Contact</a>
-          </nav>
-          <a href={PHONE_HREF} className="inline-flex items-center gap-2 rounded-md bg-teal px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-teal-glow">
-            <Phone className="h-4 w-4" /> <span className="hidden sm:inline">{PHONE}</span>
-          </a>
-        </div>
-      </header>
+      <SiteHeader active="servicii" />
+
 
       <main className="pt-32 pb-24">
         <div className="container-x">
@@ -86,9 +78,9 @@ function ServicesHub() {
             Servicii subacvatice <span className="text-gradient-teal">industriale</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-foreground/75 leading-relaxed">
-            Ecosistem complet de scufundări utilitare — de la inspecții și expertize până la sudură hiperbarică,
-            betonări subacvatice, mentenanță baraje și lucrări cu ROV. Fiecare serviciu are pagina lui dedicată,
-            cu detalii tehnice, aplicații și întrebări frecvente.
+            Gamă completă de scufundări utilitare — de la inspecții și expertize tehnice până la sudură
+            subacvatică, betonări sub apă, mentenanța barajelor și lucrări cu ROV. Fiecare serviciu are
+            o pagină dedicată, cu detalii tehnice, aplicații și întrebări frecvente.
           </p>
 
           <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -123,13 +115,15 @@ function ServicesHub() {
             <p className="mt-4 max-w-2xl mx-auto text-foreground/75">
               Fiecare proiect subacvatic este unic. Descrieți-ne obiectivul și primiți o evaluare tehnică cu deviz în 24 de ore.
             </p>
-            <a href="/#contact"
+            <a href={OFFER_MAILTO}
                className="mt-8 inline-flex items-center gap-2 rounded-md bg-teal px-6 py-3.5 font-semibold text-primary-foreground hover:bg-teal-glow">
               Solicitați ofertă <ArrowRight className="h-4 w-4" />
             </a>
           </div>
         </div>
       </main>
+      <SiteFooter />
+      <WhatsAppWidget />
     </div>
   );
 }
