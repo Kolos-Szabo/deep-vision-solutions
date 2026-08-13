@@ -1,10 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ChevronRight, Phone } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
 import { SERVICES } from "@/lib/services";
-import logoWhiteUrl from "@/assets/logo-heidi-white-raw.png";
-
-const PHONE = "0040 755 011 497";
-const PHONE_HREF = "tel:0040755011497";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
+import { WhatsAppWidget } from "@/components/whatsapp-widget";
+import { OFFER_MAILTO, abs } from "@/lib/site";
 
 export const Route = createFileRoute("/servicii/")({
   head: () => ({
@@ -13,7 +13,7 @@ export const Route = createFileRoute("/servicii/")({
       {
         name: "description",
         content:
-          "Toate serviciile subacvatice HEIDI: inspecții, sudură hiperbarică, betonări, reparații baraje, curățare rezervoare și grătare, ROV, căutări și recuperări, expertize tehnice.",
+          "Toate serviciile subacvatice HEIDI: inspecții, sudură subacvatică, betonări sub apă, reparații la baraje, curățare rezervoare și grătare, lucrări cu ROV, căutări și recuperări, expertize tehnice.",
       },
       {
         name: "keywords",
@@ -22,11 +22,17 @@ export const Route = createFileRoute("/servicii/")({
       },
       { name: "robots", content: "index, follow, max-image-preview:large" },
       { property: "og:title", content: "Servicii subacvatice industriale · HEIDI" },
-      { property: "og:description", content: "Ecosistem complet de servicii subacvatice pentru operatori de infrastructură critică." },
+      {
+        property: "og:description",
+        content:
+          "Gamă completă de scufundări utilitare: inspecții, sudură subacvatică, betonări, mentenanța barajelor și lucrări cu ROV, pentru operatori de infrastructură din România.",
+      },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/servicii" },
+      { property: "og:locale", content: "ro_RO" },
+      { property: "og:url", content: abs("/servicii") },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/servicii" }],
+    links: [{ rel: "canonical", href: abs("/servicii") }],
     scripts: [
       {
         type: "application/ld+json",
@@ -34,8 +40,8 @@ export const Route = createFileRoute("/servicii/")({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Acasă", item: "/" },
-            { "@type": "ListItem", position: 2, name: "Servicii", item: "/servicii" },
+            { "@type": "ListItem", position: 1, name: "Acasă", item: abs("/") },
+            { "@type": "ListItem", position: 2, name: "Servicii", item: abs("/servicii") },
           ],
         }),
       },
@@ -47,7 +53,7 @@ export const Route = createFileRoute("/servicii/")({
           itemListElement: SERVICES.map((s, i) => ({
             "@type": "ListItem",
             position: i + 1,
-            url: `/servicii/${s.slug}`,
+            url: abs(`/servicii/${s.slug}`),
             name: s.h1,
           })),
         }),
