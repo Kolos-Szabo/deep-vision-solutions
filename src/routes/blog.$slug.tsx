@@ -213,7 +213,7 @@ function BlogPost() {
         <section className="border-t border-white/5 py-16">
           <div className="container-x max-w-5xl">
             <div className="text-xs uppercase tracking-[0.3em] text-foreground/50 mb-6">
-              Continuă să citești
+              Continuați lectura
             </div>
             <Link
               to="/blog/$slug"
@@ -221,7 +221,7 @@ function BlogPost() {
               className="group block rounded-2xl overflow-hidden border border-white/5 hover:border-teal/40 transition-colors md:grid md:grid-cols-[1fr_1.2fr]"
             >
               <div className="aspect-[16/10] md:aspect-auto overflow-hidden">
-                <img src={other.cover} alt={other.coverAlt} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <img src={other.cover} alt={other.coverAlt} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
               <div className="p-7">
                 <div className="text-xs text-teal uppercase tracking-widest">{other.category}</div>
@@ -230,13 +230,16 @@ function BlogPost() {
                 </h3>
                 <p className="mt-3 text-sm text-foreground/65">{other.excerpt}</p>
                 <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-teal">
-                  Citește articolul <ArrowRight className="h-4 w-4" />
+                  Citiți articolul <ArrowRight className="h-4 w-4" />
                 </span>
               </div>
             </Link>
           </div>
         </section>
       )}
-    </main>
+      </main>
+      <SiteFooter />
+      <WhatsAppWidget />
+    </div>
   );
 }
