@@ -119,13 +119,13 @@ const services: { icon: LucideIcon; title: string; slug?: string; desc: string }
   { icon: Droplets,      title: "Mentenanță rezervoare de apă", slug: "mentenanta-rezervoare-apa", desc: "Curățare și decolmatare rezervoare de apă potabilă și industrială fără scoaterea din serviciu, conform normelor sanitare în vigoare." },
   { icon: Bot,           title: "Lucrări cu ROV (robot subacvatic)", slug: "lucrari-cu-rov", desc: "Inspecții ROV la adâncimi mari, în spații înguste sau medii periculoase — sonar multibeam, cameră HD, manipulator pentru sarcini ușoare." },
   { icon: Cable,         title: "Pozare cabluri și conducte subacvatice", desc: "Amplasare, traversare și protejare a cablurilor, conductelor și canalelor în ape staționare și curgătoare, inclusiv cuplări și flanșări sub apă." },
-  { icon: ShieldAlert,   title: "Intervenții în medii contaminate", slug: "interventii-medii-contaminate", desc: "Scufundări în medii poluate sau cu risc respirator, cu echipament cu cordon ombilical, recirculare și protocoale strict de decontaminare." },
+  { icon: ShieldAlert,   title: "Intervenții în medii contaminate", slug: "interventii-medii-contaminate", desc: "Scufundări în ape poluate sau cu risc respirator, cu echipament alimentat de la suprafață (cordon ombilical) și protocoale stricte de decontaminare." },
   { icon: Hammer,        title: "Etanșări și obturări subacvatice", desc: "Obturare conducte cu baloane pneumatice, dopuri metalice și etanșări de scurgeri în rezervoare — opriri rapide pentru intervenții uscate." },
   { icon: Wrench,        title: "Reparații subacvatice generale", desc: "Intervenții pe beton, oțel, garnituri și elemente structurale aflate sub apă — refacere ghidaje, batardouri și echipamente hidromecanice." },
   { icon: Anchor,        title: "Montaj structuri subacvatice", desc: "Asamblare, ancorare și poziționare a structurilor submerse — ancoraje, geamanduri, pontoane, prize de apă, cu toleranțe milimetrice." },
   { icon: FlaskConical,  title: "Prospectări hidrologice & batimetrice", desc: "Investigații hidrologice, hidrogeologice și geodezice, măsurători batimetrice și analiză calitativă a apei pentru proiecte de infrastructură." },
   { icon: Camera,        title: "Filmări și fotografii subacvatice", desc: "Documentare 4K și fotografie profesională pentru rapoarte tehnice, expertize judiciare și comunicare corporate." },
-  { icon: FileText,      title: "Expertize tehnice subacvatice", slug: "expertize-tehnice-subacvatice", desc: "Expertize independente pentru beneficiari, asiguratori și instanțe, întocmite de specialiști atestați MTCT/ISPCSAR." },
+  { icon: FileText,      title: "Expertize tehnice subacvatice", slug: "expertize-tehnice-subacvatice", desc: "Expertize independente pentru beneficiari, companii de asigurări și instanțe, întocmite de specialiști atestați, pe baza inspecției directe și a documentației foto-video." },
   { icon: Waves,         title: "Lucrări în lacuri de acumulare", desc: "Intervenții pe lacuri naturale și de acumulare: prize de apă, ancoraje, instalații hidrotehnice — inclusiv la altitudini alpine." },
   { icon: Landmark,      title: "Lucrări în râuri și curent rapid", desc: "Operațiuni în condiții de curent: piloți de pod, praguri, conducte de traversare râu, înlăturare obstacole pentru navigație." },
   { icon: Factory,       title: "Lucrări în instalații industriale", desc: "Intervenții în bazine tehnologice, decantoare, stații de epurare, circuite de răcire și terminale portuare de cereale." },
@@ -299,7 +299,7 @@ function Hero() {
       <Bubbles />
       <div className="container-x relative grid lg:grid-cols-[1.2fr_1fr] gap-12 items-center">
         <div className="animate-fade-up">
-          <span className="eyebrow">HEIDI · since 1993</span>
+          <span className="eyebrow">HEIDI · din 1993</span>
           <h1 className="mt-6 font-display text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.02] tracking-tight">
             Lucrări <span className="text-gradient-teal">Subacvatice</span>
             <br/>Profesionale
@@ -342,7 +342,7 @@ function Hero() {
                 <div className="mt-1 text-foreground/60 text-sm">la nivel național</div>
               </div>
               <div className="grid grid-cols-2 gap-3 text-xs">
-                {["EN ISO 9001", "OHSAS 18001", "Scafandri atestați", "Echipamente certificate"].map((t) => (
+                {["Scafandri atestați", "Echipamente verificate periodic", "Scafandru de rezervă la fiecare imersiune", "Documentație foto-video la final"].map((t) => (
                   <div key={t} className="flex items-center gap-2 text-foreground/70">
                     <Check className="h-3.5 w-3.5 text-teal" /> {t}
                   </div>
@@ -608,7 +608,7 @@ const faqs = [
   },
   {
     q: "Până la ce adâncime executați lucrări subacvatice?",
-    a: "Echipele HEIDI sunt dotate pentru intervenții până la 130 m adâncime, cu echipament de scufundare cu cordon ombilical (surface-supplied diving), cască Kirby Morgan și sisteme de comunicații în timp real cu suprafața.",
+    a: "Lucrările curente se execută cu echipament de scufundare alimentat de la suprafață (surface-supplied), cască Kirby Morgan și comunicație permanentă cu suprafața, în domeniul uzual al scufundărilor industriale cu aer, până la aproximativ 50 m. Pentru adâncimi mai mari sau pentru zone cu risc ridicat folosim ROV sau planificăm lucrarea cu procedură dedicată, stabilită împreună cu beneficiarul.",
   },
   {
     q: "Faceți sudură subacvatică certificată?",
