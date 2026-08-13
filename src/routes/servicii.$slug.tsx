@@ -19,7 +19,7 @@ export const Route = createFileRoute("/servicii/$slug")({
       };
     }
     const s = loaderData.service;
-    const url = `/servicii/${params.slug}`;
+    const url = abs(`/servicii/${params.slug}`);
     return {
       meta: [
         { title: s.metaTitle },
@@ -29,12 +29,14 @@ export const Route = createFileRoute("/servicii/$slug")({
         { property: "og:title", content: s.metaTitle },
         { property: "og:description", content: s.metaDescription },
         { property: "og:type", content: "article" },
+        { property: "og:locale", content: "ro_RO" },
         { property: "og:url", content: url },
-        { property: "og:image", content: s.cover },
+        { property: "og:image", content: abs(s.cover) },
+        { property: "og:image:alt", content: s.coverAlt },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: s.metaTitle },
         { name: "twitter:description", content: s.metaDescription },
-        { name: "twitter:image", content: s.cover },
+        { name: "twitter:image", content: abs(s.cover) },
       ],
       links: [{ rel: "canonical", href: url }],
       scripts: [
