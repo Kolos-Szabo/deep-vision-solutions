@@ -14,8 +14,8 @@ export const Route = createFileRoute("/blog/$slug")({
   },
   head: ({ loaderData }) => {
     const post = loaderData?.post;
-    if (!post) return { meta: [{ title: "Articol negăsit | HEIDI" }] };
-    const url = `/blog/${post.slug}`;
+    if (!post) return { meta: [{ title: "Articol indisponibil | HEIDI" }, { name: "robots", content: "noindex" }] };
+    const url = abs(`/blog/${post.slug}`);
     return {
       meta: [
         { title: post.metaTitle },
@@ -29,12 +29,13 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:title", content: post.metaTitle },
         { property: "og:description", content: post.metaDescription },
         { property: "og:url", content: url },
-        { property: "og:image", content: post.cover },
+        { property: "og:locale", content: "ro_RO" },
+        { property: "og:image", content: abs(post.cover) },
         { property: "og:image:alt", content: post.coverAlt },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: post.metaTitle },
         { name: "twitter:description", content: post.metaDescription },
-        { name: "twitter:image", content: post.cover },
+        { name: "twitter:image", content: abs(post.cover) },
       ],
       links: [{ rel: "canonical", href: url }],
       scripts: [
