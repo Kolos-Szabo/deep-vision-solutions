@@ -64,8 +64,8 @@ export const Route = createFileRoute("/servicii/$slug")({
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Acasă", item: "/" },
-              { "@type": "ListItem", position: 2, name: "Servicii", item: "/servicii" },
+              { "@type": "ListItem", position: 1, name: "Acasă", item: abs("/") },
+              { "@type": "ListItem", position: 2, name: "Servicii", item: abs("/servicii") },
               { "@type": "ListItem", position: 3, name: s.h1, item: url },
             ],
           }),
@@ -102,22 +102,8 @@ function ServicePageView() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="fixed inset-x-0 top-0 z-50 bg-deep/80 backdrop-blur-xl border-b border-white/5">
-        <div className="container-x flex h-20 items-center justify-between gap-4">
-          <Link to="/" className="flex items-center gap-2 shrink-0">
-            <img src={logoWhiteUrl} alt="HEIDI Lucrări Subacvatice" className="h-9 w-auto" />
-          </Link>
-          <nav className="hidden md:flex items-center gap-8 text-sm">
-            <Link to="/" className="text-foreground/80 hover:text-teal">Acasă</Link>
-            <Link to="/servicii" className="text-foreground/80 hover:text-teal">Servicii</Link>
-            <Link to="/blog" className="text-foreground/80 hover:text-teal">Blog</Link>
-            <a href="/#contact" className="text-foreground/80 hover:text-teal">Contact</a>
-          </nav>
-          <a href={PHONE_HREF} className="inline-flex items-center gap-2 rounded-md bg-teal px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-teal-glow">
-            <Phone className="h-4 w-4" /> <span className="hidden sm:inline">{PHONE}</span>
-          </a>
-        </div>
-      </header>
+      <SiteHeader active="servicii" />
+
 
       <main className="pt-32 pb-24">
         <article className="container-x">
