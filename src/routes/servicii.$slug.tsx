@@ -192,16 +192,19 @@ function ServicePageView() {
 
             <aside className="lg:sticky lg:top-28 self-start space-y-6">
               <div className="rounded-2xl border border-teal/25 bg-teal/5 p-6">
-                <div className="text-[10px] uppercase tracking-widest text-teal font-semibold">Cere ofertă</div>
-                <h3 className="mt-2 font-display text-xl font-semibold">Deviz în 24 h</h3>
+                <div className="text-[10px] uppercase tracking-widest text-teal font-semibold">Cereți o ofertă</div>
+                <h3 className="mt-2 font-display text-xl font-semibold">Deviz în 24 de ore</h3>
                 <p className="mt-2 text-sm text-foreground/75">
-                  Descrieți-ne obiectivul lucrării. Vă răspundem cu evaluare tehnică inițială și estimare de buget.
+                  Descrieți-ne obiectivul lucrării. Vă răspundem cu o evaluare tehnică inițială și o estimare de buget.
                 </p>
+                <a href={OFFER_MAILTO} className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-md bg-teal px-4 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-teal-glow">
+                  Solicitați ofertă <ArrowRight className="h-4 w-4" />
+                </a>
                 <a href={PHONE_HREF} className="mt-4 flex items-center gap-2 text-teal font-semibold">
                   <Phone className="h-4 w-4" /> {PHONE}
                 </a>
-                <a href={`mailto:${EMAIL}`} className="mt-2 flex items-center gap-2 text-foreground/85">
-                  <Mail className="h-4 w-4" /> {EMAIL}
+                <a href={`mailto:${EMAIL}`} className="mt-2 flex items-center gap-2 text-foreground/85 break-all">
+                  <Mail className="h-4 w-4 shrink-0" /> {EMAIL}
                 </a>
               </div>
 
