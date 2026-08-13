@@ -1,12 +1,10 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowRight, ChevronRight, Phone, Mail, Check } from "lucide-react";
-import { SERVICES, getService, type ServicePage } from "@/lib/services";
-import logoWhiteUrl from "@/assets/logo-heidi-white-raw.png";
-
-const PHONE = "0040 755 011 497";
-const PHONE_HREF = "tel:0040755011497";
-const EMAIL = "infomylake@gmail.com";
-const WHATSAPP_NUMBER = "40755011497";
+import { getService, type ServicePage } from "@/lib/services";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
+import { WhatsAppWidget } from "@/components/whatsapp-widget";
+import { EMAIL, OFFER_MAILTO, PHONE, PHONE_HREF, WHATSAPP_URL, abs } from "@/lib/site";
 
 export const Route = createFileRoute("/servicii/$slug")({
   loader: ({ params }) => {
