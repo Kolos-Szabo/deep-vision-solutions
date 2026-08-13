@@ -1,9 +1,10 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, Calendar, Clock, Phone, Tag } from "lucide-react";
 import { BLOG_POSTS, getPost } from "@/lib/blog-posts";
-
-const PHONE = "0040 755 011 497";
-const PHONE_HREF = "tel:0040755011497";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
+import { WhatsAppWidget } from "@/components/whatsapp-widget";
+import { OFFER_MAILTO, PHONE, PHONE_HREF, abs } from "@/lib/site";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
