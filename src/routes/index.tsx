@@ -411,7 +411,7 @@ function Services() {
                 {body}
               </Link>
             ) : (
-              <Link key={title} to="/servicii" aria-label={`Detalii ${title}`} className={cls}>
+              <Link key={title} to="/servicii" aria-label={`${title} — vezi toate serviciile subacvatice`} className={cls}>
                 {body}
               </Link>
             );
@@ -605,8 +605,9 @@ function SeoSection() {
           <p>
             Lucrăm pentru <strong className="text-foreground">ABA (Administrația Bazinală de Apă)</strong>, hidrocentrale, primării,
             companii de apă-canal, constructori de infrastructură, terminale portuare și operatori industriali.
-            Răspundem la întrebări frecvente precum „cât costă o lucrare subacvatică", „firmă de scafandri lângă mine",
-            „sudură subacvatică preț" sau „inspecție baraj cu ROV" cu evaluare tehnică și deviz în 24 de ore.
+            Răspundem punctual la întrebările cele mai frecvente — „cât costă o lucrare subacvatică”,
+            „ce firmă de scafandri lucrează în zona mea”, „cât costă sudura subacvatică” sau
+            „cum se face inspecția unui baraj cu ROV” — cu evaluare tehnică și deviz în 24 de ore.
           </p>
         </div>
       </div>
@@ -739,7 +740,7 @@ function Contact() {
             Solicitați ofertă <ArrowRight className="h-4 w-4" />
           </a>
           <p className="mt-4 text-xs text-foreground/50">
-            Clickul deschide clientul de e-mail cu subiectul precompletat „Solicitare ofertă".
+            Butonul deschide aplicația dumneavoastră de e-mail, cu subiectul completat automat: „Solicitare ofertă”.
           </p>
         </div>
       </div>
