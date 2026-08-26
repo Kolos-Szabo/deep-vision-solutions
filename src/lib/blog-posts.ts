@@ -4,6 +4,8 @@ import projDamAsset from "@/assets/interventie-hidrotehnica-baraj-batardou.webp"
 const projDam = projDamAsset;
 import projEntryAsset from "@/assets/scafandru-intrare-in-apa-scufundari-utilitare.webp";
 const projEntry = projEntryAsset;
+import projCrossingAsset from "@/assets/inspectie-conducta-subacvatica-traversare-rau.webp";
+const projCrossing = projCrossingAsset;
 
 export type BlogPost = {
   slug: string;
@@ -27,6 +29,138 @@ export type BlogPost = {
 };
 
 export const BLOG_POSTS: BlogPost[] = [
+  {
+    slug: "afuieri-la-pile-de-pod-si-traversari-subacvatice",
+    title:
+      "Afuierile la pile de pod și traversări subacvatice: cum se depistează la timp și ce se poate repara sub apă",
+    metaTitle:
+      "Afuieri la pile de pod și traversări — depistare și reparații subacvatice | HEIDI",
+    metaDescription:
+      "Ce sunt afuierile la pile de pod, culee și traversări de conducte, cum se depistează prin inspecții subacvatice după viituri și ce soluții de reparație se pot executa sub apă, fără devierea cursului.",
+    keywords:
+      "afuieri pile de pod, inspectie subacvatica pod, subspalare fundatie pod, inspectie pile pod dupa viitura, traversare conducta rau, reparatii subacvatice, betonari subacvatice, protectie antiafuiere, scafandri profesionisti Romania, expertize tehnice subacvatice",
+    excerpt:
+      "Afuierea este una dintre cele mai frecvente cauze de avarie la poduri și traversări submerse, dar rămâne invizibilă de la suprafață. Cum se măsoară, ce indicii apar înainte de avarie și ce se poate remedia sub apă.",
+    cover: projCrossing,
+    coverAlt:
+      "Inspecție subacvatică la o traversare de conductă sub albia unui râu, pentru verificarea afuierilor",
+    date: "26 august 2026",
+    dateISO: "2026-08-26",
+    readingMinutes: 9,
+    category: "Infrastructură & inspecții",
+    body: [
+      {
+        paragraphs: [
+          "Podurile, pasarelele și traversările de conducte peste râuri se degradează în cea mai mare parte acolo unde nimeni nu se uită: sub linia apei. Cea mai frecventă formă de degradare din această zonă este afuierea — antrenarea materialului din albie din jurul fundațiilor, sub acțiunea curentului.",
+          "Problema afuierii este că evoluează lent, apoi brusc. O groapă de câțiva zeci de centimetri se poate adânci semnificativ în timpul unei singure viituri, iar la scăderea apelor albia se reface parțial, mascând golul rămas sub fundație. De la suprafață, structura pare intactă.",
+          "Articolul de față explică, pentru administratorii de drumuri, operatorii de utilități și constructori, cum se depistează afuierile printr-o verificare subacvatică, ce se măsoară concret și ce categorii de remedieri se pot executa sub apă.",
+        ],
+      },
+      {
+        heading: "Ce este, de fapt, afuierea",
+        paragraphs: [
+          "Curentul care întâlnește o pilă de pod se accelerează și formează vârtejuri la baza obstacolului. Aceste vârtejuri desprind material din albie și îl transportă în aval, formând o groapă locală în jurul fundației.",
+          "Fenomenul are mai multe componente care se suprapun:",
+        ],
+        bullets: [
+          "afuiere generală — coborârea nivelului albiei pe toată secțiunea, în timp;",
+          "afuiere de contracție — accelerarea apei în secțiunea îngustată de infrastructura podului;",
+          "afuiere locală — groapa formată direct în jurul pilei sau al culeei;",
+          "eroziunea malurilor și a rampelor de acces, care poate destabiliza culeele.",
+        ],
+      },
+      {
+        heading: "De ce nu se vede de la suprafață",
+        paragraphs: [
+          "În râurile din România, vizibilitatea sub apă este de regulă redusă, iar patul albiei este mobil. După viitură, aluviunile se depun înapoi în groapa formată, dar sunt necompactate: fundația rămâne descărcată lateral, chiar dacă adâncimea măsurată de pe mal pare normală.",
+          "De aceea o batimetrie făcută exclusiv de la suprafață este utilă, dar insuficientă. Confirmarea reală se obține prin verificare tactilă, executată de scafandru, care poate sesiza golurile de sub radier și materialul afânat.",
+        ],
+      },
+      {
+        heading: "Când se justifică o inspecție subacvatică",
+        paragraphs: [
+          "Nu orice structură necesită verificări frecvente, dar există situații în care o inspecție este pe deplin justificată:",
+        ],
+        bullets: [
+          "după viituri importante sau după perioade prelungite de debite mari;",
+          "la structuri cu istoric de afuiere sau la care s-au făcut anterior lucrări de protecție a fundației;",
+          "când apar semne la suprastructură: fisuri noi, rosturi deschise, denivelări ale căii, deplasări ale parapetului;",
+          "înainte de o expertiză tehnică sau de o recepție, când este nevoie de date reale despre partea submersă;",
+          "la traversările de conducte, când apar suspiciuni de expunere a tubului sau de deplasare a balastului de acoperire;",
+          "periodic, ca parte dintr-un program de mentenanță preventivă, la structurile importante pentru trafic sau alimentare.",
+        ],
+      },
+      {
+        heading: "Cum decurge o verificare subacvatică a unei pile",
+        paragraphs: [
+          "O inspecție corectă nu înseamnă „o scufundare și câteva poze”. Ea urmează o procedură care permite compararea în timp a rezultatelor.",
+        ],
+        bullets: [
+          "recunoașterea zonei și stabilirea condițiilor de lucru: debit, curent, adâncimi, accese, trafic naval sau rutier;",
+          "stabilirea reperelor de măsurare, astfel încât inspecția următoare să poată fi comparată cu cea curentă;",
+          "parcurgerea perimetrului fiecărei pile și al culeelor, cu verificare tactilă acolo unde vizibilitatea este redusă;",
+          "măsurarea adâncimii gropii de afuiere față de nivelul albiei și al tălpii fundației;",
+          "identificarea golurilor de sub radier, a materialului afânat și a pierderii anrocamentelor de protecție;",
+          "evaluarea stării betonului submers: eroziune, segregări, armătură expusă, degradări la rosturi;",
+          "documentare video și fotografică, cu poziționare clară a fiecărei constatări.",
+        ],
+        serviceLinks: [
+          { slug: "inspectii-subacvatice", label: "inspecții subacvatice" },
+          { slug: "lucrari-cu-rov", label: "inspecții și lucrări cu ROV" },
+        ],
+      },
+      {
+        heading: "Ce probleme apar cel mai des la structurile din albie",
+        paragraphs: [
+          "Dincolo de afuierea propriu-zisă, verificările în albie scot la iveală un set recurent de probleme:",
+        ],
+        bullets: [
+          "anrocamentele de protecție dislocate și împrăștiate în aval, deci fără rol de protecție;",
+          "beton erodat la nivelul zonei de variație a apei, unde acțiunea mecanică este cea mai intensă;",
+          "armătură expusă și corodată la muchii și la baza elevațiilor;",
+          "rosturi deschise și infiltrații la culee;",
+          "resturi acumulate în amonte de pile — trunchiuri, deșeuri, plase — care modifică local curgerea și accentuează eroziunea;",
+          "la traversări: conductă parțial dezvelită, tronsoane suspendate, balast de acoperire spălat.",
+        ],
+      },
+      {
+        heading: "Ce se poate repara sub apă, fără devierea cursului",
+        paragraphs: [
+          "Multe dintre remedieri nu impun oprirea circulației sau devierea râului. Lucrările se execută de scafandri, direct în amplasament, ceea ce reduce durata și costul intervenției.",
+          "Categoriile uzuale de intervenție sunt:",
+        ],
+        bullets: [
+          "curățarea și îndepărtarea depunerilor și a resturilor acumulate în jurul fundației;",
+          "umplerea golurilor și refacerea zonelor degradate prin betonări subacvatice cu mixturi speciale;",
+          "refacerea protecției antiafuiere prin repoziționarea sau completarea anrocamentelor;",
+          "reparații locale la beton și tratarea zonelor cu armătură expusă;",
+          "lucrări de sudură și consolidare la elementele metalice submerse;",
+          "reacoperirea și fixarea tronsoanelor expuse la traversările de conducte.",
+        ],
+        serviceLinks: [
+          { slug: "betonari-subacvatice", label: "betonări subacvatice" },
+          { slug: "sudura-subacvatica", label: "sudură subacvatică" },
+          { slug: "expertize-tehnice-subacvatice", label: "expertize tehnice subacvatice" },
+        ],
+      },
+      {
+        heading: "Cum se transformă constatările într-o decizie",
+        paragraphs: [
+          "Un raport util nu se oprește la descrierea defectelor. El trebuie să permită administratorului să decidă: ce se remediază acum, ce se monitorizează și ce necesită o expertiză mai amplă.",
+          "În practică, constatările se grupează pe trei niveluri de urgență: intervenție imediată (goluri sub fundație, armătură expusă pe suprafețe mari, conductă suspendată), intervenție programată (protecție antiafuiere degradată, eroziuni locale) și monitorizare (evoluții mici, de urmărit la următoarea verificare).",
+          "Valoarea reală apare în timp: două inspecții făcute cu aceleași repere arată dacă groapa de afuiere crește, s-a stabilizat sau a fost corect remediată.",
+        ],
+      },
+      {
+        heading: "De reținut",
+        paragraphs: [
+          "Afuierea nu se rezolvă de la sine, iar refacerea aparentă a albiei după viitură nu înseamnă că fundația a revenit la starea inițială. O verificare subacvatică executată la momentul potrivit costă mult mai puțin decât o consolidare de urgență sau o restricție de circulație.",
+          "Dacă administrați un pod, o pasarelă, o traversare de conductă sau o priză de apă în albie și nu aveți date recente despre partea submersă, o inspecție este primul pas rezonabil.",
+          "Echipa lucrarisubacvatice.ro execută inspecții și intervenții subacvatice în toată România. Descrieți-ne obiectivul și primiți o evaluare tehnică și un deviz transparent în maximum 24 de ore.",
+        ],
+      },
+    ],
+  },
   {
     slug: "planificarea-unei-lucrari-subacvatice-etape-documentatie-siguranta",
     title:
