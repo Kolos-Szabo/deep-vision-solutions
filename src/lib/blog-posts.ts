@@ -6,6 +6,8 @@ import projEntryAsset from "@/assets/scafandru-intrare-in-apa-scufundari-utilita
 const projEntry = projEntryAsset;
 import projCrossingAsset from "@/assets/inspectie-conducta-subacvatica-traversare-rau.webp";
 const projCrossing = projCrossingAsset;
+import projTankAsset from "@/assets/scafandru-comercial-inspectie-rezervoar-apa.webp";
+const projTank = projTankAsset;
 
 export type BlogPost = {
   slug: string;
@@ -29,6 +31,128 @@ export type BlogPost = {
 };
 
 export const BLOG_POSTS: BlogPost[] = [
+  {
+    slug: "curatare-rezervoare-apa-potabila-fara-golire",
+    title:
+      "Curățarea rezervoarelor de apă potabilă fără golire: cum se face, ce presupune și când este necesară",
+    metaTitle:
+      "Curățare rezervoare de apă potabilă fără golire — proceduri și costuri | HEIDI",
+    metaDescription:
+      "Cum se curăță și se inspectează rezervoarele de apă potabilă fără scoaterea din funcțiune: scafandri în echipament dedicat, aspirarea sedimentului, dezinfecție și raport tehnic. Ghid pentru operatorii de apă din România.",
+    keywords:
+      "curatare rezervoare apa potabila, igienizare rezervor apa, curatare rezervor fara golire, inspectie rezervor apa potabila, castel de apa curatare, scafandri apa potabila, sediment rezervor, mentenanta rezervoare apa, lucrari subacvatice Romania",
+    excerpt:
+      "Golirea unui rezervor înseamnă întreruperea alimentării și pierderi mari de apă. Explicăm cum se execută curățarea și inspecția sub apă, cu personal și echipamente dedicate apei potabile, fără oprirea distribuției.",
+    cover: projTank,
+    coverAlt:
+      "Scafandru comercial în echipament dedicat apei potabile, la inspecția unui rezervor de apă",
+    date: "1 septembrie 2026",
+    dateISO: "2026-09-01",
+    readingMinutes: 8,
+    category: "Apă potabilă & mentenanță",
+    body: [
+      {
+        paragraphs: [
+          "Într-un rezervor de apă potabilă, sedimentul se depune încet și constant: particule fine din sursă, produși de coroziune, nisip antrenat de la aducțiune. Ani la rând nu se vede nimic în analizele de rutină, apoi apar turbiditate la consumatori după o manevră de vane, un gust modificat sau depășiri punctuale ale parametrilor microbiologici.",
+          "Reflexul clasic este golirea rezervorului. În practică asta înseamnă întreruperea sau reducerea alimentării, pierderea unui volum important de apă tratată, spălare, dezinfecție și repunerea în funcțiune — un proces care poate dura zile.",
+          "Există însă și varianta în care curățarea și verificarea se execută cu apa în rezervor, prin lucrări subacvatice realizate cu personal și echipament rezervate exclusiv apei potabile. Articolul explică pe scurt cum funcționează metoda, ce se poate și ce nu se poate rezolva astfel și cum se pregătește corect o astfel de intervenție.",
+        ],
+      },
+      {
+        heading: "De ce se acumulează sediment chiar și în apa tratată",
+        paragraphs: [
+          "Un rezervor este, hidraulic vorbind, un decantor involuntar. Apa intră, își pierde viteza și tot ce transportă în suspensie are timp să se depună pe radier. Sursele obișnuite sunt:",
+        ],
+        bullets: [
+          "particule minerale fine care trec de treapta de filtrare, mai ales după viituri sau lucrări la sursă;",
+          "produși de coroziune și depuneri desprinse din conductele de aducțiune;",
+          "material antrenat în rețea în timpul unor lucrări de reparație sau al unor manevre bruște de vane;",
+          "biofilm dezvoltat pe pereți și pe radier acolo unde apa stagnează;",
+          "praf și impurități pătrunse prin guri de vizitare neetanșe sau prin sisteme de aerisire neprotejate.",
+        ],
+      },
+      {
+        heading: "Semnalele care indică nevoia unei intervenții",
+        paragraphs: [
+          "Nu orice rezervor trebuie curățat anual, dar există indicii clare că depunerile au ajuns la un nivel care afectează exploatarea:",
+        ],
+        bullets: [
+          "apă tulbure la consumatori după manevre de vane sau după variații mari de nivel;",
+          "consum crescut de dezinfectant pentru menținerea aceluiași nivel de clor rezidual;",
+          "rezultate microbiologice instabile, fără o cauză identificată în rețea;",
+          "colmatarea repetată a sorbului sau a filtrelor din aval;",
+          "nicio verificare a interiorului rezervorului în ultimii ani;",
+          "suspiciuni de pierderi de apă sau de infiltrații în zona radierului ori a rosturilor.",
+        ],
+      },
+      {
+        heading: "Cum se execută curățarea fără scoaterea din funcțiune",
+        paragraphs: [
+          "Principiul este simplu: sedimentul se aspiră punctual de pe radier, fără a fi resuspendat în masa de apă, iar apa curată rămâne în rezervor. Practic, intervenția presupune o disciplină strictă privind echipamentul și traseul de lucru.",
+        ],
+        bullets: [
+          "echipament dedicat exclusiv apei potabile — costum uscat, cască, furtunuri și scule păstrate separat și dezinfectate înainte de intrare;",
+          "dezinfecția echipamentului și a scafandrului la intrarea în rezervor, cu soluții admise pentru contact cu apa potabilă;",
+          "aspirarea sedimentului cu sistem de vidanjare, cu evacuare în afara rezervorului, fără agitarea coloanei de apă;",
+          "curățarea locală a radierului, a colțurilor și a zonei sorbului, unde depunerile sunt cele mai consistente;",
+          "verificarea vizuală a pereților, a tavanului, a rosturilor și a pieselor metalice, cu înregistrare video;",
+          "prelevarea de probe și verificarea parametrilor înainte de repunerea în regim normal, împreună cu laboratorul operatorului.",
+        ],
+        serviceLinks: [
+          { slug: "mentenanta-rezervoare-apa", label: "mentenanța rezervoarelor de apă" },
+          { slug: "inspectii-subacvatice", label: "inspecții subacvatice" },
+        ],
+      },
+      {
+        heading: "Ce se poate face sub apă și ce necesită totuși golire",
+        paragraphs: [
+          "Metoda subacvatică rezolvă foarte bine partea de igienizare și de diagnostic, dar are limite care trebuie asumate din faza de ofertare.",
+          "Se pot executa sub apă: aspirarea sedimentului, curățarea radierului și a pereților, inspecția vizuală detaliată, verificarea sorbului și a gurilor de plecare, localizarea zonelor de infiltrație, montarea sau verificarea unor piese metalice.",
+          "Necesită, în schimb, golire și lucru în uscat: refacerea integrală a hidroizolației interioare, aplicarea de acoperiri sau vopsele de protecție pe suprafețe mari, reparațiile structurale de amploare la beton și intervențiile care presupun tăiere sau sudură în interiorul cupei.",
+          "Din acest motiv, o inspecție subacvatică executată înainte de a decide golirea este de multe ori cea mai economică variantă: fie confirmă că este suficientă curățarea, fie stabilește exact ce lucrări justifică oprirea și cât trebuie bugetat.",
+        ],
+        serviceLinks: [
+          { slug: "expertize-tehnice-subacvatice", label: "expertize tehnice subacvatice" },
+          { slug: "curatare-gratare-priza-apa", label: "curățarea grătarelor și a prizelor de apă" },
+        ],
+      },
+      {
+        heading: "Ce trebuie pregătit de către operator",
+        paragraphs: [
+          "O intervenție într-un rezervor de apă potabilă este o lucrare în spațiu confinat, cu cerințe suplimentare de igienă. Pregătirea din partea beneficiarului scurtează semnificativ durata lucrării:",
+        ],
+        bullets: [
+          "planurile rezervorului: geometrie, adâncime utilă, poziția sorbului, a preaplinului și a gurilor de vizitare;",
+          "accesul la gura de vizitare și spațiu pentru amplasarea echipamentelor de suprafață și a autovidanjei;",
+          "stabilirea unui interval de lucru corelat cu programul de distribuție și cu nivelul din rezervor;",
+          "punct de racord pentru energie electrică și pentru evacuarea apei rezultate din vidanjare;",
+          "o persoană de contact din exploatare, prezentă pe durata intervenției, pentru manevre și decizii rapide;",
+          "coordonarea cu laboratorul propriu pentru probele de dinainte și de după lucrare.",
+        ],
+      },
+      {
+        heading: "Ce primește beneficiarul la final",
+        paragraphs: [
+          "Documentarea este partea care transformă o curățare într-un instrument de mentenanță. Un raport util conține starea inițială și cea finală, înregistrări video din interior, observațiile privind pereții, radierul, rosturile și piesele metalice, precum și recomandări privind intervalul următor de verificare.",
+          "Pe baza acestor date, operatorul poate planifica bugetar lucrările mari și poate justifica, documentat, deciziile de mentenanță în fața autorității de reglementare.",
+        ],
+      },
+      {
+        heading: "De ce contează echipa și procedura",
+        paragraphs: [
+          "Lucrul într-un rezervor de apă potabilă combină două categorii de risc: riscul de scufundare în spațiu confinat, fără ieșire directă la suprafață, și riscul sanitar, pentru că orice greșeală de procedură afectează apa distribuită populației.",
+          "De aceea intervenția presupune personal instruit pentru scufundări utilitare, echipament rezervat acestui tip de lucrare, proceduri de dezinfecție respectate integral, evaluarea condițiilor din teren înainte de intrare și un plan clar de comunicare cu exploatarea. Este exact opusul unei lucrări improvizate.",
+        ],
+      },
+      {
+        heading: "Concluzie",
+        paragraphs: [
+          "Curățarea și inspecția rezervoarelor cu apa în cupă nu înlocuiesc reparațiile majore, dar rezolvă cea mai frecventă problemă reală a operatorilor: sedimentul acumulat și lipsa de informații despre starea interioară, fără a întrerupe alimentarea consumatorilor.",
+          "Dacă administrați un rezervor, un castel de apă sau un bazin de stocare și nu aveți date recente despre starea lui, descrieți-ne pe scurt obiectivul — dimensiuni, adâncime, acces și problemele observate. Echipa lucrarisubacvatice.ro vă transmite o evaluare tehnică și o ofertă adaptată situației din teren.",
+        ],
+      },
+    ],
+  },
   {
     slug: "afuieri-la-pile-de-pod-si-traversari-subacvatice",
     title:

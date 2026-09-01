@@ -102,7 +102,9 @@ export const Route = createFileRoute("/blog/$slug")({
 
 function BlogPost() {
   const { post } = Route.useLoaderData() as { post: (typeof BLOG_POSTS)[number] };
-  const other = BLOG_POSTS.find((p) => p.slug !== post.slug);
+  const related = BLOG_POSTS.filter((p) => p.slug !== post.slug)
+    .sort((a, b) => Number(b.category === post.category) - Number(a.category === post.category))
+    .slice(0, 2);
 
   return (
     <div className="min-h-screen bg-deep text-foreground">
@@ -209,31 +211,36 @@ function BlogPost() {
         </div>
       </article>
 
-      {other && (
+      {related.length > 0 && (
         <section className="border-t border-white/5 py-16">
           <div className="container-x max-w-5xl">
-            <div className="text-xs uppercase tracking-[0.3em] text-foreground/50 mb-6">
-              Continuați lectura
+            <h2 className="text-xs uppercase tracking-[0.3em] text-foreground/50 mb-6">
+              Articole recomandate
+            </h2>
+            <div className="grid gap-6 md:grid-cols-2">
+              {related.map((other) => (
+                <Link
+                  key={other.slug}
+                  to="/blog/$slug"
+                  params={{ slug: other.slug }}
+                  className="group block rounded-2xl overflow-hidden border border-white/5 hover:border-teal/40 transition-colors"
+                >
+                  <div className="aspect-[16/10] overflow-hidden">
+                    <img src={other.cover} alt={other.coverAlt} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  </div>
+                  <div className="p-7">
+                    <div className="text-xs text-teal uppercase tracking-widest">{other.category}</div>
+                    <h3 className="mt-3 text-lg md:text-xl font-display font-semibold text-foreground group-hover:text-teal transition-colors leading-snug">
+                      {other.title}
+                    </h3>
+                    <p className="mt-3 text-sm text-foreground/65">{other.excerpt}</p>
+                    <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-teal">
+                      Citiți articolul <ArrowRight className="h-4 w-4" />
+                    </span>
+                  </div>
+                </Link>
+              ))}
             </div>
-            <Link
-              to="/blog/$slug"
-              params={{ slug: other.slug }}
-              className="group block rounded-2xl overflow-hidden border border-white/5 hover:border-teal/40 transition-colors md:grid md:grid-cols-[1fr_1.2fr]"
-            >
-              <div className="aspect-[16/10] md:aspect-auto overflow-hidden">
-                <img src={other.cover} alt={other.coverAlt} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              </div>
-              <div className="p-7">
-                <div className="text-xs text-teal uppercase tracking-widest">{other.category}</div>
-                <h3 className="mt-3 text-xl md:text-2xl font-display font-semibold text-foreground group-hover:text-teal transition-colors leading-snug">
-                  {other.title}
-                </h3>
-                <p className="mt-3 text-sm text-foreground/65">{other.excerpt}</p>
-                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-teal">
-                  Citiți articolul <ArrowRight className="h-4 w-4" />
-                </span>
-              </div>
-            </Link>
           </div>
         </section>
       )}
