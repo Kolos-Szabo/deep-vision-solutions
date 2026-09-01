@@ -6,6 +6,8 @@ import projEntryAsset from "@/assets/scafandru-intrare-in-apa-scufundari-utilita
 const projEntry = projEntryAsset;
 import projCrossingAsset from "@/assets/inspectie-conducta-subacvatica-traversare-rau.webp";
 const projCrossing = projCrossingAsset;
+import projTankAsset from "@/assets/scafandru-comercial-inspectie-rezervoar-apa.webp";
+const projTank = projTankAsset;
 
 export type BlogPost = {
   slug: string;
