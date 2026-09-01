@@ -102,7 +102,9 @@ export const Route = createFileRoute("/blog/$slug")({
 
 function BlogPost() {
   const { post } = Route.useLoaderData() as { post: (typeof BLOG_POSTS)[number] };
-  const other = BLOG_POSTS.find((p) => p.slug !== post.slug);
+  const related = BLOG_POSTS.filter((p) => p.slug !== post.slug)
+    .sort((a, b) => Number(b.category === post.category) - Number(a.category === post.category))
+    .slice(0, 2);
 
   return (
     <div className="min-h-screen bg-deep text-foreground">
