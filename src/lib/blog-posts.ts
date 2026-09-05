@@ -8,6 +8,9 @@ import projCrossingAsset from "@/assets/inspectie-conducta-subacvatica-traversar
 const projCrossing = projCrossingAsset;
 import projTankAsset from "@/assets/scafandru-comercial-inspectie-rezervoar-apa.webp";
 const projTank = projTankAsset;
+import projPumpAsset from "@/assets/interventie-statie-de-pompare-subacvatica.webp";
+const projPump = projPumpAsset;
+
 
 export type BlogPost = {
   slug: string;
