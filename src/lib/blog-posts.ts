@@ -35,6 +35,147 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "colmatarea-prizelor-de-apa-si-a-gratarelor-statii-de-pompare",
+    title:
+      "Colmatarea prizelor de apă și a grătarelor la stațiile de pompare: semne, riscuri și curățare subacvatică fără oprirea instalației",
+    metaTitle:
+      "Colmatare prize de apă și grătare stații de pompare — curățare subacvatică | HEIDI",
+    metaDescription:
+      "Debit scăzut, cavitație și consum mare la pompe? Explicăm cum se depistează colmatarea prizelor de apă și a grătarelor, ce riscuri apar și cum se curăță subacvatic, fără oprirea instalației.",
+    keywords:
+      "colmatare priza de apa, curatare gratare priza apa, statie de pompare curatare subacvatica, sorb pompa infundat, decolmatare priza de apa, inspectie subacvatica statie pompare, lucrari subacvatice Romania, scafandri industriali",
+    excerpt:
+      "Pierderea de debit la o stație de pompare este rareori o problemă de pompă. De cele mai multe ori cauza este sub apă: grătare colmatate, sorburi înfundate și sediment în camera de aspirație. Cum se verifică și cum se remediază fără oprirea instalației.",
+    cover: projPump,
+    coverAlt:
+      "Intervenție subacvatică la o stație de pompare — scafandru pregătit pentru curățarea sorbului și a grătarelor",
+    date: "5 septembrie 2026",
+    dateISO: "2026-09-05",
+    readingMinutes: 8,
+    category: "Stații de pompare & prize de apă",
+    body: [
+      {
+        paragraphs: [
+          "O stație de pompare care „nu mai trage ca înainte” este, în majoritatea cazurilor, o problemă hidraulică amonte de pompă, nu una de utilaj. Grătarul de la priza de apă se acoperă treptat cu vegetație, crengi, folii și cochilii, sorbul se înfundă parțial, iar în camera de aspirație se depune nisip și mâl.",
+          "Efectul apare lent: debit mai mic, presiune instabilă, consum electric mai mare pentru același volum pompat. Când colmatarea trece de un anumit prag, pompa începe să lucreze în cavitație, iar deteriorarea devine rapidă și costisitoare.",
+          "Articolul explică semnele care indică o colmatare, ce se verifică efectiv sub apă și cum se execută decolmatarea, în cele mai multe situații fără oprirea instalației.",
+        ],
+      },
+      {
+        heading: "De ce se colmatează prizele de apă și grătarele",
+        paragraphs: [
+          "Orice priză de apă este, prin funcția ei, un filtru. Tot ce plutește sau este antrenat de curent ajunge la grătar, iar ceea ce trece de grătar se depune mai departe, în zone cu viteză mică a apei.",
+        ],
+        bullets: [
+          "Sezonier: vegetație acvatică, frunze și crengi după viituri sau după perioade cu vânt puternic.",
+          "Aluviuni: nisip și mâl transportate de râu, care se depun în fața prizei și în camera de aspirație.",
+          "Biologic: colonii de scoici și biofilm pe barele grătarului și pe interiorul sorburilor — reduc secțiunea liberă chiar și fără depuneri vizibile.",
+          "Deșeuri antrenate: folii de plastic, textile, resturi plutitoare care se lipesc de grătar și îl transformă într-o suprafață aproape etanșă.",
+          "Coroziune și degradare mecanică: bare rupte sau deformate care lasă să treacă obiecte mari spre sorb.",
+        ],
+      },
+      {
+        heading: "Semnele care indică o colmatare sub apă",
+        paragraphs: [
+          "Înainte de orice intervenție merită corelate datele de exploatare. Aproape întotdeauna există un istoric care arată clar că problema s-a instalat treptat.",
+        ],
+        bullets: [
+          "Debit pompat mai mic la aceeași turație și aceeași configurație de vane.",
+          "Diferență de nivel neobișnuită între amonte și aval de grătar — semnul cel mai direct al unei secțiuni reduse.",
+          "Fluctuații de presiune pe refulare și zgomot de cavitație în pompă.",
+          "Consum energetic crescut raportat la volumul pompat.",
+          "Aer antrenat în aspirație sau dezamorsări repetate la pornire.",
+          "Impurități ajunse în instalație, semn că grătarul are bare lipsă sau deteriorate.",
+        ],
+        paragraphs2: undefined,
+      },
+      {
+        heading: "Ce riscuri apar dacă intervenția este amânată",
+        paragraphs: [
+          "Colmatarea nu rămâne o simplă pierdere de randament. Sub o secțiune redusă, viteza apei crește local, iar solicitările pe structură și pe echipamente se modifică.",
+        ],
+        bullets: [
+          "Cavitație: eroziunea rotorului și a carcasei pompei, cu reparații mult mai scumpe decât o curățare.",
+          "Uzură prin abraziune, când nisipul trece de grătar și ajunge în circuitul hidraulic.",
+          "Solicitări suplimentare pe grătar, care pot duce la deformarea sau ruperea barelor și la desprinderea panourilor.",
+          "Risc de oprire neplanificată a alimentării, exact în perioadele critice — viituri, secetă sau vârf de consum.",
+          "Degradarea betonului și a pieselor metalice înglobate în zona prizei, acolo unde depunerile mențin permanent un mediu agresiv.",
+        ],
+      },
+      {
+        heading: "Cum se verifică efectiv priza de apă",
+        paragraphs: [
+          "O verificare corectă nu se rezumă la îndepărtarea a ceea ce se vede de la suprafață. Scopul este să se stabilească gradul real de obturare și starea structurii, cu documentare video pentru dosarul tehnic.",
+        ],
+        bullets: [
+          "Inspecție vizuală și video a grătarului, a sorbului și a radierului din fața prizei, cu măsurarea grosimii depunerilor.",
+          "Verificarea integrității barelor, a prinderilor, a ramelor și a stavilelor sau batardourilor existente.",
+          "Măsurarea secțiunii libere rămase, pentru a estima pierderea de debit atribuibilă colmatării.",
+          "Verificarea camerei de aspirație și a zonelor moarte unde se acumulează sediment.",
+          "În bazine adânci, cu vizibilitate redusă sau cu acces dificil, verificarea preliminară se poate face cu ROV, fără imersia scafandrului.",
+        ],
+        serviceLinks: [
+          { slug: "inspectii-subacvatice", label: "inspecții subacvatice" },
+          { slug: "lucrari-cu-rov", label: "inspecții și lucrări cu ROV" },
+        ],
+      },
+      {
+        heading: "Decolmatarea: ce se poate face cu instalația în funcțiune",
+        paragraphs: [
+          "În cele mai multe cazuri curățarea se execută cu instalația în funcțiune sau cu o reducere temporară de sarcină, negociată împreună cu personalul de exploatare. Condiția obligatorie este controlul curenților de aspirație: lucrul lângă un sorb activ se face numai după stabilirea unei proceduri clare de blocare, semnalizare și comunicare permanentă cu camera de comandă.",
+        ],
+        bullets: [
+          "Îndepărtarea manuală a corpurilor mari prinse de grătar și degajarea sorbului.",
+          "Aspirarea sedimentului din camera de aspirație și din fața prizei, cu pompe și airlift.",
+          "Curățarea mecanică a barelor și a suprafețelor colonizate biologic.",
+          "Recuperarea obiectelor căzute accidental în bazin, când acestea blochează circulația apei.",
+          "Reparații punctuale sub apă acolo unde inspecția arată bare rupte, prinderi cedate sau beton degradat.",
+        ],
+        serviceLinks: [
+          { slug: "curatare-gratare-priza-apa", label: "curățarea grătarelor și a prizelor de apă" },
+          { slug: "cautari-si-recuperari-subacvatice", label: "căutări și recuperări subacvatice" },
+          { slug: "sudura-subacvatica", label: "sudură subacvatică" },
+          { slug: "betonari-subacvatice", label: "betonări subacvatice" },
+        ],
+      },
+      {
+        heading: "Condiții de lucru și siguranță",
+        paragraphs: [
+          "Intervențiile la prize de apă și stații de pompare sunt lucrări cu risc ridicat, tocmai din cauza curenților de aspirație și a vizibilității adesea nule. Ele presupun personal instruit, echipament adecvat și o procedură agreată în scris cu beneficiarul înainte de prima imersie.",
+          "Practic, planificarea acoperă izolarea hidraulică sau limitarea debitului pe durata lucrului, comunicația permanentă scafandru–suprafață, asigurarea unui scafandru de rezervă și stabilirea criteriilor de oprire a lucrării. Detaliile de organizare sunt tratate pe larg în ghidul nostru dedicat pregătirii unei intervenții.",
+        ],
+        bullets: [
+          "Blocarea și semnalizarea pompelor pe durata lucrului în zona sorbului.",
+          "Verificarea calității apei atunci când există riscul de contaminare — ape uzate, efluenți industriali.",
+          "Documentarea video a stării inițiale și a stării finale, pentru recepția lucrării.",
+        ],
+        serviceLinks: [
+          { slug: "interventii-medii-contaminate", label: "intervenții în medii contaminate" },
+          { slug: "expertize-tehnice-subacvatice", label: "expertize tehnice subacvatice" },
+        ],
+      },
+      {
+        heading: "Cât de des ar trebui verificată o priză de apă",
+        paragraphs: [
+          "Nu există un interval unic: frecvența depinde de sursă, de sezon și de importanța instalației. O priză pe un râu cu transport mare de aluviuni are nevoie de verificări mult mai dese decât una într-un lac cu apă limpede.",
+          "Un reper practic este verificarea după fiecare viitură importantă și cel puțin o inspecție programată înainte de sezonul de vârf. Costul unei verificări este mic în raport cu o oprire neplanificată sau cu înlocuirea unui rotor erodat, iar rezultatele consemnate în timp permit planificarea intervențiilor înainte ca pierderea de debit să devină vizibilă în exploatare.",
+        ],
+        serviceLinks: [
+          { slug: "mentenanta-preventiva-subacvatica", label: "mentenanță preventivă subacvatică" },
+          { slug: "mentenanta-rezervoare-apa", label: "mentenanța rezervoarelor de apă" },
+        ],
+      },
+      {
+        heading: "Concluzie",
+        paragraphs: [
+          "Când debitul scade, iar pompele lucrează mai greu, răspunsul se află de obicei sub apă. O inspecție documentată a grătarului, a sorbului și a camerei de aspirație stabilește rapid dacă problema este colmatarea și cât din pierderea de debit se recuperează printr-o simplă decolmatare.",
+          "Echipa HEIDI execută inspecții și curățări subacvatice la prize de apă și stații de pompare în toată România, cu raport tehnic și documentare video la finalul lucrării.",
+        ],
+      },
+    ],
+  },
+
+  {
     slug: "curatare-rezervoare-apa-potabila-fara-golire",
     title:
       "Curățarea rezervoarelor de apă potabilă fără golire: cum se face, ce presupune și când este necesară",
