@@ -87,7 +87,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "Aer antrenat în aspirație sau dezamorsări repetate la pornire.",
           "Impurități ajunse în instalație, semn că grătarul are bare lipsă sau deteriorate.",
         ],
-        paragraphs2: undefined,
+        
       },
       {
         heading: "Ce riscuri apar dacă intervenția este amânată",
