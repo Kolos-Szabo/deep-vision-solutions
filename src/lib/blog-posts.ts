@@ -39,7 +39,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title:
       "Avarii la conducte subacvatice: cum se localizează pierderile și ce reparații se pot executa fără golirea instalației",
     metaTitle:
-      "Reparații conducte subacvatice — detectarea avariilor și soluții de intervenție | HEIDI",
+      "Reparații conducte subacvatice: detectare avarii | HEIDI",
     metaDescription:
       "Cum se localizează o avarie la o conductă subacvatică și ce reparații se pot executa sub apă: inspecție cu scafandri și ROV, etanșare, sudură și raport tehnic.",
     keywords:
