@@ -35,6 +35,161 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "avarii-conducte-subacvatice-detectare-reparatii",
+    title:
+      "Avarii la conducte subacvatice: cum se localizează pierderile și ce reparații se pot executa fără golirea instalației",
+    metaTitle:
+      "Reparații conducte subacvatice: detectare avarii | HEIDI",
+    metaDescription:
+      "Cum se localizează o avarie la o conductă subacvatică și ce reparații se pot executa sub apă: inspecție cu scafandri și ROV, etanșare, sudură și raport tehnic.",
+    keywords:
+      "reparatii conducte subacvatice, inspectie conducte subacvatice, avarie conducta submersa, pierderi conducta sub apa, traversare conducta rau, etansare conducta sub apa, ROV conducte, sudura conducta subacvatica, scafandri industriali Romania",
+    excerpt:
+      "Scăderea presiunii, pierderile de produs sau modificarea albiei pot indica o avarie ascunsă la o conductă imersată. Aflați cum se localizează defectul și când poate fi reparat direct sub apă.",
+    cover: projCrossing,
+    coverAlt:
+      "Scafandru industrial inspectând interiorul unei conducte subacvatice la o traversare de râu, pentru localizarea unei avarii",
+    date: "21 septembrie 2026",
+    dateISO: "2026-09-21",
+    readingMinutes: 10,
+    category: "Infrastructură & inspecții",
+    body: [
+      {
+        paragraphs: [
+          "O conductă submersă poate funcționa ani la rând fără indicii vizibile la suprafață, deși protecția ei se degradează treptat. Coroziunea, deplasarea reazemelor, afuierea albiei, lovirea accidentală sau cedarea unei îmbinări pot produce pierderi de debit și presiune, infiltrații ori contaminarea mediului transportat.",
+          "Pentru operator, dificultatea nu este doar repararea, ci localizarea exactă a defectului. O intervenție începută fără diagnostic poate însemna opriri inutile, excavări extinse și costuri care nu rezolvă cauza reală.",
+          "Acest ghid explică modul în care se investighează o avarie la o conductă subacvatică, ce date sunt necesare pentru alegerea soluției și ce reparații pot fi executate direct sub apă, cu întreruperi minime ale exploatării.",
+        ],
+      },
+      {
+        heading: "Unde apar cel mai frecvent avariile la conductele submerse",
+        paragraphs: [
+          "Conductele de aducțiune, evacuare, canalizare, apă industrială sau utilități amplasate în râuri, lacuri și bazine tehnologice sunt solicitate simultan de presiunea internă, curent, variații de nivel și mișcarea terenului. Defectul observat este adesea rezultatul mai multor mecanisme care au evoluat în timp.",
+        ],
+        bullets: [
+          "Coroziune generală sau localizată, accentuată în zonele unde protecția anticorozivă s-a desprins.",
+          "Fisuri, pori sau cordoane degradate în zona îmbinărilor sudate și a pieselor speciale.",
+          "Garnituri deplasate, flanșe slăbite și prinderi compromise de vibrații sau tasări.",
+          "Tronsoane dezvelite de afuierea albiei, rămase fără sprijin continuu și solicitate la încovoiere.",
+          "Deformări ori perforări produse de ancore, utilaje, resturi transportate de viituri sau alte impacturi.",
+          "Fisuri și pierderi la trecerile prin pereți, cămine, rezervoare sau structuri de beton.",
+        ],
+      },
+      {
+        heading: "Semnele care justifică o inspecție subacvatică",
+        paragraphs: [
+          "Nu orice variație de debit indică o fisură în conductă. Înainte de mobilizare trebuie comparate datele de exploatare, istoricul manevrelor și evenimentele recente din amplasament. Corelarea acestor informații restrânge zona de căutare și reduce timpul petrecut sub apă.",
+        ],
+        bullets: [
+          "Scădere constantă a presiunii sau a debitului, fără o explicație la pompe și vane.",
+          "Diferență între volumul introdus în conductă și cel măsurat la capătul traseului.",
+          "Turbiditate, bule, vortex sau modificarea locală a culorii apei deasupra traseului.",
+          "Infiltrații într-un cămin, într-o galerie ori într-o structură conectată conductei.",
+          "Vibrații și zgomote neobișnuite, în special în apropierea reazemelor și compensatorilor.",
+          "Viituri, lucrări în albie, coliziuni sau tasări care ar fi putut deplasa conducta ori protecția ei.",
+        ],
+        serviceLinks: [
+          { slug: "inspectii-subacvatice", label: "inspecții subacvatice documentate" },
+          { slug: "mentenanta-preventiva-subacvatica", label: "mentenanță preventivă subacvatică" },
+        ],
+      },
+      {
+        heading: "Cum se localizează defectul fără excavarea întregului traseu",
+        paragraphs: [
+          "Investigația începe de la planurile existente, reperele de pe mal și datele de presiune. Traseul este împărțit în sectoare, apoi fiecare anomalie este poziționată și verificată printr-o metodă potrivită condițiilor din teren.",
+          "În apă limpede și la adâncimi accesibile, scafandrul poate urmări conducta, curăța local suprafața și face o verificare tactilă apropiată. În zone adânci, contaminate, cu acces dificil sau cu suprafețe mari, un ROV poate face recunoașterea inițială și poate ghida intervenția punctuală a scafandrului.",
+        ],
+        bullets: [
+          "Inspecție video pe întregul sector suspect, cu reper de scară și poziționarea anomaliilor.",
+          "Sonar în apă cu vizibilitate foarte redusă, pentru urmărirea traseului și identificarea tronsoanelor deplasate.",
+          "Curățare locală a depunerilor pentru examinarea îmbinărilor, flanșelor și cordoanelor de sudură.",
+          "Măsurători de grosime prin ultrasunete acolo unde există suspiciune de coroziune.",
+          "Verificarea reazemelor, a colierelor, a balastului și a protecției față de afuiere.",
+          "Probe de etanșeitate sau teste hidraulice numai în coordonare cu operatorul și proiectantul instalației.",
+        ],
+        serviceLinks: [
+          { slug: "lucrari-cu-rov", label: "inspecții de conducte cu ROV" },
+          { slug: "expertize-tehnice-subacvatice", label: "expertize tehnice subacvatice" },
+        ],
+      },
+      {
+        heading: "Scafandru sau ROV: alegerea metodei corecte",
+        paragraphs: [
+          "ROV-ul și scafandrul nu sunt soluții concurente. Robotul este eficient pentru recunoaștere, acoperirea rapidă a unui traseu și documentarea zonelor unde expunerea umană nu este justificată. Scafandrul este necesar când diagnosticul presupune contact tactil, curățare, măsurători directe, montarea unui colier sau executarea unei reparații.",
+          "O combinație bine planificată reduce timpul de imersie: ROV-ul identifică și marchează punctele suspecte, iar echipa de scafandri intervine doar acolo unde informația sau lucrarea nu pot fi obținute de la distanță.",
+        ],
+      },
+      {
+        heading: "Ce reparații se pot executa direct sub apă",
+        paragraphs: [
+          "Soluția nu se alege înainte de identificarea materialului, diametrului, presiunii de lucru, grosimii reziduale și cauzei avariei. O peticire care oprește temporar pierderea, dar lasă conducta fără sprijin sau cu o zonă corodată extinsă, nu reprezintă o reparație completă.",
+        ],
+        bullets: [
+          "Montarea de coliere mecanice și manșoane de reparație dimensionate pentru conducta și presiunea existente.",
+          "Înlocuirea garniturilor, strângerea controlată sau refacerea unor îmbinări cu flanșă.",
+          "Sudură subacvatică pentru piese și consolidări compatibile cu procedura aprobată și starea materialului suport.",
+          "Etanșări locale la treceri prin beton, rosturi și racorduri, folosind sisteme compatibile cu mediul și fluidul transportat.",
+          "Refacerea reazemelor, a ancorajelor și a protecției mecanice a tronsonului.",
+          "Reacoperirea conductei și stabilizarea albiei în zonele afectate de afuiere, pe baza unei soluții proiectate.",
+        ],
+        serviceLinks: [
+          { slug: "sudura-subacvatica", label: "sudură subacvatică pentru conducte și structuri" },
+          { slug: "betonari-subacvatice", label: "betonări și consolidări subacvatice" },
+        ],
+      },
+      {
+        heading: "Se poate repara conducta fără golirea instalației?",
+        paragraphs: [
+          "Unele defecte pot fi remediate cu conducta plină sau cu o reducere controlată a debitului, însă acest lucru nu se poate presupune. Decizia aparține echipei tehnice, împreună cu operatorul și proiectantul, după evaluarea presiunii, fluidului, geometriei și posibilității de izolare.",
+          "Colierele mecanice, anumite etanșări și consolidările exterioare pot limita oprirea. În schimb, o ruptură extinsă, o deformare severă, o zonă cu grosime reziduală insuficientă sau o conductă care transportă substanțe periculoase poate impune izolarea, depresurizarea și înlocuirea tronsonului. Obiectivul nu este evitarea opririi cu orice preț, ci alegerea unei proceduri controlabile și verificabile.",
+        ],
+      },
+      {
+        heading: "Riscuri și condiții de siguranță la intervenție",
+        paragraphs: [
+          "Lucrul lângă o conductă activă poate implica aspirație, jet sub presiune, energie mecanică, apă contaminată și vizibilitate nulă. Înaintea primei imersii se stabilesc limitele de operare, comunicația cu dispeceratul și criteriile de oprire a lucrării.",
+        ],
+        bullets: [
+          "Identificarea și izolarea tuturor surselor de energie care pot afecta zona de lucru.",
+          "Confirmarea fluidului transportat și a eventualelor riscuri biologice sau chimice.",
+          "Alimentare și comunicație de la suprafață, scafandru de rezervă și supraveghere permanentă.",
+          "Controlul presiunii și al debitului pe durata măsurătorilor, montajului sau sudurii.",
+          "Stabilirea unui traseu sigur de acces, fără agățarea ombilicalului de reazeme și obstacole.",
+        ],
+        serviceLinks: [
+          { slug: "interventii-medii-contaminate", label: "intervenții în ape contaminate" },
+        ],
+      },
+      {
+        heading: "Ce trebuie să conțină raportul tehnic",
+        paragraphs: [
+          "Documentația de la final trebuie să permită atât recepția reparației, cât și compararea la inspecțiile viitoare. Un film lung, fără repere și fără localizarea defectelor, nu este suficient pentru o decizie de mentenanță.",
+        ],
+        bullets: [
+          "Planul traseului și poziția fiecărei anomalii raportate la repere fixe.",
+          "Starea inițială, metoda de curățare și rezultatele măsurătorilor relevante.",
+          "Fotografii și secvențe video înainte, în timpul și după reparație.",
+          "Descrierea materialelor, pieselor și procedurilor utilizate.",
+          "Defectele rămase, limitele inspecției și recomandarea pentru următoarea verificare.",
+        ],
+      },
+      {
+        heading: "Informațiile necesare pentru o evaluare corectă",
+        paragraphs: [
+          "Pentru o ofertă realistă sunt utile planul conductei, materialul și diametrul, presiunea și fluidul transportat, adâncimea, lungimea sectorului suspect, rapoartele anterioare și simptomele observate. Fotografii ale accesului la apă și informațiile despre posibilitatea de oprire sau reducere a debitului pot evita o mobilizare suplimentară.",
+          "Dacă amplasamentul nu este cunoscut suficient, prima etapă trebuie tratată separat ca inspecție și diagnostic. Soluția de reparație și devizul final se stabilesc după ce defectul și cauza lui au fost documentate.",
+        ],
+      },
+      {
+        heading: "Concluzie",
+        paragraphs: [
+          "O avarie la o conductă subacvatică nu se rezolvă eficient prin presupuneri. Localizarea precisă, evaluarea grosimii și a sprijinirii, stabilirea cauzei și documentarea condițiilor de exploatare sunt pașii care separă o reparație controlată de o intervenție temporară.",
+          "Echipa HEIDI execută inspecții și reparații la conducte subacvatice și traversări de râu în România. Trimiteți planul traseului, datele de exploatare și simptomele observate pentru o evaluare tehnică inițială și o ofertă adaptată amplasamentului.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "colmatarea-prizelor-de-apa-si-a-gratarelor-statii-de-pompare",
     title:
       "Colmatarea prizelor de apă și a grătarelor la stațiile de pompare: semne, riscuri și curățare subacvatică fără oprirea instalației",
