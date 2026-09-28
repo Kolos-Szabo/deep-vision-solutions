@@ -26,7 +26,6 @@ const RAW: Omit<GalleryPhoto, "lg" | "sm">[] = [
   { id: "scafandru-la-suprafata-langa-ponton-de-lucru", cat: "baraje-lacuri", field: true, alt: "Scafandru la suprafață lângă marginea pontonului, cu furtunuri ombilicale pe punte." },
   { id: "interventie-hidrotehnica-baraj-batardou", cat: "baraje-lacuri", alt: "Batardou metalic ridicat cu macaraua la un baraj, în cadrul unei lucrări subacvatice hidrotehnice." },
   { id: "lucrari-subacvatice-lac-acumulare-scafandru", cat: "baraje-lacuri", alt: "Scafandru echipat cu cască galbenă ieșind din apă pe malul unui lac de acumulare, cu furtunul ombilical desfășurat pe mal." },
-  { id: "montaj-structura-metalica-subacvatica-macara", cat: "interventii", alt: "Montaj cu macaraua al unei structuri metalice destinate lucrărilor subacvatice." },
   { id: "interventie-statie-de-pompare-subacvatica", cat: "interventii", alt: "Echipament metalic ridicat cu macaraua din apă la o stație de pompare, sub supravegherea echipei de pe ponton." },
   { id: "inspectie-conducta-subacvatica-traversare-rau", cat: "interventii", alt: "Scafandru pătrunzând printr-o fereastră tăiată într-o conductă industrială, pentru inspecția interioară." },
   { id: "sudura-subacvatica-structura-metalica-scafandru", cat: "interventii", alt: "Scafandru comercial coborând pe scară către o structură metalică submersată." },
