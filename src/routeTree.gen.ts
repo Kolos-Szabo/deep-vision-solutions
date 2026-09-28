@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as GalerieFotoRouteImport } from './routes/galerie-foto'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServiciiIndexRouteImport } from './routes/servicii.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
@@ -19,6 +20,11 @@ import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalerieFotoRoute = GalerieFotoRouteImport.update({
+  id: '/galerie-foto',
+  path: '/galerie-foto',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -49,6 +55,7 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/galerie-foto': typeof GalerieFotoRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/servicii/$slug': typeof ServiciiSlugRoute
@@ -57,6 +64,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/galerie-foto': typeof GalerieFotoRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/servicii/$slug': typeof ServiciiSlugRoute
@@ -66,6 +74,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/galerie-foto': typeof GalerieFotoRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/servicii/$slug': typeof ServiciiSlugRoute
@@ -76,6 +85,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/galerie-foto'
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/servicii/$slug'
@@ -84,6 +94,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/galerie-foto'
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/servicii/$slug'
@@ -92,6 +103,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/galerie-foto'
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/servicii/$slug'
@@ -101,6 +113,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  GalerieFotoRoute: typeof GalerieFotoRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   BlogSlugRoute: typeof BlogSlugRoute
   ServiciiSlugRoute: typeof ServiciiSlugRoute
@@ -115,6 +128,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/galerie-foto': {
+      id: '/galerie-foto'
+      path: '/galerie-foto'
+      fullPath: '/galerie-foto'
+      preLoaderRoute: typeof GalerieFotoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -157,6 +177,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  GalerieFotoRoute: GalerieFotoRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   BlogSlugRoute: BlogSlugRoute,
   ServiciiSlugRoute: ServiciiSlugRoute,

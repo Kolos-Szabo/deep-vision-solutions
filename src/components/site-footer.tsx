@@ -28,6 +28,7 @@ export function SiteFooter({ home = false }: { home?: boolean }) {
             <li><a href={`${p}#proiecte`} className="hover:text-teal text-foreground/80">Proiecte</a></li>
             <li><a href={`${p}#proces`} className="hover:text-teal text-foreground/80">Proces</a></li>
             <li><Link to="/blog" className="hover:text-teal text-foreground/80">Blog</Link></li>
+            <li><Link to="/galerie-foto" className="hover:text-teal text-foreground/80">Galerie foto</Link></li>
             <li><a href={`${p}#contact`} className="hover:text-teal text-foreground/80">Contact</a></li>
           </ul>
         </div>
