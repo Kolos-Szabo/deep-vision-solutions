@@ -25,6 +25,7 @@ import equipmentAsset from "@/assets/echipament-scafandru-profesional-kirby-morg
 
 import { SiteFooter } from "@/components/site-footer";
 import { WhatsAppWidget } from "@/components/whatsapp-widget";
+import { FieldGallery } from "@/components/field-gallery";
 import { EMAIL, OFFER_MAILTO, PHONE, PHONE_HREF, SITE_URL, abs } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
@@ -519,6 +520,7 @@ function Projects() {
             </article>
           ))}
         </div>
+        <FieldGallery />
       </div>
     </section>
   );
