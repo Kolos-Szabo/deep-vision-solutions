@@ -237,6 +237,9 @@ function Nav() {
           <Link to="/blog" className="text-sm text-foreground/80 hover:text-teal transition-colors">
             Blog
           </Link>
+          <Link to="/galerie-foto" className="text-sm text-foreground/80 hover:text-teal transition-colors">
+            Galerie foto
+          </Link>
         </nav>
         <div className="flex items-center gap-3">
           <a href={PHONE_HREF} className="hidden md:inline-flex items-center gap-2 text-sm text-foreground/90 hover:text-teal">
@@ -281,6 +284,10 @@ function Nav() {
             <Link to="/blog" onClick={() => setOpen(false)}
                   className="py-3 text-foreground/90 hover:text-teal border-b border-white/5">
               Blog
+            </Link>
+            <Link to="/galerie-foto" onClick={() => setOpen(false)}
+                  className="py-3 text-foreground/90 hover:text-teal border-b border-white/5">
+              Galerie foto
             </Link>
             <a href={PHONE_HREF} className="mt-4 inline-flex items-center gap-2 text-teal font-semibold">
               <Phone className="h-4 w-4" /> {PHONE}

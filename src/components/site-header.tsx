@@ -5,8 +5,8 @@ import { PHONE, PHONE_HREF } from "@/lib/site";
 
 /** Header used on the inner pages (servicii, blog). The home page has its own
  *  transparent-on-scroll variant with the same links, so navigation stays identical. */
-export function SiteHeader({ active }: { active?: "servicii" | "blog" }) {
-  const cls = (key: "servicii" | "blog") =>
+export function SiteHeader({ active }: { active?: "servicii" | "blog" | "galerie" }) {
+  const cls = (key: "servicii" | "blog" | "galerie") =>
     active === key ? "text-teal" : "text-foreground/80 hover:text-teal";
 
   return (
@@ -19,6 +19,7 @@ export function SiteHeader({ active }: { active?: "servicii" | "blog" }) {
           <Link to="/" className="text-foreground/80 hover:text-teal">Acasă</Link>
           <Link to="/servicii" className={cls("servicii")}>Servicii</Link>
           <Link to="/blog" className={cls("blog")}>Blog</Link>
+          <Link to="/galerie-foto" className={cls("galerie")}>Galerie foto</Link>
           <a href="/#contact" className="text-foreground/80 hover:text-teal">Contact</a>
         </nav>
         <a
