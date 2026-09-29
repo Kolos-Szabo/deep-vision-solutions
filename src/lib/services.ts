@@ -42,7 +42,7 @@ export const SERVICES: ServicePage[] = [
     h1: "Inspecții subacvatice profesionale — CVI, UT și cartografiere structuri submerse",
     metaTitle: "Inspecții subacvatice România · CVI, ultrasunete, ROV — HEIDI",
     metaDescription:
-      "Inspecții subacvatice pentru baraje, conducte, rezervoare și structuri portuare: CVI, măsurători UT, sonar multibeam, rapoarte tehnice cu foto-video HD. Acoperire națională, deviz în 24 h.",
+      "Inspecții subacvatice pentru baraje, conducte, rezervoare și structuri portuare: CVI, măsurători UT, sonar multibeam, rapoarte tehnice cu foto-video HD. Acoperire națională, ofertă personalizată în funcție de lucrare.",
     keywords:
       "inspectii subacvatice, inspectie CVI, inspectie baraj, inspectie rezervor apa, inspectie conducta sub apa, scafandri inspectori, raport tehnic subacvatic, ultrasunete sub apa",
     eyebrow: "Inspecții & diagnoză",

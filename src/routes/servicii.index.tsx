@@ -113,7 +113,7 @@ function ServicesHub() {
           <div className="mt-20 rounded-2xl border border-teal/20 bg-teal/5 p-10 text-center">
             <h2 className="font-display text-3xl md:text-4xl font-semibold">Nu găsiți lucrarea dumneavoastră?</h2>
             <p className="mt-4 max-w-2xl mx-auto text-foreground/75">
-              Fiecare proiect subacvatic este unic. Descrieți-ne obiectivul și primiți o evaluare tehnică cu deviz în 24 de ore.
+              Fiecare proiect subacvatic este unic. Descrieți-ne obiectivul, iar noi vă comunicăm serviciile necesare și costurile aferente, în funcție de complexitatea lucrării și de condițiile din teren.
             </p>
             <a href={OFFER_MAILTO}
                className="mt-8 inline-flex items-center gap-2 rounded-md bg-teal px-6 py-3.5 font-semibold text-primary-foreground hover:bg-teal-glow">
