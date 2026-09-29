@@ -11,6 +11,8 @@ const projTank = projTankAsset;
 import projPumpAsset from "@/assets/interventie-statie-de-pompare-subacvatica.webp";
 const projPump = projPumpAsset;
 
+import { GALLERY_PHOTOS } from "@/lib/gallery";
+const img = (id: string) => GALLERY_PHOTOS.find((p) => p.id === id)?.lg ?? "";
 
 export type BlogPost = {
   slug: string;
@@ -30,10 +32,135 @@ export type BlogPost = {
     paragraphs: string[];
     bullets?: string[];
     serviceLinks?: { slug: string; label: string }[];
+    images?: { id: string; caption?: string }[];
+    subheading?: string;
+    subparagraphs?: string[];
   }[];
 };
 
 export const BLOG_POSTS: BlogPost[] = [
+  {
+    slug: "lucrari-subacvatice-turn-de-priza-lac-de-acumulare",
+    title:
+      "Lucrări subacvatice la turnul de priză al unui lac de acumulare: cum se organizează intervenția de pe ponton",
+    metaTitle: "Lucrări subacvatice la turnul de priză | HEIDI",
+    metaDescription:
+      "Cum se organizează o intervenție cu scafandri la turnul de priză al unui lac de acumulare: ponton de lucru, verificări, alimentare de la suprafață și siguranță.",
+    keywords:
+      "lucrari subacvatice turn de priza, scafandri lac de acumulare, ponton de lucru scafandri, scufundari cu alimentare de la suprafata, furtun ombilical scafandru, inspectie turn de priza baraj, scafandri industriali Romania",
+    excerpt:
+      "Fotografii reale din teren arată cum se lucrează la un turn de priză: pontonul ancorat lângă beton, echipa de suprafață, verificarea echipamentelor și scafandrul legat prin ombilical.",
+    cover: img("vedere-aeriana-turn-priza-lac-acumulare-ponton"),
+    coverAlt:
+      "Vedere aeriană a unui turn de priză pe un lac de acumulare, cu pasarela de acces și pontonul echipei de scafandri alături",
+    date: "29 septembrie 2026",
+    dateISO: "2026-09-29",
+    readingMinutes: 8,
+    category: "Baraje & lacuri de acumulare",
+    body: [
+      {
+        paragraphs: [
+          "Turnul de priză este una dintre cele mai importante construcții ale unui lac de acumulare: prin el se captează apa pentru alimentare, irigații sau producția de energie. Grătarele, stavilele, golirile și betonul din zona lui stau permanent sub apă, iar orice verificare sau reparație în această zonă cere o intervenție organizată cu atenție.",
+          "Fotografiile de mai jos provin din teren, de la o intervenție a echipei noastre lângă un turn de priză. Le folosim pentru a explica, pas cu pas, cum arată în realitate punctul de lucru și ce presupune o scufundare profesională în acest tip de amplasament. Nu descriem aici un proiect anume și nici rezultate: scopul este să arătăm organizarea lucrării.",
+        ],
+      },
+      {
+        heading: "De ce este nevoie de scafandri la turnul de priză",
+        paragraphs: [
+          "Zonele submersate ale turnului nu pot fi evaluate de la mal. Depunerile, corpurile plutitoare prinse în grătare, degradarea betonului sau funcționarea defectuoasă a unei stavile se observă doar prin inspecție directă sub apă, cu scafandru sau cu ROV.",
+        ],
+        bullets: [
+          "verificarea și curățarea grătarelor de la priză;",
+          "inspecția vizuală a betonului și a îmbinărilor, cu înregistrare video;",
+          "verificarea zonei stavilelor și a ghidajelor;",
+          "îndepărtarea obiectelor care blochează secțiunea de curgere;",
+          "pregătirea unor reparații ulterioare, pe baza constatărilor.",
+        ],
+        serviceLinks: [
+          { slug: "inspectii-subacvatice", label: "inspecții subacvatice" },
+          { slug: "curatare-gratare-priza-apa", label: "curățarea grătarelor și a prizelor de apă" },
+          { slug: "reparatii-si-constructii-baraje", label: "lucrări la baraje" },
+        ],
+      },
+      {
+        heading: "Pontonul de lucru: baza intervenției",
+        images: [
+          { id: "ponton-de-lucru-scafandri-langa-turn-priza-lac", caption: "Pontonul ancorat lângă pila de beton a turnului de priză." },
+          { id: "echipa-scafandri-ponton-lac-acumulare-vedere-drona" },
+        ],
+        paragraphs: [
+          "Pe un lac de acumulare, accesul la turn se face de obicei de pe apă. De aceea echipa lucrează de pe un ponton ancorat stabil lângă construcție. Pe ponton se află tot ce este necesar: aerul pentru scafandru, sistemul de comunicații, furtunurile ombilicale, echipamentul de rezervă și sculele.",
+          "Poziționarea contează: pontonul trebuie să fie aproape de zona de lucru, dar ancorat astfel încât să nu se deplaseze și să nu fie atras spre curenții generați de priză. Suprafața trebuie organizată ordonat, pentru ca ombilicalul să se poată desfășura fără noduri sau agățări.",
+        ],
+      },
+      {
+        heading: "Verificarea echipamentelor înainte de imersie",
+        images: [{ id: "verificare-echipamente-scufundare-inainte-de-imersie" }],
+        paragraphs: [
+          "Înainte de fiecare scufundare, echipamentele se verifică la suprafață: alimentarea cu aer, comunicațiile, casca sau masca integrală, butelia de rezervă și iluminarea. Orice problemă descoperită pe ponton este mult mai ușor de rezolvat decât una descoperită sub apă.",
+          "Tot în această etapă se stabilesc rolurile: cine coordonează scufundarea, cine urmărește ombilicalul și cine este pregătit să intervină în caz de nevoie.",
+        ],
+        serviceLinks: [{ slug: "mentenanta-preventiva-subacvatica", label: "mentenanță preventivă subacvatică" }],
+      },
+      {
+        heading: "Echiparea scafandrului și furtunul ombilical",
+        images: [
+          { id: "pregatire-scafandru-ponton-turn-priza-baraj" },
+          { id: "echipare-scafandru-furtun-ombilical-ponton" },
+        ],
+        paragraphs: [
+          "La acest tip de lucrare scafandrul este legat de ponton printr-un furtun ombilical. Prin el primește aer de la suprafață și rămâne în contact permanent cu echipa, care îl aude și îi poate transmite instrucțiuni.",
+          "Echiparea se face cu ajutorul colegilor: fiecare element este fixat și verificat încă o dată înainte de intrarea în apă. Membrii echipei de pe ponton poartă cască de protecție și vestă de salvare, pentru că și lucrul pe apă, la suprafață, are propriile riscuri.",
+        ],
+        subheading: "De ce alimentare de la suprafață",
+        subparagraphs: [
+          "Față de scufundarea autonomă, alimentarea de la suprafață permite lucrul mai îndelungat, comunicare vocală continuă și control mai bun din partea echipei. Ombilicalul servește totodată ca legătură fizică, astfel încât poziția scafandrului poate fi urmărită în orice moment.",
+        ],
+      },
+      {
+        heading: "Intrarea în apă și lucrul lângă betonul turnului",
+        images: [
+          { id: "intrare-in-apa-scafandru-langa-perete-beton-baraj" },
+          { id: "scafandru-cu-casca-si-lanterne-la-suprafata-apei" },
+        ],
+        paragraphs: [
+          "Scafandrul intră în apă de pe ponton, lângă peretele de beton, și coboară spre zona de lucru. Lanternele montate pe mască sunt necesare deoarece, în lacurile de acumulare, vizibilitatea scade rapid odată cu adâncimea.",
+          "Cea mai importantă regulă la un turn de priză este controlul curgerii: înainte de scufundare, beneficiarul și echipa stabilesc ce vane și stavile rămân închise pe durata lucrării, pentru ca scafandrul să nu fie expus aspirației la grătare.",
+        ],
+      },
+      {
+        heading: "Revenirea la suprafață și documentarea lucrării",
+        images: [{ id: "scafandru-la-suprafata-langa-ponton-de-lucru" }],
+        paragraphs: [
+          "După finalizarea sarcinii, scafandrul revine la ponton, iar echipa preia echipamentul. Observațiile de sub apă, fotografiile și filmările sunt centralizate, iar beneficiarul primește constatările, alături de recomandări pentru pașii următori.",
+          "Dacă inspecția arată degradări, acestea pot fi analizate într-o expertiză tehnică, iar reparațiile pot fi planificate separat, de exemplu betonări sau sudură subacvatică.",
+        ],
+        serviceLinks: [
+          { slug: "expertize-tehnice-subacvatice", label: "expertize tehnice subacvatice" },
+          { slug: "betonari-subacvatice", label: "betonări subacvatice" },
+          { slug: "sudura-subacvatica", label: "sudură subacvatică" },
+        ],
+      },
+      {
+        heading: "Ce informații sunt utile pentru o ofertă",
+        paragraphs: ["Pentru o evaluare corectă a unei lucrări la turnul de priză, sunt utile:"],
+        bullets: [
+          "tipul lucrării dorite (inspecție, curățare, reparație);",
+          "adâncimea aproximativă a zonei de lucru;",
+          "posibilitatea de a opri sau limita curgerea pe durata intervenției;",
+          "modul de acces la lac și la turn;",
+          "planuri sau fotografii existente ale construcției.",
+        ],
+      },
+      {
+        heading: "Concluzie",
+        paragraphs: [
+          "O lucrare subacvatică la turnul de priză nu înseamnă doar scufundarea propriu-zisă. Siguranța și calitatea ei depind de pontonul bine poziționat, de verificarea echipamentelor, de echipa de suprafață și de oprirea curgerii în zona de lucru. Fotografiile din teren arată exact aceste etape.",
+          "Dacă administrați un lac de acumulare sau o priză de apă și aveți nevoie de o inspecție ori de o intervenție, echipa HEIDI vă poate ajuta să planificați lucrarea. Puteți vedea mai multe imagini din teren în galeria foto.",
+        ],
+      },
+    ],
+  },
   {
     slug: "avarii-conducte-subacvatice-detectare-reparatii",
     title:
