@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, Calendar, Clock, Phone, Tag } from "lucide-react";
 import { BLOG_POSTS, getPost } from "@/lib/blog-posts";
+import { GALLERY_PHOTOS } from "@/lib/gallery";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { WhatsAppWidget } from "@/components/whatsapp-widget";
@@ -150,8 +151,40 @@ function BlogPost() {
                 </h2>
               )}
               <div className="space-y-4 text-foreground/80 leading-relaxed">
+                {block.images && (
+                  <div className={`grid gap-4 ${block.images.length > 1 ? "sm:grid-cols-2" : ""}`}>
+                    {block.images.map((im) => {
+                      const ph = GALLERY_PHOTOS.find((g) => g.id === im.id);
+                      if (!ph) return null;
+                      return (
+                        <figure key={im.id} className="rounded-xl overflow-hidden border border-white/5">
+                          <img
+                            src={ph.lg}
+                            srcSet={`${ph.sm} 800w, ${ph.lg} 1600w`}
+                            sizes={block.images!.length > 1 ? "(min-width: 640px) 384px, 100vw" : "(min-width: 768px) 768px, 100vw"}
+                            alt={ph.alt}
+                            loading="lazy"
+                            decoding="async"
+                            width={1600}
+                            height={1067}
+                            className="w-full aspect-[3/2] object-cover"
+                          />
+                          {im.caption && (
+                            <figcaption className="px-4 py-2 text-xs text-foreground/60">{im.caption}</figcaption>
+                          )}
+                        </figure>
+                      );
+                    })}
+                  </div>
+                )}
                 {block.paragraphs.map((p, j) => (
                   <p key={j}>{p}</p>
+                ))}
+                {block.subheading && (
+                  <h3 className="pt-2 text-xl font-display font-semibold text-foreground">{block.subheading}</h3>
+                )}
+                {block.subparagraphs?.map((p, j) => (
+                  <p key={`s${j}`}>{p}</p>
                 ))}
                 {block.bullets && (
                   <ul className="space-y-2.5 pl-1">
