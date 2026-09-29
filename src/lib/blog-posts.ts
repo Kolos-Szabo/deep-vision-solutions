@@ -706,7 +706,7 @@ export const BLOG_POSTS: BlogPost[] = [
         paragraphs: [
           "Afuierea nu se rezolvă de la sine, iar refacerea aparentă a albiei după viitură nu înseamnă că fundația a revenit la starea inițială. O verificare subacvatică executată la momentul potrivit costă mult mai puțin decât o consolidare de urgență sau o restricție de circulație.",
           "Dacă administrați un pod, o pasarelă, o traversare de conductă sau o priză de apă în albie și nu aveți date recente despre partea submersă, o inspecție este primul pas rezonabil.",
-          "Echipa lucrarisubacvatice.ro execută inspecții și intervenții subacvatice în toată România. Descrieți-ne obiectivul și primiți o evaluare tehnică și un deviz transparent în maximum 24 de ore.",
+          "Echipa lucrarisubacvatice.ro execută inspecții și intervenții subacvatice în toată România. Trimiteți-ne detaliile proiectului pentru a analiza cerințele tehnice și a vă comunica serviciile necesare și costurile aferente.",
         ],
       },
     ],
@@ -901,7 +901,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "Cât costă sudura subacvatică?",
         paragraphs: [
-          "Prețul unei lucrări de sudură sub apă depinde de adâncime, accesibilitate, lungimea cordonului, clasa de calitate cerută și de timpul de imobilizare a instalației beneficiare. Pentru o estimare corectă, HEIDI execută o inspecție preliminară (vizuală sau cu ROV), urmată de deviz tehnic transparent, livrat în 24 de ore. Solicitați o evaluare gratuită pentru lucrarea dumneavoastră.",
+          "Prețul unei lucrări de sudură sub apă depinde de adâncime, accesibilitate, lungimea cordonului, clasa de calitate cerută și de timpul de imobilizare a instalației beneficiare. Pentru o estimare corectă, este de obicei necesară o inspecție preliminară (vizuală sau cu ROV), un serviciu profesional al cărui cost se stabilește în prealabil, în funcție de condițiile lucrării. Solicitați o ofertă personalizată pentru lucrarea dumneavoastră.",
         ],
       },
     ],

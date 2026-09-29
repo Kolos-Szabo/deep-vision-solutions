@@ -220,10 +220,10 @@ function BlogPost() {
           <aside className="mt-16 rounded-2xl border border-teal/30 bg-teal/5 p-8">
             <div className="text-xs uppercase tracking-[0.25em] text-teal">Aveți un proiect?</div>
             <h3 className="mt-3 text-2xl font-display font-semibold text-foreground">
-              Solicitați o evaluare tehnică gratuită
+              Discutați cerințele proiectului cu echipa noastră
             </h3>
             <p className="mt-3 text-foreground/70">
-              Echipa HEIDI vă transmite o evaluare tehnică și un deviz transparent în maximum 24 de ore.
+              Trimiteți-ne detaliile lucrării, iar echipa HEIDI vă comunică serviciile necesare și costurile aferente. Orice inspecție sau evaluare tehnică se stabilește de comun acord, inclusiv costul, înainte de începerea ei.
               Lucrăm în toată România, inclusiv pentru intervenții urgente.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">

@@ -96,7 +96,7 @@ export const Route = createFileRoute("/")({
           "@type": "FAQPage",
           mainEntity: [
             { "@type": "Question", name: "Ce sunt lucrările subacvatice industriale?", acceptedAnswer: { "@type": "Answer", text: "Lucrările subacvatice industriale (scufundări utilitare/comerciale) cuprind inspecții, sudură hiperbarică, betonări, reparații structurale și mentenanță executate de scafandri profesioniști pe infrastructură critică: baraje, hidrocentrale, rezervoare, conducte, porturi." } },
-            { "@type": "Question", name: "Cât costă o lucrare subacvatică?", acceptedAnswer: { "@type": "Answer", text: "Prețul depinde de adâncime, complexitate, durată, echipamente (scafandru sau ROV) și locație. HEIDI oferă evaluare tehnică și deviz transparent în maximum 24 de ore de la solicitare." } },
+            { "@type": "Question", name: "Cât costă o lucrare subacvatică?", acceptedAnswer: { "@type": "Answer", text: "Prețul depinde de adâncime, complexitate, durată, echipamente (scafandru sau ROV) și locație. Costurile, inclusiv cele pentru inspecție sau evaluare tehnică, se comunică transparent după analiza detaliilor proiectului." } },
             { "@type": "Question", name: "Lucrați cu ROV (robot subacvatic)?", acceptedAnswer: { "@type": "Answer", text: "Da. Folosim ROV-uri pentru inspecții la adâncimi mari, în medii periculoase sau contaminate, precum și pentru cartografierea structurilor submerse cu sonar și cameră HD." } },
             { "@type": "Question", name: "Faceți sudură subacvatică certificată?", acceptedAnswer: { "@type": "Answer", text: "Da. Echipa noastră execută sudură umedă (wet welding) și sudură hiperbarică în habitat uscat, conform standardelor AWS D3.6M, cu scafandri-sudori atestați." } },
             { "@type": "Question", name: "Interveniți în regim de urgență 24/7?", acceptedAnswer: { "@type": "Answer", text: "Da. Mobilizăm echipa de intervenție rapidă în maximum 24 de ore la nivel național pentru etanșări scurgeri, deblocare stavile, recuperări și avarii pe infrastructură hidrotehnică." } },
@@ -616,7 +616,7 @@ function SeoSection() {
             companii de apă-canal, constructori de infrastructură, terminale portuare și operatori industriali.
             Răspundem punctual la întrebările cele mai frecvente — „cât costă o lucrare subacvatică”,
             „ce firmă de scafandri lucrează în zona mea”, „cât costă sudura subacvatică” sau
-            „cum se face inspecția unui baraj cu ROV” — cu evaluare tehnică și deviz în 24 de ore.
+            „cum se face inspecția unui baraj cu ROV” — cu o ofertă personalizată, adaptată cerințelor proiectului.
           </p>
         </div>
       </div>
@@ -643,7 +643,7 @@ const faqs = [
   },
   {
     q: "Cât costă o lucrare subacvatică?",
-    a: "Prețul unei lucrări subacvatice variază în funcție de adâncime, durată, complexitate tehnică, echipament necesar (scafandru, ROV, habitat hiperbaric) și locație. Trimitem ofertă personalizată în maximum 24 de ore.",
+    a: "Prețul unei lucrări subacvatice variază în funcție de adâncime, durată, complexitate tehnică, echipament necesar (scafandru, ROV, habitat hiperbaric) și locație. După ce primim detaliile proiectului, vă comunicăm transparent serviciile necesare și costurile aferente, inclusiv pentru eventuala inspecție sau evaluare tehnică.",
   },
   {
     q: "Interveniți în regim de urgență 24/7 în toată România?",
@@ -706,7 +706,7 @@ function Contact() {
             Solicitați o ofertă <span className="text-gradient-teal">personalizată</span>
           </h2>
           <p className="mt-5 text-foreground/75 text-lg">
-            Descrieți-ne pe scurt obiectivul lucrării. Vă răspundem în maximum 24 de ore cu o evaluare tehnică inițială.
+            Descrieți-ne pe scurt obiectivul lucrării. Analizăm cerințele și vă comunicăm pașii următori, serviciile necesare și costurile aferente.
           </p>
           <div className="mt-10 space-y-5">
             <a href={PHONE_HREF} className="flex items-start gap-4 group">
@@ -742,7 +742,7 @@ function Contact() {
           <h3 className="font-display text-2xl font-semibold">Solicitați ofertă</h3>
           <p className="mt-3 text-foreground/70 leading-relaxed">
             Trimiteți-ne un e-mail cu detaliile lucrării — tip, locație, adâncime estimată și termen —
-            și primiți o propunere tehnică transparentă în maximum 24 de ore.
+            iar noi vă comunicăm serviciile necesare și costurile aferente.
           </p>
           <a href={OFFER_MAILTO}
              className="mt-8 w-full inline-flex items-center justify-center gap-2 rounded-md bg-teal px-6 py-4 font-semibold text-primary-foreground transition hover:bg-teal-glow hover:shadow-[0_0_40px_-5px_var(--teal-glow)]">
